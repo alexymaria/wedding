@@ -143,24 +143,31 @@
         
     
         <h2>Confirma tu asistencia</h2>
-        <form id="rsvp-form" method="POS">
-            <label for="name">Nombre completo:</label>
-            <input type="text" id="name" name="name" required>
+        <form id="rsvp-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" placeholder="Escribe tu nombre completo" required>
         
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email">Correo:</label>
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
         
-            <label for="guests">¿Número de acompañantes?</label>
-            <input type="number" id="guests" name="guests" min="0" max="10">
+            <label for="attendance">¿Asistirás?</label>
+            <select id="attendance" name="attendance" required>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+            </select>
         
-            <label for="guest-names">Nombres de los acompañantes:</label>
-            <textarea id="guest-names" name="guest-names"></textarea>
+            <label for="companions">¿Cuántos acompañantes llevarás?</label>
+            <input type="number" id="companions" name="companions" min="0" value="0">
         
-            <label for="food-restrictions">¿Restricciones alimentarias?</label>
-            <textarea id="food-restrictions" name="food-restrictions"></textarea>
+            <label for="companion-names">Nombres de los acompañantes:</label>
+            <textarea id="companion-names" name="companion-names" placeholder="Escribe los nombres de tus acompañantes"></textarea>
         
-            <button type="submit">Confirmar asistencia</button>
+            <label for="dietary-restrictions">Restricciones alimentarias:</label>
+            <textarea id="dietary-restrictions" name="dietary-restrictions" placeholder="Escribe aquí cualquier restricción alimentaria"></textarea>
+        
+            <button type="submit">Enviar</button>
         </form>
+        
         <div id="response-message" style="margin-top: 20px;"></div>
         
         </section>

@@ -1,32 +1,35 @@
-document.getElementById('rsvp-form').addEventListener('submit', async function (event) {
-    event.preventDefault();
-    const formData = {
+document.getElementById("rsvp-form").addEventListener("submit", async function (e) {
+    e.preventDefault(); // Evita recargar la página
 
-    name = document.getElementById('name').value,
-    email = document.getElementById('email').value,
-    guests = document.getElementById('guests').value,
-    guestNames = document.getElementById('guest-names').value,
-    foodRestrictions = document.getElementById('food-restrictions').value,
+    const formData = {
+        Nombre: document.getElementById("name").value,
+        Correo: document.getElementById("email").value,
+        Asistencia: document.getElementById("attendance").value,
+        Acompañantes: document.getElementById("companions").value,
+        "Nombres de acompañantes": document.getElementById("companion-names").value,
+        "Restricciones alimentarias": document.getElementById("dietary-restrictions").value,
     };
 
-
     try {
-        const response = await fetch('https://sheetdb.io/api/v1/nvjlakeb4660p', {
-            method: 'POST',
+        const response = await fetch("https://sheetdb.io/api/v1/nvjlakeb4660p", {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(formData),
         });
 
         if (response.ok) {
-            document.getElementById('response-message').textContent = '¡Gracias por confirmar tu asistencia!';
-            document.getElementById('rsvp-form').reset();
+            alert("¡Formulario enviado con éxito!");
+            document.getElementById("rsvp-form").reset(); // Limpia el formulario
         } else {
-            throw new Error('Error al enviar el formulario.');
+            const error = await response.json();
+            console.error("Error en la respuesta:", error);
+            alert("Hubo un problema al enviar el formulario.");
         }
     } catch (error) {
-        document.getElementById('response-message').textContent = 'Hubo un problema al enviar tu confirmación. Inténtalo más tarde.';
-        console.error(error);
+        console.error("Error:", error);
+        alert("No se pudo enviar el formulario. Revisa tu conexión o configuración.");
     }
 });
+
