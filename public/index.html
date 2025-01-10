@@ -143,7 +143,7 @@
         
     
         <h2>Confirma tu asistencia</h2>
-        <form id="rsvp-form" method="POST">
+        <form id="rsvp-form" method="POS">
             <label for="name">Nombre completo:</label>
             <input type="text" id="name" name="name" required>
         
@@ -164,24 +164,6 @@
         <div id="response-message" style="margin-top: 20px;"></div>
         
         </section>
-        <script> 
-            document.getElementById('rsvp-form').addEventListener('submit', function(event) { 
-                event.preventDefault(); 
-                var formData = new FormData(this); 
-                fetch('process_form.php', { 
-                    method: 'POST', 
-                    body: formData 
-                }) 
-                .then(response => response.text()) 
-                .then(data => { 
-                    document.getElementById('response-message').innerText = data; 
-                }) 
-                .catch(error => { 
-                    document.getElementById('response-message').innerText = 'Error al enviar el formulario. Por favor, inténtelo de nuevo.'; 
-                }); 
-            }); 
-
-        </script>
     </main>
 </body>
 </html>
