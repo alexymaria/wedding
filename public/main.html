@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro & María - Save the Date</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="icons/pareja-de-boda.png">
+    <script src="scripts/rsvp.js"></script>
+    <script src="scripts/countdown.js"></script>
+    <script src="js/script.js"></script> </script>
+
+
+</head>
+<body>
+    <!-- Encabezado con imagen principal -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Imagen central para móviles y escritorio -->
+            <div class="center-image">
+                <!-- Imagen para móvil -->
+                <img src="images/IMG5.jpeg" alt="Imagen para móvil" class="main-image mobile-only">
+                
+                <!-- Imagen para escritorio -->
+                <img src="images/IMG2.jpeg" alt="Imagen para escritorio" class="main-image desktop-only">
+    
+                <!-- Texto sobre la imagen -->
+                <div class="header-text">
+                    <h1>Alejandro & María</h1>
+                    <p>¡Nos casamos!</p>
+                    <p>30 de Agosto de 2025</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+
+        <section class="countdown">
+            <h2>¡Cuenta atrás para el gran día!</h2>
+            <div class="countdown-timer">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <p>Días</p>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <p>Horas</p>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <p>Minutos</p>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <p>Segundos</p>
+                </div>
+            </div>
+        </section>
+        
+        <h2>Horario del día</h2>       
+        <section class="timeline-section">
+
+            <ul class="timeline">
+                <li>
+                    <div class="event">
+                        <p><strong>Ceremonia religiosa</strong></p>
+                    </div>
+                    <div class="time">5:00 PM</div>
+                    <div class="icon">
+                        <img src="icons/iglesiab.png" alt="Ceremony Icon">
+                    </div>
+                </li>
+                <li>
+                    <div class="event">
+                        <p><strong>Cóctel</strong></p>
+                    </div>
+                    <div class="time">6:30 PM</div>
+                    <div class="icon">
+                        <img src="icons/coctel.png" alt="Cocktail Icon">
+                    </div>
+                </li>
+                <li>
+                    <div class="event">
+                        <p><strong>Cena</strong></p>
+                    </div>
+                    <div class="time">8:30 PM</div>
+                    <div class="icon">
+                        <img src="icons/cena-romantica.png" alt="Dinner Icon">
+                    </div>
+                </li>
+                <li>
+                    <div class="event">
+                        <p><strong>Primer baile</strong></p>
+                    </div>
+                    <div class="time">10:30 PM</div>
+                    <div class="icon">
+                        <img src="icons/baile.png" alt="First Dance Icon">
+                    </div>
+                </li>
+                <li>
+                    <div class="event">
+                        <p><strong>Let's go to the Party!</strong></p>
+                    </div>
+                    <div class="time">11:00 PM</div>
+                    <div class="icon">
+                        <img src="icons/bola-de-disco.png" alt="Party Icon">
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <h2>Ubicaciones </h2>
+        <section class="venue">
+
+            <div class="venue-container">
+                <!-- Columna izquierda: Imagen de la iglesia -->
+     
+                <div class="venue-column">
+                    <h3>Monasterio de la Fuencisla</h3>
+                    <p>
+                        La ceremonia religiosa tendrá lugar en el <strong>Monasterio de la Fuencisla</strong> en Segovia. 
+                        Este hermoso monasterio ofrece el ambiente perfecto para un momento tan especial.
+                    </p>
+                    <img src="images/iglesia.jpg" alt="Iglesia Monasterio de la Fuencisla">
+
+                </div>
+        
+                <!-- Columna derecha: Imagen de la finca -->
+                <div class="venue-column">
+                    <img src="images/mencia.jpeg" alt="Finca Mencía de Sotosalbos">
+                    <h3>Mencía de Sotosalbos</h3>
+                    <p>
+                        Después, a unos 15 minutos, celebraremos el convite en la <strong>Finca Mencía</strong> 
+                        de Sotosalbos, rodeados de naturaleza y con unas vistas impresionantes.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        
+    
+        <h2>Confirma tu asistencia</h2>
+        <section class="rsvp">
+
+            <form id="rsvp-form" action="../scripts/process_form.php" method="POST">
+                <label for="name">Nombre y Apellidos:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label>¿Asistirás?</label>
+                <div class="radio-group">
+                        <input type="radio" id="yes" name="attendance" value="Sí" required>
+                        <label for="yes">Sí</label>
+                        <input type="radio" id="no" name="attendance" value="No">
+                        <label for="no">No</label>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label for="guests">Número de acompañantes (0 si ninguno):</label>
+                    <input type="number" id="guests" name="guests" min="0" max="5" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="guest-names">Nombres y apellidos de los acompañantes (si aplica):</label>
+                    <textarea id="guest-names" name="guest_names" rows="3"></textarea>
+                </div>
+        
+                <div class="form-group">
+                    <label for="diet">Restricciones alimentarias (si aplica):</label>
+                    <textarea id="diet" name="diet" rows="3"></textarea>
+                </div>
+        
+                <button type="submit">Enviar confirmación</button>
+            </form>
+            <div id="response-message"></div>
+        </section>
+        <script> 
+            document.getElementById('rsvp-form').addEventListener('submit', function(event) { 
+                event.preventDefault(); 
+                var formData = new FormData(this); 
+                fetch('process_form.php', { 
+                    method: 'POST', 
+                    body: formData 
+                }) 
+                .then(response => response.text()) 
+                .then(data => { 
+                    document.getElementById('response-message').innerText = data; 
+                }) 
+                .catch(error => { 
+                    document.getElementById('response-message').innerText = 'Error al enviar el formulario. Por favor, inténtelo de nuevo.'; 
+                }); 
+            }); 
+
+        </script>
+    </main>
+</body>
+</html>
