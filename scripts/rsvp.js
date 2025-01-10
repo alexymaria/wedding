@@ -19,7 +19,7 @@ document.getElementById('rsvp-form').addEventListener('submit', async function (
     };
 
     try {
-        const response = await fetch('https://sheetdb.io/api/v1/uqzq9k6oqyv5m', {
+        const response = await fetch('https://sheetdb.io/api/v1/nvjlakeb4660p', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

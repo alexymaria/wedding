@@ -6,7 +6,7 @@
     <title>Alejandro & María - Save the Date</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="icons/pareja-de-boda.png">
-    <script src="scripts/rsvp.js"></script>
+    <script src="../scripts/rsvp.js"></script>
     <script src="../scripts/countdown.js"></script>
     <script src="js/script.js"></script> </script>
 
@@ -143,42 +143,26 @@
         
     
         <h2>Confirma tu asistencia</h2>
-        <section class="rsvp">
-
-            <form id="rsvp-form" action="../scripts/process_form.php" method="POST">
-                <label for="name">Nombre y Apellidos:</label>
-                <input type="text" id="name" name="name" required>
+        <form id="rsvp-form">
+            <label for="name">Nombre completo:</label>
+            <input type="text" id="name" name="name" required>
         
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label>¿Asistirás?</label>
-                <div class="radio-group">
-                        <input type="radio" id="yes" name="attendance" value="Sí" required>
-                        <label for="yes">Sí</label>
-                        <input type="radio" id="no" name="attendance" value="No">
-                        <label for="no">No</label>
-                    </div>
-                </div>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
         
-                <div class="form-group">
-                    <label for="guests">Número de acompañantes (0 si ninguno):</label>
-                    <input type="number" id="guests" name="guests" min="0" max="5" required>
-                </div>
+            <label for="guests">¿Número de acompañantes?</label>
+            <input type="number" id="guests" name="guests" min="0" max="10">
         
-                <div class="form-group">
-                    <label for="guest-names">Nombres y apellidos de los acompañantes (si aplica):</label>
-                    <textarea id="guest-names" name="guest_names" rows="3"></textarea>
-                </div>
+            <label for="guest-names">Nombres de los acompañantes:</label>
+            <textarea id="guest-names" name="guest-names"></textarea>
         
-                <div class="form-group">
-                    <label for="diet">Restricciones alimentarias (si aplica):</label>
-                    <textarea id="diet" name="diet" rows="3"></textarea>
-                </div>
+            <label for="food-restrictions">¿Restricciones alimentarias?</label>
+            <textarea id="food-restrictions" name="food-restrictions"></textarea>
         
-                <button type="submit">Enviar confirmación</button>
-            </form>
-            <div id="response-message"></div>
+            <button type="submit">Confirmar asistencia</button>
+        </form>
+        <div id="response-message" style="margin-top: 20px;"></div>
+        
         </section>
         <script> 
             document.getElementById('rsvp-form').addEventListener('submit', function(event) { 
