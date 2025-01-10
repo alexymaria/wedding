@@ -1,22 +1,14 @@
 document.getElementById('rsvp-form').addEventListener('submit', async function (event) {
     event.preventDefault();
+    const formData = {
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const guests = document.getElementById('guests').value;
-    const guestNames = document.getElementById('guest-names').value;
-    const foodRestrictions = document.getElementById('food-restrictions').value;
-
-    const data = {
-        data: {
-            "Nombre": name,
-            "Correo Electrónico": email,
-            "Número de Acompañantes": guests,
-            "Nombres de Acompañantes": guestNames,
-            "Restricciones Alimentarias": foodRestrictions,
-            "Fecha de Envío": new Date().toISOString(),
-        }
+    name = document.getElementById('name').value,
+    email = document.getElementById('email').value,
+    guests = document.getElementById('guests').value,
+    guestNames = document.getElementById('guest-names').value,
+    foodRestrictions = document.getElementById('food-restrictions').value,
     };
+
 
     try {
         const response = await fetch('https://sheetdb.io/api/v1/nvjlakeb4660p', {
