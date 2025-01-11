@@ -2,9 +2,9 @@
 
 @font-face {
     font-family: 'champagne';
-    src: url('');
     src: url('../fonts/champagne.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'libre';
     src: url('../fonts/JosefinSans-VariableFont_wght') format('truetype');
@@ -15,61 +15,55 @@ body {
     margin: 0;
     padding: 0;
     background-color: white;
-  
     line-height: 1.6;
 }
+
 /* Títulos (H1, H2, H3, etc.) */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'champagne', sans-serif;
     font-weight: normal;
-
     margin: 0 0 10px 0;
-     /* Color negro */
 }
 
 /* Textos descriptivos (p, span, etc.) */
 p, span {
     font-family: 'champagne', serif;
-
-    font-size: 1.2rem; /* Tamaño estándar */
-    line-height: 1.6; /* Espaciado entre líneas */
-  /* Color gris oscuro */
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
-/* Contenedor principal del header */
+
+/* Header */
 .header-container {
     position: relative;
     width: 100%;
-    height: 50vh; /* Altura ajustada */
+    height: 50vh;
     overflow: hidden;
 }
 
-/* Imágenes centrales */
 .main-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
-    display: none; /* Oculta por defecto */
+    object-fit: cover;
+    display: none;
 }
 
 .mobile-only {
-    display: block; /* Solo para móviles */
+    display: block;
 }
 
 .desktop-only {
-    display: none; /* Oculta en móviles */
+    display: none;
 }
 
-/* Texto sobre la imagen */
 .header-text {
     position: absolute;
-    top: 70%; /* Ajusta la posición del texto */
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     background: rgba(0, 0, 0, 0.5);
     padding: 15px 25px;
     border-radius: 10px;
-    font-family: 'champagne', sans-serif;
     text-align: center;
 }
 
@@ -82,49 +76,44 @@ p, span {
     margin: 5px 0;
 }
 
-
 /* Main Content */
 .main-content {
     padding: 20px;
 }
 
-
-/* Venue Section */
 /* Venue Section */
 .venue {
-    background-color: #f0f0f0; /* Fondo gris claro */
-
-    padding: 20px 20px;
+    background-color: #f0f0f0;
+    padding: 20px;
     text-align: center;
-    width: 100%; /* Abarca todo el ancho */
-    margin: 0; /* Elimina cualquier margen */
-    box-sizing: border-box; /* Incluye el padding en el ancho total */
-    
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .venue-container {
     display: flex;
-    flex-wrap: wrap; /* Permite flexibilidad para columnas */
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Centra el contenido */
-    margin: 0 auto; /* Centrado horizontal */
-    gap: 20px; /* Espaciado entre las columnas */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
 }
 
 .venue-column {
-    flex: 1 1 45%; /* Cada columna ocupa el 45% del ancho */
-    max-width: 45%; /* Límites en pantallas grandes */
-    text-align: left; /* Texto alineado a la izquierda */
+    flex: 1 1 45%;
+    max-width: 45%;
+    text-align: left;
     box-sizing: border-box;
     font-size: small;
 }
 
 .venue-column img {
-    width: 100%; /* La imagen ocupa todo el ancho de su contenedor */
+    width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .venue-column h3 {
@@ -139,12 +128,12 @@ p, span {
     line-height: 1.9;
 }
 
-
+/* Timeline Section */
 .timeline-section {
     text-align: center;
-    padding-top: 0%;
     padding: 20px;
     max-width: 600px;
+    margin: 0 auto;
     background-color: white;
 }
 
@@ -162,15 +151,15 @@ p, span {
     width: 1px;
     height: 100%;
     background: rgb(204, 204, 204);
-    left: 50%; /* Coloca la línea vertical al centro */
-    transform: translateX(-50%); /* Ajusta la posición para centrarla */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .timeline li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px 0; /* Espaciado entre eventos */
+    margin: 30px 0;
     position: relative;
 }
 
@@ -182,46 +171,44 @@ p, span {
 }
 
 .icon img {
-    width: 40px; /* Tamaño del icono */
+    width: 40px;
     height: 40px;
 }
 
 .event {
     flex: 1;
-
     text-align: left;
     position: relative;
     margin-right: 20px;
 }
 
 .time {
-    flex: 0 0 80px; /* Ajusta este ancho según sea necesario */
+    flex: 0 0 80px;
     text-align: center;
 }
 
-/* --- COUNTDOWN: Estilo de la cuenta atrás --- */
+/* Countdown Section */
 .countdown-container {
     text-align: center;
     margin: 20px auto;
     font-family: 'libre', serif;
     padding: 20px;
     border-radius: 10px;
-    background: #f0f0f0; /* Fondo gris claro */
-    max-width: 600px; /* Ancho máximo para evitar que ocupe todo */
+    background: #f0f0f0;
+    max-width: 600px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .countdown-title {
     font-size: 1.8rem;
     margin-bottom: 15px;
-    font-family: 'champagne', sans-serif;
 }
 
 .countdown-timer {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
 }
 
 .countdown-item {
@@ -258,15 +245,11 @@ p, span {
     font-size: 0.9rem;
     color: #666;
 }
-/* Espaciado y altura dinámica para mantener espacio en móviles */
-.countdown {
-    margin-top: 40px;
-    padding: 10px;
-}
+
+/* RSVP Section */
 .rsvp {
     margin: 40px auto;
     text-align: center;
-    font-family: 'libre', serif;
     background: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
@@ -292,26 +275,6 @@ p, span {
     color: #333;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
-.radio-group {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.radio-group input {
-    margin-right: 8px;
-}
-
 button {
     background-color: #6b705c;
     color: #fff;
@@ -327,153 +290,60 @@ button:hover {
     background-color: #8d99ae;
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    .desktop-only {
-        display: none; /* Oculta la imagen de escritorio */
-        height: 90vh;
-        flex: 1;
-        width: 100%; /* La imagen central ocupa todo el ancho */
-    }
-    .mobile-only {
-        display: block; /* Muestra la imagen para móvil */
-    }
-
-    
-   .venue-container {
-        flex-wrap: nowrap; /* No apila las columnas */
-        flex-direction: row; /* Mantiene las columnas lado a lado */
-        overflow-x: scroll; /* Añade desplazamiento horizontal si es necesario */
-        gap: 10px; /* Reduce el espacio entre columnas */
+    .venue-container {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        overflow-x: scroll;
+        gap: 10px;
     }
 
     .venue-column {
-        flex: 1 1 45%; /* Mantén columnas al 45% del ancho */
+        flex: 1 1 45%;
         max-width: 45%;
     }
-    .header {
-        height: 40vh; /* Reduce la altura en móviles */
-    }
-
-    .header-text h1 {
-        font-size: 1.8rem; /* Ajusta el tamaño del texto */
-    }
-
-    .header-text p {
-        font-size: 1rem; /* Ajusta el tamaño del texto */
-    }
-    .countdown-timer {
-        gap: 10px; /* Reduce espacio entre los elementos */
-    }
-
-    .time-box {
-        width: 60px; /* Reduce el tamaño de las cajas en móviles */
-        padding: 8px 10px;
-    }
-
-    .time-box span {
-        font-size: 1.8rem; /* Ajusta el tamaño del número */
-    }
-
-    .time-box p {
-        font-size: 0.8rem; /* Texto más pequeño */
-    }
-
-    .countdown-title {
-        font-size: 1.5rem; /* Reduce el tamaño del título */
-        margin-bottom: 10px; /* Ajusta el espacio */
-    }
 }
 
-/* Cambios exclusivos para vista escritorio */
-@media (min-width: 768px) {
-/* Contenedor principal */
-
-
-    .timeline-section {
-        text-align: center;
-        padding: 20px;
-        max-width: 800px; /* Aumenta el ancho máximo para escritorio */
-        margin: 0 auto; /* Centra horizontalmente la sección */
-        background-color: white;
-    }
-
-    .timeline {
-        max-width: 100%; /* Ajusta el ancho para adaptarse al contenedor */
-        margin: 0 auto; /* Centra la línea vertical */
-        position: relative;
-    }
-
-    .timeline::before {
-        left: 50%; /* Coloca la línea vertical al centro */
-        transform: translateX(-50%); /* Ajusta la posición para centrarla */
-        width: 2px; /* Ancho de la línea */
-    }
-
-    .timeline li {
-        flex-direction: row; /* Coloca los elementos en fila */
-        justify-content: flex-start; /* Ajusta alineación si es necesario */
-        align-items: center;
-        text-align: center; /* Asegura alineación uniforme */
-    }
-
-    .time {
-        flex: 0 0 auto;
-        text-align: left; /* Alinea la hora a la derecha */
-        margin-right: 30px; /* Espaciado entre la hora y la línea */
-    }
-
-    .icon {
-        margin-right: 20px; /* Espaciado entre el icono y la línea */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .event {
-        text-align: left; /* Alinea el texto del evento a la izquierda */
-        padding-left: 20px; /* Espaciado adicional entre el evento y la línea */
-    }
-    .time-box {
-        width: 60px; /* Aún más pequeño en dispositivos muy pequeños */
-    }
-
-    .time-box span {
-        font-size: 1.8rem; /* Ajusta el tamaño del número */
-    }
-
-    .countdown-title {
-        font-size: 1.3rem; /* Más pequeño el título */
-    }
-    .mobile-only {
-        display: none; /* Oculta la imagen de móvil */
-    }
-    .desktop-only {
-        display: block; /* Muestra la imagen de escritorio */
-    }
-}
-
+/* Mobile adjustments */
 @media (max-width: 480px) {
-    .countdown-timer {
-        gap: 5px; /* Reduce aún más el espacio */
-    }
-
     .time-box {
-        width: 50px; /* Tamaño pequeño */
+        width: 50px;
         padding: 5px 8px;
     }
 
     .time-box span {
-        font-size: 1.6rem; /* Número más pequeño */
-    }
-
-    .time-box p {
-        font-size: 0.7rem; /* Texto aún más reducido */
+        font-size: 1.6rem;
     }
 
     .countdown-title {
-        font-size: 1.3rem; /* Título más pequeño */
-        margin-bottom: 8px; /* Menor espacio */
+        font-size: 1.3rem;
+        margin-bottom: 8px;
     }
+}
+iframe {
+    width: 100%; /* O ajusta a un valor fijo, como 600px */
+    height: 100vh; /* Altura del viewport, ajusta según el contenido */
+    border: none; /* Quita el borde para una apariencia limpia */
+    display: block; /* Asegura que ocupe todo su contenedor */
+    margin: 0 auto; /* Centra horizontalmente si es necesario */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+.iframe-container {
+    position: relative; /* Por si necesitas overlays o elementos absolutos */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Ajusta automáticamente según el iframe */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    padding: 0;
+    margin: 0 auto;
+}
+iframe {
+    overflow: auto; /* Habilita el scroll interno */
+    -webkit-overflow-scrolling: touch; /* Suaviza el scroll en móviles */
+}
+form {
+    max-width: 100%; /* Asegura que no exceda el ancho del iframe */
+    margin: 0 auto; /* Centra el formulario */
+    padding: 10px; /* Añade espacio interno */
+    box-sizing: border-box; /* Incluye el padding en el tamaño */
 }
