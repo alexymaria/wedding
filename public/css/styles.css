@@ -19,10 +19,16 @@ body {
 }
 
 /* Títulos (H1, H2, H3, etc.) */
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6 {
     font-family: 'champagne', sans-serif;
     font-weight: normal;
     margin: 0 0 10px 0;
+}
+h2{
+    font-family: 'champagne', sans-serif;
+    font-weight: normal;
+    margin: 0 0 10px 0;
+    text-align: center;  
 }
 
 /* Textos descriptivos (p, span, etc.) */
