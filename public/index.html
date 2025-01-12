@@ -16,25 +16,17 @@
 <body>
     <!-- Menú de navegación -->
 <nav class="navbar">
-    <div class="navbar-container">
-        <a href="#" class="brand-logo">Nuestra Boda</a>
-        <!-- Botón del menú hamburguesa para móviles -->
-        <button class="hamburger" aria-label="Abrir menú">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </button>
-        <!-- Enlaces del menú -->
-        <ul class="nav-links">
-            <li><a href="#header">Inicio</a></li>
-            <li><a href="#countdown">Cuenta atrás</a></li>
-            <li><a href="#venue">Ubicaciones</a></li>
-            <li><a href="#form">Confirma tu asistencia</a></li>
-        </ul>
-    </div>
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#countdown">Cuenta atrás</a></li>
+        <li><a href="#timeline-section">Cronología</a></li>
+        <li><a href="#venue">Ubicaciones</a></li>
+        <li><a href="#form">Confirma tu asistencia</a></li>
+    </ul>
 </nav>
 
-    <!-- Encabezado con imagen principal -->
+<div id="inicio">   <!-- Encabezado con imagen principal -->
     <header class="header">
         <div class="header-container">
             <!-- Imagen central para móviles y escritorio -->
@@ -54,12 +46,12 @@
             </div>
         </div>
     </header>
-    
+</div> 
 
     <!-- Contenido principal -->
     <main class="main-content">
 
-        <section class="countdown">
+        <section class="countdown" id="countdown">
             <h2>¡Cuenta atrás para el gran día!</h2>
             <div class="countdown-timer">
                 <div class="time-box">
@@ -82,7 +74,7 @@
         </section>
         
     
-        <section class="timeline-section">
+        <section class="timeline-section" id="timeline-section">
             <h2>Horario del día</h2>   
             <ul class="timeline">
                 <li>
@@ -134,7 +126,7 @@
         </section>
         
         <h2>Ubicaciones </h2>
-        <section class="venue">
+        <section class="venue" id="venue">
 
             <div class="venue-container">
                 <!-- Columna izquierda: Imagen de la iglesia -->
@@ -160,7 +152,7 @@
                 </div>
             </div>
         </section>
-        <section class="form">
+        <section class="form" id="form">
 
         <h2>Confirma tu asistencia</h2>
 

@@ -37,93 +37,49 @@ p, span {
     font-size: 1.2rem;
     line-height: 1.6;
 }
-/* Estilos generales del menú */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #6b705c;
+nav {
+    background-color: #f0f0f0;; /* Color de fondo del menú */
     padding: 10px 20px;
-    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.navbar .brand-logo {
-    font-size: 1.5rem;
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Libre Baskerville', serif;
-}
-
-.navbar .nav-links {
+/* Estilo para los enlaces */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     gap: 20px;
 }
 
-.navbar .nav-links a {
-    color: #fff;
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
     text-decoration: none;
+    color: black;
     font-size: 1rem;
-    font-family: 'Champagne', sans-serif;
+    font-family: 'Libre', serif;
+    transition: color 0.3s;
 }
 
-.navbar .nav-links a:hover {
-    text-decoration: underline;
+nav ul li a:hover {
+    color: #ffda77;
 }
 
-/* Menú hamburguesa (solo visible en móviles) */
-.hamburger {
+/* Vista móvil: menú hamburguesa */
+.menu-toggle {
     display: none;
-    flex-direction: column;
-    gap: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
     background: none;
     border: none;
-    cursor: pointer;
 }
 
-.hamburger .line {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 3px;
-}
-
-/* Ocultar menú en móviles por defecto */
-.nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #6b705c;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    width: 200px;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.nav-links.active {
-    display: flex;
-}
-
-/* Diseño de escritorio */
-@media (min-width: 768px) {
-    .hamburger {
-        display: none;
-    }
-
-    .nav-links {
-        display: flex;
-        position: static;
-        background: none;
-        flex-direction: row;
-        box-shadow: none;
-    }
-}
 
 /* Header */
 .header-container {
@@ -398,6 +354,26 @@ button:hover {
     .venue-column {
         flex: 1 1 45%;
         max-width: 45%;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #6b705c;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        gap: 10px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 }
 
