@@ -138,6 +138,7 @@ p, span {
 /* Timeline Section */
 .timeline-section {
     text-align: center;
+    padding-top: 0%;
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
