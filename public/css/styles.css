@@ -48,11 +48,11 @@ p, span {
 }
 nav {
     background-color: #f0f0f0;; /* Color de fondo del menú */
-    
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 /* Estilo para los enlaces */
@@ -62,10 +62,6 @@ nav ul {
     padding: 0;
     display: flex;
     gap: 20px;
-}
-
-nav ul li {
-    display: inline;
 }
 
 nav ul li a {

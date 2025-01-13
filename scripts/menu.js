@@ -4,5 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     toggleButton.addEventListener("click", function () {
         menu.classList.toggle("show");
+        console.log("Click menu")
     });
 });
