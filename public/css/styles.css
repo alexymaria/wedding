@@ -402,6 +402,7 @@ button:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
     .venue-container {
         flex-wrap: nowrap;
         flex-direction: row;
@@ -475,6 +476,12 @@ button:hover {
     }
     .header-text {
         width: 60%;
+    }
+    .contacto p {
+        font-size: 1.0rem;
+    }
+    .venue p {
+        font-size: 1.0rem;
     }
 }
 .codigo-vestimenta {
