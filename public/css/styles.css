@@ -430,6 +430,7 @@ button:hover {
     }
     nav ul {
         display: flex; /* Por defecto, el menú está oculto */
+        flex-direction: column; 
         background-color: #f0f0f0;
         position: absolute;
         top: 50px; /* Debajo del encabezado */
