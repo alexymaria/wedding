@@ -186,9 +186,13 @@ nav ul li a:hover {
 }
 .como-llegar {
     padding: 20px;
+    padding-top: 0%;
     background-color: white;
     color: #333;
     text-align: center;
+}
+.como-llegar p{
+    font-size: 1.2rem;
 }
 
 
@@ -525,7 +529,7 @@ form {
 }
 .numero-cuenta {
     text-align: center;
-    padding: 30px 15px;
+    padding: 0px 15px;
     background-color: white;
     color: black;
 }
