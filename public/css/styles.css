@@ -444,6 +444,10 @@ button:hover {
     /* Mostrar menú cuando tenga la clase "show" */
     nav ul.show {
         display: flex; /* Cambia de oculto a visible */
+        width: 20%;  /* El menú ocupa solo el 20% del ancho */
+        top: 0;
+        right: 0;
+        height: 100vh;
     }
 
     /* Mostrar el botón hamburguesa en móviles */
