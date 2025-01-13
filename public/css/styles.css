@@ -189,6 +189,10 @@ nav ul li a:hover {
     padding: 30px 15px;
     background-color: #f8f9fa;
 }
+.map-column {
+    flex: 1 1 45%;
+    max-width: 45%;
+}
 
 .map-container {
     max-width: 800px;
@@ -367,6 +371,17 @@ button:hover {
     }
 
     .venue-column {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+    .map-container {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        overflow-x: scroll;
+        gap: 10px;
+    }
+
+    .map-column {
         flex: 1 1 45%;
         max-width: 45%;
     }
