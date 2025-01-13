@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.querySelector(".menu-toggle");
-    const menu = document.querySelector("nav ul");
+    const toggleButton = document.querySelector(".menu-toggle"); // Botón hamburguesa
+    const menu = document.querySelector("nav ul"); // Menú
 
     toggleButton.addEventListener("click", function () {
-        menu.classList.toggle("show");
-        console.log("Click menu")
+        console.log("Toggle button clicked"); // Para verificar el clic
+        menu.classList.toggle("show"); // Añade/quita la clase "show"
     });
 });

@@ -362,11 +362,11 @@ button:hover {
         max-width: 45%;
     }
     nav ul {
-        display: none;
+        display: none; /* Por defecto, el menú está oculto */
         flex-direction: column;
-        background-color: #f0f0f0;;
+        background-color: #6b705c;
         position: absolute;
-        top: 50px;
+        top: 50px; /* Debajo del encabezado */
         left: 0;
         right: 0;
         padding: 20px;
@@ -374,10 +374,12 @@ button:hover {
         border-radius: 0 0 10px 10px;
     }
 
+    /* Mostrar menú cuando tenga la clase "show" */
     nav ul.show {
-        display: flex;
+        display: flex; /* Cambia de oculto a visible */
     }
 
+    /* Mostrar el botón hamburguesa en móviles */
     .menu-toggle {
         display: block;
     }
