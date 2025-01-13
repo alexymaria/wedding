@@ -429,12 +429,10 @@ button:hover {
         max-width: 45%;
     }
     nav ul {
-        display: none; /* Por defecto, el menú está oculto */
-        flex-direction: column;
+        display: flex; /* Por defecto, el menú está oculto */
         background-color: #f0f0f0;
         position: absolute;
         top: 50px; /* Debajo del encabezado */
-        left: 0;
         right: 0;
         width: 20%;
         padding: 20px;
