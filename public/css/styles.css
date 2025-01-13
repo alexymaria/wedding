@@ -181,7 +181,7 @@ nav ul li a:hover {
 }
 
 .venue-column p {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     line-height: 1.9;
 }
 .como-llegar {
@@ -480,7 +480,9 @@ button:hover {
     color: black;
     border-radius: 2%;
 }
-
+.codigo-vestimenta p{
+    font-size: 1.2rem;
+}
 
 
 .codigo-vestimenta ul {
@@ -571,7 +573,7 @@ form {
 }
 
 .contacto-item h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 10px;
     color: #333;
 }
