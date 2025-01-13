@@ -9,6 +9,10 @@
     font-family: 'libre';
     src: url('../fonts/JosefinSans-VariableFont_wght') format('truetype');
 }
+@font-face {
+    font-family: 'garamond';
+    src: url('../fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
+}
 
 body {
     font-family: 'libre', sans-serif;
@@ -27,7 +31,7 @@ h1, h3, h4, h5, h6 {
 h2{
     font-family: 'champagne', sans-serif;
     font-weight: normal;
-    margin: 0 0 10px 0;
+    margin: 0;
     text-align: center;  
 }
 
@@ -36,6 +40,11 @@ p, span {
     font-family: 'champagne', serif;
     font-size: 1.2rem;
     line-height: 1.6;
+}
+.test p{
+    font-family: 'garamond', serif;
+    font-size: 1.2rem;
+    line-height: 1.6; 
 }
 nav {
     background-color: #f0f0f0;; /* Color de fondo del menú */
