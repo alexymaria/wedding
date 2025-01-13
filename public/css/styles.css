@@ -184,6 +184,26 @@ nav ul li a:hover {
     font-size: 0.9rem;
     line-height: 1.9;
 }
+.como-llegar {
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #f8f9fa;
+}
+
+.map-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #6b705c;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.como-llegar h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: #6b705c;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
 
 /* Timeline Section */
 .timeline-section {
