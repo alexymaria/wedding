@@ -42,7 +42,7 @@ p, span {
     line-height: 1.6;
 }
 #nos-casamos{
-    font-family: 'garamond';
+    font-family: 'garamond', serif;
     font-size: 1.5rem;
     text-align: center;
 }
@@ -53,20 +53,16 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    width: 100%; 
 }
 
 /* Estilo para los enlaces */
 nav ul {
-    display: none;  /* Menú oculto por defecto */
-    position: absolute; /* Posiciona el menú sobre otros elementos */
-    top: 0;
-    right: -100%; /* Inicialmente fuera de la pantalla, al lado derecho */
-    background-color: white; /* O cualquier color de fondo que prefieras */
     list-style: none;
-    padding: 0;
     margin: 0;
-    overflow-y: auto; /* Permite hacer scroll si el contenido es largo */
-    transition: right 0.3s ease; /* Animación para el deslizamiento */
+    padding: 0;
+    display: flex;
+    gap: 20px;
 }
 
 nav ul li a {
@@ -440,6 +436,7 @@ button:hover {
         top: 50px; /* Debajo del encabezado */
         left: 0;
         right: 0;
+        width: 20%;
         padding: 20px;
         gap: 10px;
         border-radius: 0 0 10px 10px;
@@ -448,10 +445,7 @@ button:hover {
 
     /* Mostrar menú cuando tenga la clase "show" */
     nav ul.show {
-        display: block;
-        right: 0;  /* Mueve el menú a la pantalla */
-        width: 20%;  /* El menú ocupa solo el 20% del ancho */
-        height: auto; /
+        display: flex; /* Cambia de oculto a visible */
     }
 
     /* Mostrar el botón hamburguesa en móviles */
