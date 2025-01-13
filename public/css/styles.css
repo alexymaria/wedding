@@ -42,7 +42,7 @@ p, span {
     line-height: 1.6;
 }
 #nos-casamos{
-    font-family: 'garamond', cursive;
+    font-family: 'garamond', serif;
     font-size: 1.5rem;
     text-align: center;
 }
@@ -602,14 +602,13 @@ form {
 }
 
 .contacto-item p {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     margin: 0;
 }
 
 .contacto-item a {
     text-decoration: none;
     color: #6b705c;
-    font-weight: bold;
 }
 
 .contacto-item a:hover {
