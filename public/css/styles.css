@@ -39,6 +39,7 @@ p, span {
 }
 nav {
     background-color: #f0f0f0;; /* Color de fondo del menú */
+    
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -62,12 +63,12 @@ nav ul li a {
     text-decoration: none;
     color: black;
     font-size: 1rem;
-    font-family: 'Libre', serif;
+    font-family: 'champagne', sans-serif;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ffda77;
+    color: #0c0c0c;
 }
 
 /* Vista móvil: menú hamburguesa */
@@ -358,7 +359,7 @@ button:hover {
     nav ul {
         display: none;
         flex-direction: column;
-        background-color: #6b705c;
+        background-color: #f0f0f0;;
         position: absolute;
         top: 50px;
         left: 0;
