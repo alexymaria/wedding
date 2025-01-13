@@ -441,8 +441,8 @@ button:hover {
 .codigo-vestimenta {
     text-align: center;
     padding: 30px 15px;
-    background-color: #e8f5e9;
-    color: #6b705c;
+    background-color: #f0f0f0;
+    color: black;
 }
 
 
@@ -488,8 +488,8 @@ form {
 .numero-cuenta {
     text-align: center;
     padding: 30px 15px;
-    background-color: #fff5e6;
-    color: #6b705c;
+    background-color: white;
+    color: black;
 }
 
 .cuenta-container {
@@ -525,7 +525,7 @@ form {
 .contacto-item {
     text-align: center;
     padding: 10px 20px;
-    background-color: #ffffff;
+    background-color: #f0f0f0;
     border: 1px solid #6b705c;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
