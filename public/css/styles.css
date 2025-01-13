@@ -73,11 +73,12 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #f0f0f0;
+    color: #f0f0f0d5;
 }
 
 /* Vista móvil: menú hamburguesa */
 .menu-toggle {
+   
     display: none;
     cursor: pointer;
     font-size: 1.5rem;
@@ -386,7 +387,7 @@ nav ul li a:hover {
 }
 
 button {
-    background-color: #6b705c;
+    background-color: #f0f0f0;
     color: #fff;
     padding: 10px 20px;
     font-size: 1rem;
@@ -397,7 +398,7 @@ button {
 }
 
 button:hover {
-    background-color: #8d99ae;
+    background-color: #f0f0f0d5;;
 }
 
 /* Responsive Design */
@@ -452,10 +453,20 @@ button:hover {
         color: black;
         background: none;
         border: none;
-        position: absolute;
+        height: 100%;
+        width: 20%;
+        position: fixed;
         top: 10px;
-        right: 20px;
+        right: -100px;
         z-index: 1100; /* Debe quedar sobre el menú desplegable */
+        transition: right 0.3s ease; /* Transición suave */
+        overflow-y: auto;
+    }
+    .contacto p {
+        font-size: 1.0rem;
+    }
+    .venue p {
+        font-size: 1.0rem;
     }
 }
 
