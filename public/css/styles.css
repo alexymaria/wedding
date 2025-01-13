@@ -434,6 +434,32 @@ button:hover {
         width: 60%;
     }
 }
+.codigo-vestimenta {
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #e8f5e9;
+    color: #6b705c;
+}
+
+.codigo-vestimenta h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: #6b705c;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.codigo-vestimenta ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.codigo-vestimenta ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
 iframe {
     width: 100%; /* O ajusta a un valor fijo, como 600px */
     height: 100vh; /* Altura del viewport, ajusta según el contenido */
@@ -459,4 +485,27 @@ form {
     margin: 0 auto; /* Centra el formulario */
     padding: 10px; /* Añade espacio interno */
     box-sizing: border-box; /* Incluye el padding en el tamaño */
+}
+.numero-cuenta {
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #fff5e6;
+    color: #6b705c;
+}
+
+.cuenta-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #6b705c;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.numero-cuenta h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: #6b705c;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
