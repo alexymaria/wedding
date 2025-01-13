@@ -467,6 +467,15 @@ button:hover {
     .venue p {
         font-size: 1.0rem;
     }
+    .codigo-vestimenta p{
+        font-size: 1.0rem;
+    }
+    .codigo-vestimenta ul li{
+        font-size: 1.2rem;
+    }
+    .numero-cuenta{
+        font-size: 1.0rem;
+    }
 }
 
 /* Mobile adjustments */
