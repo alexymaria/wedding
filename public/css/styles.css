@@ -56,7 +56,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    width: 100%; 
+    max-width: 100%;
+    height: auto;
 }
 
 /* Estilo para los enlaces */
@@ -88,7 +89,8 @@ nav ul li a:hover {
     display: none;
     cursor: pointer;
     color: white;
-    width: 30%;
+    max-width: 30%;
+    height: auto;
 }
 
 
