@@ -23,3 +23,6 @@ menuLinks.forEach(link => {
         hamburger.classList.remove('open');
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("page-loaded");
+});
