@@ -34,4 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sessionStorage.removeItem("jotformErrorState"); // Limpia el estado para la próxima sesión
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("page-loaded");
+});
 
