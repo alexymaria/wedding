@@ -13,9 +13,9 @@
     font-family: 'garamond';
     src: url('../fonts/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
 }
-* {
+/* {
     outline: 1px solid red;
-}
+}*/
 
 body {
     margin: 0;
