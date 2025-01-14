@@ -103,14 +103,17 @@ nav ul li a:hover {
 .header-container {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: auto;
+    text-align: center;
     overflow: hidden;
+    padding: 20px 0;
 }
 
 .main-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    margin: 0 auto;
     display: block;
 }
 
@@ -716,3 +719,8 @@ body.page-loaded .form-line-error {
     display: block; /* Muestra el mensaje cuando sea necesario */
 }
 
+@media (min-width: 768px) {
+    .main-image {
+        object-position: center; /* Centra la imagen en su contenedor */
+    }
+}
