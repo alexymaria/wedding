@@ -221,10 +221,8 @@ nav ul li a:hover {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
-
 .map-item p {
-    font-size: 1rem;
-    margin-bottom: 15px;
+    font-size: 1.2rem;
 }
 
 .map-responsive {
@@ -470,6 +468,10 @@ button:hover {
         font-size: 1.0rem;
     }
     .venue p {
+        font-size: 1.0rem;
+    }
+    
+    .map-item p {
         font-size: 1.0rem;
     }
     .codigo-vestimenta p{
