@@ -11,7 +11,7 @@
 }
 @font-face {
     font-family: 'garamond';
-    src: url('../fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
+    src: url('../fonts/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
 }
 * {
     outline: 1px solid red;
@@ -47,7 +47,7 @@ p, span {
     line-height: 1.6;
 }
 #nos-casamos{
-    font-family: 'champagne', sans-serif;
+    font-family: 'garamond', sans-serif;
     font-size: 1.5rem;
     text-align: center;
     font-style: italic; /* Aplica cursiva */
