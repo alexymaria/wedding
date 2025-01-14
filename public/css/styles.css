@@ -19,6 +19,8 @@ body {
     padding: 0;
     background-color: white;
     line-height: 1.6;
+    width: 100%;
+    overflow-x: hidden; /* Evita el scroll horizontal */
 }
 
 /* Títulos (H1, H2, H3, etc.) */
