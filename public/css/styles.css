@@ -31,7 +31,8 @@ h2{
     font-family: 'champagne', sans-serif;
     font-weight: normal;
     margin: 0;
-    text-align: center;  
+    text-align: center; 
+    padding-top: 10px;
 }
 
 /* Textos descriptivos (p, span, etc.) */
@@ -428,7 +429,7 @@ button:hover {
         max-width: 45%;
     }
     nav ul {
-        display: flex; /* Por defecto, el menú está oculto */
+        display: none; /* Por defecto, el menú está oculto */
         flex-direction: column; 
         background-color: #f0f0f0;
         position: absolute;
@@ -439,6 +440,7 @@ button:hover {
         gap: 10px;
         border-radius: 0 0 10px 10px;
         z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
     }
 
     /* Mostrar menú cuando tenga la clase "show" */
