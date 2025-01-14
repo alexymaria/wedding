@@ -63,7 +63,7 @@ p, span {
 }
 nav {
     background-color: #f0f0f0;; /* Color de fondo del menú */
-    padding: 10px 20px;
+    padding: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -116,7 +116,7 @@ nav ul li a:hover {
     height: auto;
     text-align: center;
     overflow: hidden;
-    padding: 20px 0;
+    padding: 0px;
 }
 
 .main-image {
@@ -449,7 +449,7 @@ button:hover {
         top: 50px; /* Debajo del encabezado */
         right: 0;
         width: 30%;
-        padding: 20px;
+        padding: 0px;
         gap: 10px;
         border-radius: 10px;
         z-index: 1000;
