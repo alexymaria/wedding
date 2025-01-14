@@ -705,12 +705,8 @@ form {
 .men-card {
     border-left: 5px solid #7faaff;
 }
+/* Oculta los mensajes de error por defecto */
 .form-error-message,
 .form-line-error {
     display: none;
-}
-
-body.page-loaded .form-error-message,
-body.page-loaded .form-line-error {
-    display: block; /* Muestra el mensaje cuando sea necesario */
 }

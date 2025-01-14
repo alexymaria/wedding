@@ -1,28 +1,23 @@
 // Aquí puedes agregar funcionalidad adicional en JavaScript si es necesario.
 // Por ejemplo, podrías gestionar eventos en el formulario o agregar interactividad al mapa.
 console.log("Página cargada correctamente.");
-
-// Seleccionamos los elementos clave del DOM
-const hamburger = document.getElementById('hamburger');
-const menuList = document.getElementById('menu-list');
-
-// Función para alternar el estado del menú
-function toggleMenu() {
-    menuList.classList.toggle('active');
-    hamburger.classList.toggle('open');
-}
-
-// Añadimos el evento clic al icono de la hamburguesa
-hamburger.addEventListener('click', toggleMenu);
-
-// Cerramos el menú cuando se hace clic en un enlace
-const menuLinks = document.querySelectorAll('#menu-list a');
-menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        menuList.classList.remove('active');
-        hamburger.classList.remove('open');
-    });
-});
 document.addEventListener("DOMContentLoaded", function () {
-    document.body.classList.add("page-loaded");
+    // Oculta los mensajes de error al cargar la página
+    document.querySelectorAll(".form-error-message, .form-line-error").forEach(function (error) {
+        error.style.display = "none";
+    });
+
+    // Maneja el envío del formulario
+    const form = document.querySelector("form");
+    if (form) {
+        form.addEventListener("submit", function () {
+            // Verifica si hay errores en el formulario
+            if (document.querySelector(".form-line-error")) {
+                sessionStorage.setItem("jotformErrorState", "true");
+            } else {
+                sessionStorage.removeItem("jotformErrorState");
+            }
+        });
+    }
 });
+
