@@ -110,13 +110,16 @@ nav ul li a:hover {
 }
 
 .main-image {
-    width: 100%;
-    height: auto;
     max-width: 100%;
-    max-height: 100vh;
+    max-height: 100%;
     object-fit: contain;
+}
+.image-container {
+    max-width: 1200px;
+    width: 100%; /* Ajusta el tamaño dinámicamente */
+    height: auto;
+    aspect-ratio: 3 / 2; /* Mantiene la proporción 3:2 */
     margin: 0 auto;
-    object-fit: contain;
 }
 
 
