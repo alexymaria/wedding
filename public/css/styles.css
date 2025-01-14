@@ -437,13 +437,12 @@ button:hover {
         top: 50px; /* Debajo del encabezado */
         right: 0;
         width: 30%;
-        max-width: 300px; /* Limita el ancho máximo del menú */
-        min-width: 200px; /
         padding: 20px;
         gap: 10px;
         border-radius: 10px;
         z-index: 1000;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+        text-align: right;
     }
 
     /* Mostrar menú cuando tenga la clase "show" */
