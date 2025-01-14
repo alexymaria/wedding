@@ -13,6 +13,10 @@
     font-family: 'garamond';
     src: url('../fonts/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'tenor';
+    src: url('../fonts/TenorSans-Regular.ttf') format('truetype');
+}
 /* {
     outline: 1px solid red;
 }*/
@@ -25,9 +29,12 @@ body {
     width: 100%;
     overflow-x: hidden; /* Evita el scroll horizontal */
 }
-
+h1{
+    font-family: 'tenor', sans-serif;
+    font-weight: normal;
+}
 /* Títulos (H1, H2, H3, etc.) */
-h1, h3, h4, h5, h6 {
+h3, h4, h5, h6 {
     font-family: 'champagne', sans-serif;
     font-weight: normal;
     margin: 0 0 10px 0;
