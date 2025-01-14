@@ -79,13 +79,16 @@ nav ul li a:hover {
 
 /* Vista móvil: menú hamburguesa */
 .menu-toggle {
-   
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Pegado al borde derecho */
+    z-index: 1100; /* Siempre sobre el menú */
+    font-size: 1.5rem;
+    background: none;
+    border: none;
     display: none;
     cursor: pointer;
-    font-size: 1.5rem;
     color: white;
-    background: #f0f0f0;
-    border: none;
 }
 
 
@@ -435,10 +438,12 @@ button:hover {
         position: absolute;
         top: 50px; /* Debajo del encabezado */
         right: 0;
-        width: 20%;
+        width: 30%;
+        max-width: 300px; /* Limita el ancho máximo del menú */
+        min-width: 200px; /
         padding: 20px;
         gap: 10px;
-        border-radius: 0 0 10px 10px;
+        border-radius: 10px;
         z-index: 1000;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
     }
@@ -478,6 +483,7 @@ button:hover {
     }
 }
 
+
 /* Mobile adjustments */
 @media (max-width: 480px) {
     .time-box {
@@ -503,6 +509,13 @@ button:hover {
         font-size: 1.0rem;
     }
 }
+@media (max-width: 400px) {
+    nav ul {
+        width: 100%; /* Ocupa todo el ancho de la pantalla */
+        max-width: none; /* Elimina el límite máximo */
+    }
+}
+
 .codigo-vestimenta {
     text-align: center;
     padding: 30px 15px;
