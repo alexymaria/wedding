@@ -114,7 +114,7 @@ nav ul li a:hover {
     height: 100vh;
     max-width: 1200px;
     max-height: 800px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 
@@ -484,6 +484,11 @@ button:hover {
     }
     .numero-cuenta{
         font-size: 1.0rem;
+    }
+    .main-image {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
     }
 }
 
