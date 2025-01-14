@@ -45,6 +45,7 @@ p, span {
     font-family: 'garamond', serif;
     font-size: 1.5rem;
     text-align: center;
+    font-style: italic; /* Aplica cursiva */
 }
 nav {
     background-color: #f0f0f0;; /* Color de fondo del menú */
@@ -79,16 +80,13 @@ nav ul li a:hover {
 
 /* Vista móvil: menú hamburguesa */
 .menu-toggle {
-    position: absolute;
-    top: 10px;
-    right: 10px; /* Pegado al borde derecho */
-    z-index: 1100; /* Siempre sobre el menú */
     font-size: 1.5rem;
     background: none;
     border: none;
     display: none;
     cursor: pointer;
     color: white;
+    width: 30%;
 }
 
 
