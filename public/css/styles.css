@@ -562,7 +562,7 @@ form {
     max-width: 600px;
     margin: 0 auto;
     background-color: #f0f0f0;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #6b705c;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -607,7 +607,7 @@ form {
 }
 
 .contacto-item p {
-    font-size: 1.0rem;
+    font-size: 0.7rem;
     margin: 0;
 }
 
