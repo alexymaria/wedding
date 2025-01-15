@@ -238,7 +238,7 @@ nav ul li a:hover {
 .map-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;;
     gap: 20px;
 }
 
@@ -247,8 +247,10 @@ nav ul li a:hover {
     box-sizing: border-box;
     background-color: #fff;
     padding: 15px;
+    border: 1px solid #ddd; 
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
 .map-item h3 {
@@ -268,13 +270,14 @@ nav ul li a:hover {
 }
 
 .map-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     border: 0;
     border-radius: 8px;
+}
+.map-item li {
+    margin-left: 15px;
+    line-height: 1.5;
 }
 
 
@@ -508,15 +511,20 @@ button:hover {
         max-width: 45%;
     }
     .map-container {
-        flex-wrap: nowrap;
-        flex-direction: row;
-        overflow-x: scroll;
-        gap: 10px;
+        flex-direction: column; /* Cambia a diseño en columna */
+        gap: 15px; /* Ajusta el espacio entre elementos */
     }
 
     .map-column {
         flex: 1 1 45%;
         max-width: 45%;
+    }
+    .map-item {
+        flex: 1 1 100%; /* Ocupa todo el ancho del contenedor */
+    }
+
+    .map-responsive iframe {
+        height: 250px; /* Aumenta la altura del mapa en móviles */
     }
     nav ul {
         display: none; /* Por defecto, el menú está oculto */
