@@ -541,9 +541,16 @@ button:hover {
     background-color: #b1abab;
     transform: translateX(-50%) scale(1.05); /* Pequeño efecto de aumento */
 }
+#mobile-menu.show {
+    display: flex;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    #main-nav{
+        display: none;
+    }
 
     .venue-container {
         flex-wrap: nowrap;
@@ -663,6 +670,9 @@ button:hover {
         z-index: 1000;
         padding: 20px;
         border-radius: 8px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     #mobile-menu ul {
