@@ -49,12 +49,12 @@ h1{
 }
 /* Títulos (H1, H2, H3, etc.) */
 h3, h4, h5, h6 {
-    font-family: 'lato', sans-serif;
+    font-family: 'lator', sans-serif;
     font-weight: normal;
     margin: 0 0 10px 0;
 }
 h2{
-    font-family: 'lator', sans-serif;
+    font-family: 'lato', sans-serif;
     font-weight: normal;
     margin: 0;
     text-align: center; 
@@ -142,7 +142,7 @@ nav ul li a:hover {
 
 .header-text {
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
