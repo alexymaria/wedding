@@ -30,10 +30,10 @@
     font-family: 'pinyon';
     src: url('../fonts/PinyonScript-Regular.ttf');
 }
-* {
+/** {
     outline: 1px solid red;
 }*
-
+*/
 body {
     margin: 0;
     padding: 0;
@@ -179,13 +179,13 @@ nav ul li a:hover {
 }
 
 .main-image {
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    height: auto;
-    object-fit: cover; /* La imagen se adapta a cubrir el contenedor */
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Se coloca detrás del texto */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa todo el alto */
+    object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+    z-index: -1; /* La imagen queda detrás del contenido */
 }
 
 
