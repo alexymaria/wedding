@@ -577,9 +577,7 @@ button:hover {
     .logo-container {
         margin: 10px 0;
     }
-    nav{
-        display: none;
-    }
+
     nav ul {
         display: none; /* Por defecto, el menú está oculto */
         flex-direction: column; 
