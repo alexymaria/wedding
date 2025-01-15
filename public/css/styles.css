@@ -684,8 +684,11 @@ button:hover {
         font-weight: 600;
     }
 
+    #mobile-menu {
+        display: none; /* Sigue oculto hasta que se active */
+    }
     #mobile-menu.show {
-        display: block;
+        display: block; /* Mostrar cuando se activa */
     }
 }
 
@@ -722,6 +725,9 @@ button:hover {
     }
 }
 
+#mobile-menu{
+    display: none;
+}
 .codigo-vestimenta {
     text-align: center;
     padding: 30px 15px;
