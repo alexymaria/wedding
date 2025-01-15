@@ -651,6 +651,8 @@ button:hover {
     }
       /* Menú móvil */
       #mobile-menu {
+        font-family: 'lato';
+        font-size: 1.1rem;
         display: none;
         position: fixed;
         top: 50px;
