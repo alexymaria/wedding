@@ -238,7 +238,7 @@ nav ul li a:hover {
 .map-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
 }
 
@@ -250,6 +250,10 @@ nav ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
+    min-height: 500px; /* Altura mínima uniforme para todos los elementos */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .map-item h3 {
@@ -258,12 +262,15 @@ nav ul li a:hover {
 }
 .map-item p {
     font-size: 1.2rem;
+    margin: 0 0 10px;
 }
 
 .map-responsive {
     position: relative;
+    width: 100%;
     padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
     height: 0;
+    margin-top: 15px;
     overflow: hidden;
 }
 
@@ -278,7 +285,7 @@ nav ul li a:hover {
 }
 .map-item li {
     font-family: 'champagne';
-    margin-left: 15px;
+    margin: 0 0 10px;
     line-height: 1.5;
 }
 
