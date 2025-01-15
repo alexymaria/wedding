@@ -30,9 +30,9 @@
     font-family: 'pinyon';
     src: url('../fonts/PinyonScript-Regular.ttf');
 }
-* {
+/* * {
     outline: 1px solid red;
-}*
+}**/
 
 body {
     margin: 0;
