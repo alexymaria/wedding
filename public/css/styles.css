@@ -278,32 +278,38 @@ nav ul li a:hover {
 }
 
 
-/* Estilo para el botón */
-.scroll-to-top {
-    position: fixed; /* Siempre visible */
-    bottom: 20px; /* Separación desde el borde inferior */
-    right: 20px; /* Separación desde el borde derecho */
-    background-color: #f0a500; /* Color de fondo */
-    color: white; /* Color del texto o ícono */
-    border: none; /* Sin borde */
-    border-radius: 50%; /* Forma redonda */
-    padding: 15px; /* Tamaño del botón */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    z-index: 1000; /* Asegura que el botón esté encima de otros elementos */
-    display: none; /* Oculto inicialmente */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+/* Botón de volver arriba */
+.back-to-top {
+    position: fixed;
+    bottom: 20px; /* Ajusta según tu diseño */
+    right: 20px; /* Ajusta según tu diseño */
+    background-color: #f0f0f0; /* Fondo blanco */
+    color: black; /* Color del texto (verde) */
+    border: none;
+    border-radius: 50%; /* Hace que sea redondo */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para realce */
+    width: 50px; /* Tamaño del botón */
+    height: 50px; /* Tamaño del botón */
+    display: none; /* Oculto por defecto */
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; /* Tamaño del icono/flecha */
+    cursor: pointer;
+    z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.scroll-to-top.show {
-    display: block; /* Muestra el botón cuando se agrega la clase */
-    opacity: 1; /* Hace visible el botón */
-    transform: translateY(0); /* Asegura que no se desplace */
+.back-to-top:hover {
+    background-color: #c5c1c1; /* Fondo verde al pasar el ratón */
+    color: black; /* Texto blanco */
+    transform: scale(1.1); /* Ligera ampliación al pasar el ratón */
 }
 
-.scroll-to-top:hover {
-    background-color: #cc8400; /* Cambia el color al pasar el mouse */
+/* Mostrar el botón al hacer scroll */
+.back-to-top.show {
+    display: flex; /* Lo hace visible */
 }
+
 
 
 /* Timeline Section */
