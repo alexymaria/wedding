@@ -30,9 +30,9 @@
     font-family: 'pinyon';
     src: url('../fonts/PinyonScript-Regular.ttf');
 }
-/* {
+* {
     outline: 1px solid red;
-}*/
+}*
 
 body {
     margin: 0;
@@ -471,8 +471,8 @@ button:hover {
     bottom: 20px; /* Separación desde la parte inferior del contenedor */
     left: 50%; /* Centrado horizontal */
     transform: translateX(-50%); /* Ajuste para centrar completamente */
-    background-color: #f0a500; /* Color de fondo */
-    color: white; /* Color del texto */
+    background-color: #f0f0f0; /* Color de fondo */
+    color: black; /* Color del texto */
     border: none; /* Sin borde */
     border-radius: 30px; /* Borde redondeado */
     padding: 10px 20px; /* Espaciado interno */
@@ -485,7 +485,7 @@ button:hover {
 
 /* Cambia el color al pasar el mouse */
 .go-to-form:hover {
-    background-color: #cc8400;
+    background-color: #b1abab;
     transform: translateX(-50%) scale(1.05); /* Pequeño efecto de aumento */
 }
 
