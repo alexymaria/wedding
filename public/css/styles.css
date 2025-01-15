@@ -137,15 +137,20 @@ nav ul li a:hover {
 /* Vista móvil: menú hamburguesa */
 .menu-toggle {
     font-size: 1.5rem;
-    background: none;
-    border: none;
-    display: none;
-    cursor: pointer;
     color: white;
     max-width: 30%;
     height: auto;
     padding: 2px 8px 2px 8px;
     margin-top: 9px;
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 /* Contenedor del logo */
