@@ -30,9 +30,9 @@
     font-family: 'pinyon';
     src: url('../fonts/PinyonScript-Regular.ttf');
 }
-/** {
+* {
     outline: 1px solid red;
-}0*/
+}*
 
 body {
     margin: 0;
@@ -157,45 +157,47 @@ nav ul li a:hover {
 .logo {
     max-height: 60px; /* Tamaño del logo */
 }
-.header {
-    width: 100%;
-    height: 100vh; /* Altura de la pantalla completa */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin: 0;
-}
-/* Header */
 
+/* Header */
+.header-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    overflow: hidden;
+    padding: 0px;
+}
 
 .main-image {
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
-    object-fit: cover; /* La imagen se adapta a cubrir el contenedor */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1; /* Se coloca detrás del texto */
+    width: auto;
+    height: 100vh;
+    max-width: 1200px;
+    max-height: 800px;
+    object-fit: cover;
 }
 
 
 .header-text {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-    margin-bottom: 10px;
-    margin: 0;
+    padding: 15px 10px;
+    border-radius: 10px;
+    text-align: center;
 }
 
-.otroheader-text {
+.otroheader-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
-    font-size: 1.2rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    padding: 15px 10px;
+    border-radius: 10px;
+    text-align: center;   
 }
-
 .header-text h1 {
     font-size: 2rem;
     margin: 0;
@@ -543,7 +545,6 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
 
-
     .venue-container {
         flex-wrap: nowrap;
         flex-direction: row;
@@ -634,7 +635,11 @@ button:hover {
     .numero-cuenta{
         font-size: 1.0rem;
     }
-
+    .main-image {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
     .scroll-to-top {
         bottom: 15px;
         right: 15px;
@@ -658,8 +663,8 @@ button:hover {
         z-index: 1000;
         padding: 20px;
         border-radius: 8px;
-        flex-direction: column;
-        justify-content: center;
+            flex-direction: column;
+    justify-content: center;
     }
 
     #mobile-menu ul {
@@ -684,23 +689,6 @@ button:hover {
     }
     #mobile-menu.show {
         display: block; /* Mostrar cuando se activa */
-    }
-    .header {
-        height: auto; /* Permite que el contenido determine la altura */
-    }
-
-    .main-image {
-        width: 100%; /* Ocupa el ancho del contenedor */
-        height: auto; /* Mantiene las proporciones */
-        object-fit: contain; /* Asegura que la imagen no se recorte */
-    }
-
-    .header-text {
-        font-size: 2rem;
-    }
-
-    .otroheader-text {
-        font-size: 1rem;
     }
 }
 
@@ -933,14 +921,8 @@ body.page-loaded .form-line-error {
 }
 
 @media (min-width: 768px) {
-    .header {
-        height: 100vh; /* Ocupa toda la pantalla */
-    }
-
     .main-image {
-        height: 100%; /* La imagen ocupa toda la pantalla */
-        width: auto; /* Mantiene la proporción original */
-        object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+        object-position: center; /* Centra la imagen en su contenedor */
     }
 }
 .formFooter{
