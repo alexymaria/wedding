@@ -278,6 +278,33 @@ nav ul li a:hover {
 }
 
 
+/* Estilo para el botón */
+.scroll-to-top {
+    position: fixed; /* Siempre visible */
+    bottom: 20px; /* Separación desde el borde inferior */
+    right: 20px; /* Separación desde el borde derecho */
+    background-color: #f0a500; /* Color de fondo */
+    color: white; /* Color del texto o ícono */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Forma redonda */
+    padding: 15px; /* Tamaño del botón */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    z-index: 1000; /* Asegura que el botón esté encima de otros elementos */
+    display: none; /* Oculto inicialmente */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.scroll-to-top.show {
+    display: block; /* Muestra el botón cuando se agrega la clase */
+    opacity: 1; /* Hace visible el botón */
+    transform: translateY(0); /* Asegura que no se desplace */
+}
+
+.scroll-to-top:hover {
+    background-color: #cc8400; /* Cambia el color al pasar el mouse */
+}
+
 
 /* Timeline Section */
 .timeline-section {
@@ -520,6 +547,11 @@ button:hover {
         width: 100vw;
         height: 100vh;
         object-fit: cover;
+    }
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px;
     }
 }
 
