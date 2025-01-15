@@ -817,6 +817,3 @@ body.page-loaded .form-line-error {
         object-position: center; /* Centra la imagen en su contenedor */
     }
 }
-.formFooter.f6.branding21 {
-    display: none !important; /* Oculta el elemento completamente */
-}
