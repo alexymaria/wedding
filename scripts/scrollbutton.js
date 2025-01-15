@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const scrollToTopButton = document.getElementById("scrollToTopButton");
+    const backToTopButton = document.getElementById("backToTop");
 
-    // Mostrar u ocultar el botón al hacer scroll
+    // Mostrar botón al hacer scroll
     window.addEventListener("scroll", function () {
-        if (window.scrollY > window.innerHeight) {
-            scrollToTopButton.classList.add("show");
+        if (window.scrollY > 300) { // Mostrar si se ha hecho scroll más de 300px
+            backToTopButton.classList.add("show");
         } else {
-            scrollToTopButton.classList.remove("show");
+            backToTopButton.classList.remove("show");
         }
     });
 
-    // Acción para volver al inicio al hacer clic en el botón
-    scrollToTopButton.addEventListener("click", function () {
+    // Desplazar hacia arriba al hacer clic
+    backToTopButton.addEventListener("click", function () {
         window.scrollTo({
             top: 0,
-            behavior: "smooth", // Movimiento suave
+            behavior: "smooth" // Desplazamiento suave
         });
     });
 });
