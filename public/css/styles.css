@@ -465,6 +465,30 @@ button:hover {
     background-color: #f0f0f0d5;;
 }
 
+/* Estilo para el botón "Confirma tu asistencia" */
+.go-to-form {
+    position: absolute; /* Posición relativa al contenedor #inicio */
+    bottom: 20px; /* Separación desde la parte inferior del contenedor */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Ajuste para centrar completamente */
+    background-color: #f0a500; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 30px; /* Borde redondeado */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Cambia el color al pasar el mouse */
+.go-to-form:hover {
+    background-color: #cc8400;
+    transform: translateX(-50%) scale(1.05); /* Pequeño efecto de aumento */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
 
@@ -552,6 +576,10 @@ button:hover {
         bottom: 15px;
         right: 15px;
         padding: 10px;
+    }
+    .go-to-form {
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 }
 
