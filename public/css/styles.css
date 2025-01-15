@@ -288,15 +288,11 @@ nav ul li a:hover {
     border: none;
     border-radius: 50%; /* Hace que sea redondo */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para realce */
-    width: 50px; /* Tamaño del botón */
-    height: 50px; /* Tamaño del botón */
-    display: none; /* Oculto por defecto */
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem; /* Tamaño del icono/flecha */
-    cursor: pointer;
-    z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    padding: 15px; /* Tamaño del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    z-index: 1000; /* Asegura que el botón esté encima de otros elementos */
+    display: none; /* Oculto inicialmente */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
 }
 
 .back-to-top:hover {
@@ -307,7 +303,9 @@ nav ul li a:hover {
 
 /* Mostrar el botón al hacer scroll */
 .back-to-top.show {
-    display: flex; /* Lo hace visible */
+    display: block; /* Muestra el botón cuando se agrega la clase */
+    opacity: 1; /* Hace visible el botón */
+    transform: translateY(0); /* Asegura que no se desplace */
 }
 
 
