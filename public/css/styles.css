@@ -79,7 +79,6 @@ nav {
     padding: 10px 20px;
     position: relative;
     transition: transform 0.3s ease, top 0.3s ease;
-    display: none;
 }
 nav.hidden {
     transform: translateY(-100%); /* Replegar hacia arriba */
@@ -582,7 +581,22 @@ button:hover {
         margin: 10px 0;
     }
     nav {
-        display: block;
+        display: none;
+    }
+    nav ul {
+        display: none; /* Por defecto, el menú está oculto */
+        flex-direction: column; 
+        background-color: #f0f0f0;
+        position: absolute;
+        top: 50px; /* Debajo del encabezado */
+        right: 0;
+        width: 30%;
+        padding: 0px;
+        gap: 10px;
+        border-radius: 10px;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+        text-align: right;
     }
     .nav-container {
         flex-direction: column; /* Columnar en móvil */
@@ -596,7 +610,7 @@ button:hover {
 
     /* Mostrar el botón hamburguesa en móviles */
     .menu-toggle {
-        display: none;
+        display: block;
         cursor: pointer;
         font-size: 1.5rem;
         color: #f0f0f0;
