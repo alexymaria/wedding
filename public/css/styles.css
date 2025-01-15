@@ -9,13 +9,22 @@
     font-family: 'libre';
     src: url('../fonts/JosefinSans-VariableFont_wght') format('truetype');
 }
-@font-face {
-    font-family: 'garamond';
-    src: url('../fonts/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
-}
+
 @font-face {
     font-family: 'tenor';
     src: url('../fonts/TenorSans-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'promenade';
+    src: url('../fonts/BLUDHAVEN.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'lato';
+    src: url('../fonts/Lato-Thin.ttf');
+}
+@font-face {
+    font-family: 'pinyon';
+    src: url('../fonts/PinyonScript-Regular.ttf');
 }
 /* {
     outline: 1px solid red;
@@ -31,17 +40,17 @@ body {
 }
 h1{
     color: #f0f0f0;
-    font-family: 'tenor', sans-serif;
+    font-family: 'promenade', sans-serif;
     font-weight: normal;
 }
 /* Títulos (H1, H2, H3, etc.) */
 h3, h4, h5, h6 {
-    font-family: 'garamond', sans-serif;
+    font-family: 'lato', sans-serif;
     font-weight: normal;
     margin: 0 0 10px 0;
 }
 h2{
-    font-family: 'garamond', sans-serif;
+    font-family: 'champagne', sans-serif;
     font-weight: normal;
     margin: 0;
     text-align: center; 
@@ -50,12 +59,12 @@ h2{
 
 /* Textos descriptivos (p, span, etc.) */
 p, span {
-    font-family: 'garamond', serif;
+    font-family: 'champagne', serif;
     font-size: 1.2rem;
     line-height: 1.6;
 }
 #nos-casamos{
-    font-family: 'garamond', sans-serif;
+    font-family: 'pinyon', sans-serif;
     font-size: 1.5rem;
     text-align: center;
     font-style: italic; /* Aplica cursiva */
@@ -85,7 +94,7 @@ nav ul li a {
     text-decoration: none;
     color: black;
     font-size: 0.9rem;
-    font-family: 'garamond', sans-serif;
+    font-family: 'champagne', sans-serif;
     transition: color 0.3s;
     text-align: center;
 }
