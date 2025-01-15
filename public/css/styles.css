@@ -663,8 +663,8 @@ button:hover {
         z-index: 1000;
         padding: 20px;
         border-radius: 8px;
-            flex-direction: column;
-    justify-content: center;
+        flex-direction: column;
+        justify-content: center;
     }
 
     #mobile-menu ul {
@@ -928,6 +928,5 @@ body.page-loaded .form-line-error {
 .formFooter{
     display: none !important; /* Oculta el elemento completamente */
 }
-
 
 
