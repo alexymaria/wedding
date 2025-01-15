@@ -276,6 +276,7 @@ nav ul li a:hover {
     border-radius: 8px;
 }
 .map-item li {
+    font-family: 'champagne';
     margin-left: 15px;
     line-height: 1.5;
 }
