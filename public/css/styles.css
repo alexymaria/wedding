@@ -77,19 +77,20 @@ nav {
     background-color: #f0f0f0;; /* Color de fondo del menú */
     border-bottom: 1px solid #ddd; /* Línea sutil debajo */
     padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column; /* Columnar en móvil */
-    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease, top 0.3s ease;
 }
+nav.hidden {
+    transform: translateY(-100%); /* Replegar hacia arriba */
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 1200px;
+    margin: auto;
 }
 /* Estilo para los enlaces */
 nav ul {
@@ -149,15 +150,12 @@ nav ul li a:hover {
 
 /* Contenedor del logo */
 .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex: 1; /* Esto centra el logo */
+    text-align: center;
 }
 
 .logo {
     max-height: 60px; /* Tamaño del logo */
-    object-fit: contain;
 }
 
 /* Header */
@@ -577,7 +575,9 @@ button:hover {
     .logo-container {
         margin: 10px 0;
     }
-
+    nav {
+        display: none;
+    }
     nav ul {
         display: none; /* Por defecto, el menú está oculto */
         flex-direction: column; 
@@ -598,18 +598,6 @@ button:hover {
         align-items: stretch;
     }
 
-    .menu {
-        display: none; /* Oculto por defecto */
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-        margin-top: 10px;
-    }
-
-    .menu.show {
-        display: flex; /* Mostrar al abrir menú */
-    }
-
     /* Mostrar menú cuando tenga la clase "show" */
     nav ul.show {
         display: flex; /* Cambia de oculto a visible */
@@ -623,9 +611,9 @@ button:hover {
         color: #f0f0f0;
         background: none;
         border: none;
-        position: absolute;
+        position: fixed;
         top: 10px;
-        right: 0px;
+        right: 20px;
         z-index: 1100; /* Debe quedar sobre el menú desplegable */
     }
     .contacto p {
@@ -660,6 +648,39 @@ button:hover {
     .go-to-form {
         padding: 8px 16px;
         font-size: 0.9rem;
+    }
+      /* Menú móvil */
+      #mobile-menu {
+        display: none;
+        position: fixed;
+        top: 50px;
+        right: 20px;
+        background: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 20px;
+    }
+
+    #mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #mobile-menu ul li {
+        margin-bottom: 10px;
+    }
+
+    #mobile-menu ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    #mobile-menu.show {
+        display: block;
     }
 }
 
