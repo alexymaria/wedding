@@ -50,7 +50,7 @@ h3, h4, h5, h6 {
     margin: 0 0 10px 0;
 }
 h2{
-    font-family: 'champagne', sans-serif;
+    font-family: 'lato', sans-serif;
     font-weight: normal;
     margin: 0;
     text-align: center; 
@@ -65,9 +65,8 @@ p, span {
 }
 #nos-casamos{
     font-family: 'pinyon', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     text-align: center;
-    font-style: italic; /* Aplica cursiva */
     color: #f0f0f0;
 }
 nav {
