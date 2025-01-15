@@ -75,15 +75,22 @@ p, span {
 }
 nav {
     background-color: #f0f0f0;; /* Color de fondo del menú */
-    padding: 0px;
+    border-bottom: 1px solid #ddd; /* Línea sutil debajo */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Columnar en móvil */
+    align-items: center;
+}
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; 
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    max-width: 1200px;
 }
-
 /* Estilo para los enlaces */
 nav ul {
     list-style: none;
@@ -106,6 +113,26 @@ nav ul li a:hover {
     color: #f0f0f0d5;
 }
 
+/* Estilo para el menú */
+.menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px; /* Espaciado entre los enlaces */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #007bff; /* Color en hover */
+}
 /* Vista móvil: menú hamburguesa */
 .menu-toggle {
     font-size: 1.5rem;
@@ -120,6 +147,18 @@ nav ul li a:hover {
     margin-top: 9px;
 }
 
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* Esto centra el logo */
+}
+
+.logo {
+    max-height: 60px; /* Tamaño del logo */
+    object-fit: contain;
+}
 
 /* Header */
 .header-container {
@@ -535,6 +574,9 @@ button:hover {
     .map-responsive iframe {
         height: 250px; /* Aumenta la altura del mapa en móviles */
     }
+    .logo-container {
+        margin: 10px 0;
+    }
     nav ul {
         display: none; /* Por defecto, el menú está oculto */
         flex-direction: column; 
@@ -549,6 +591,22 @@ button:hover {
         z-index: 1000;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
         text-align: right;
+    }
+    .nav-container {
+        flex-direction: column; /* Columnar en móvil */
+        align-items: stretch;
+    }
+
+    .menu {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .menu.show {
+        display: flex; /* Mostrar al abrir menú */
     }
 
     /* Mostrar menú cuando tenga la clase "show" */
