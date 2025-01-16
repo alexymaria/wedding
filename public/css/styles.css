@@ -343,6 +343,8 @@ nav ul li a:hover {
     position: fixed;
     bottom: 20px; /* Ajusta según tu diseño */
     right: 20px; /* Ajusta según tu diseño */
+    width: 50px;
+    height: 50px;
     background-color: #f0f0f0; /* Fondo blanco */
     color: black; /* Color del texto (verde) */
     border: none;
