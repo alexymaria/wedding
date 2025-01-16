@@ -643,7 +643,7 @@ button:hover {
     }
     
     .map-item p {
-        font-size: 1.0rem;
+        font-size: 1.1rem;
     }
     .codigo-vestimenta p{
         font-size: 1.0rem;
@@ -748,6 +748,14 @@ button:hover {
     .timeline p {
         font-size: 1.1rem;
     }
+    .map-item p {
+        font-size: 1.1rem;
+    }
+    .codigo-vestimenta p{
+        font-size: 1.1rem;
+    }
+    
+    
 }
 @media (max-width: 400px) {
     nav ul {
