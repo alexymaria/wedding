@@ -705,6 +705,12 @@ button:hover {
     #mobile-menu.show {
         display: block; /* Mostrar cuando se activa */
     }
+    .time {
+        font-size: 1.0rem;
+    }
+    .timeline p {
+        font-size: 1.0rem;
+    }
 }
 
 
