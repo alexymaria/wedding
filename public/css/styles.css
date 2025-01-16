@@ -301,6 +301,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 1.2rem;
 }
 
 .map-item h3 {
@@ -784,6 +785,7 @@ button:hover {
     padding: 0;
     margin: 20px auto;
     max-width: 600px;
+    font-size: 1.2rem;
 }
 
 .codigo-vestimenta ul li {
