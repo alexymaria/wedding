@@ -588,21 +588,22 @@ button:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .preloader-logo {
-        width: 80px; /* Tamaño más pequeño para móviles */
+    .spinner-wrapper {
+        width: 90px; /* Reducir tamaño total en móvil */
+        height: 90px;
     }
 
-    #preloader h2 {
-        font-size: 1rem; /* Reduce el tamaño del texto en móviles */
-        margin-bottom: 15px;
+    .preloader-logo {
+        width: 60px; /* Logo más pequeño en móvil */
     }
 
     .spinner {
-        width: 30px;
-        height: 30px;
-        border-width: 3px; /* Reduce el grosor del spinner en móviles */
+        border-width: 3px; /* Borde más delgado */
     }
 
+    #preloader h2 {
+        font-size: 1rem; /* Texto más pequeño */
+    }
     .venue-container {
         flex-wrap: nowrap;
         flex-direction: row;
@@ -1173,19 +1174,28 @@ body.page-loaded .form-line-error {
     opacity: 0;
     pointer-events: none;
 }
+/* Wrapper para el logo y el spinner */
+.spinner-wrapper {
+    position: relative;
+    width: 120px; /* Tamaño total del contenedor */
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* Logo del preloader */
 .preloader-logo {
-    width: 100px; /* Tamaño inicial del logo */
+    width: 80px; /* Tamaño del logo */
     height: auto;
-    margin-bottom: 20px; /* Espacio entre el logo y el texto */
-    animation: fadeIn 1.5s ease-in-out infinite alternate; /* Animación suave para el logo */
+    z-index: 2; /* Mantiene el logo encima del spinner */
 }
 
 /* Texto del preloader */
 #preloader h2 {
     font-size: 1.2rem;
-    font-family: 'Arial', sans-serif;
+    font-family: 'champagne', sans-serif;
     color: #6b705c;
     margin: 10px 0 20px; /* Espaciado */
     line-height: 1.4; /* Mejora la legibilidad */
@@ -1193,12 +1203,16 @@ body.page-loaded .form-line-error {
 
 /* Spinner */
 .spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #ddd;
-    border-top: 4px solid #6b705c;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Tamaño del spinner, igual al wrapper */
+    height: 100%;
+    border: 4px solid transparent; /* Base del borde */
+    border-top: 4px solid #6b705c; /* Color visible del spinner */
+    border-radius: 50%; /* Hace que el borde sea un círculo */
+    animation: spin 1s linear infinite; /* Rotación infinita */
+    z-index: 1; /* Debajo del logo */
 }
 
 /* Animación de rotación del spinner */
