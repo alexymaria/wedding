@@ -427,6 +427,7 @@ nav ul li a:hover {
 .time {
     flex: 0 0 80px;
     text-align: center;
+    font-size: 1.5rem;
 }
 
 /* Countdown Section */
