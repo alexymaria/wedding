@@ -582,6 +582,10 @@ button:hover {
         flex: 1 1 45%;
         max-width: 45%;
     }
+    #como-llegar{
+        width: 100%;
+        margin: 0;
+    }
     .map-container {
         flex-direction: column; /* Cambia a diseño en columna */
         gap: 10px; /* Ajusta el espacio entre elementos */
