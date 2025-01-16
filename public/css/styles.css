@@ -115,7 +115,7 @@ nav ul li a:hover {
 }
 #main-nav {
     height: auto; /* Permite que el contenido determine el alto */
-    padding: 0; /* Elimina cualquier padding extra */
+    padding: 20px; /* Elimina cualquier padding extra */
 }
 /* Estilo para el menú */
 .menu {
@@ -163,7 +163,7 @@ nav ul li a:hover {
 }
 
 .logo {
-    max-height: 25px; /* Tamaño del logo */
+    max-height: 100px; /* Tamaño del logo */
 }
 
 /* Header */
