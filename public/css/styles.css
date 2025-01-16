@@ -305,7 +305,7 @@ nav ul li a:hover {
     min-height: 500px; /* Altura mínima uniforme para todos los elementos */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     font-size: 1.2rem;
     max-width: 600px;
 }
@@ -724,6 +724,10 @@ button:hover {
     .timeline p {
         font-size: 1.0rem;
     }
+    
+.map-item {
+    justify-content: space-between;
+}
 }
 
 
