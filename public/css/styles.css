@@ -171,8 +171,6 @@ nav ul li a:hover {
 .main-image {
     width: auto;
     height: 100vh;
-    max-width: 1200px;
-    max-height: 800px;
     object-fit: cover;
 }
 
