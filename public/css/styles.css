@@ -596,6 +596,7 @@ button:hover {
         max-width: 45%;
     }
     .map-item {
+        font-size: 1.1rem;
         flex: 1 1 100%; /* Ocupa el 100% del ancho */
         justify-content: flex-start; /* Alinea los elementos al inicio, elimina espacio entre ellos */
         min-height: auto; /* Elimina la altura mínima fija para adaptarse mejor al contenido */
@@ -732,7 +733,9 @@ button:hover {
         font-size: 1.0rem;
     }
     
-
+    .codigo-vestimenta-card p{
+        font-size: 1.1rem;
+    }
 }
 
 
@@ -769,10 +772,9 @@ button:hover {
     .map-item p {
         font-size: 1.1rem;
     }
-    .codigo-vestimenta p{
+    .codigo-vestimenta-card p{
         font-size: 1.1rem;
     }
-    
     
 }
 @media (max-width: 400px) {
@@ -949,7 +951,7 @@ form {
 .codigo-vestimenta-card p {
     line-height: 1.6;
     color: #666;
-    font-size: 16px;
+    font-size: 1.2rem;
 }
 
 .codigo-vestimenta-card strong {
