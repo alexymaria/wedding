@@ -915,6 +915,7 @@ form {
 .contacto-item a {
     text-decoration: none;
     color: #6b705c;
+    white-space: nowrap;
 }
 
 .contacto-item a:hover {
