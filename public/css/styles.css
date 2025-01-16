@@ -738,6 +738,12 @@ button:hover {
     .venue p {
         font-size: 1.0rem;
     }
+    .time {
+        font-size: 1.0rem;
+    }
+    .timeline p {
+        font-size: 1.0rem;
+    }
 }
 @media (max-width: 400px) {
     nav ul {
