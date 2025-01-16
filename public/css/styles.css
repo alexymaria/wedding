@@ -1083,3 +1083,49 @@ body.page-loaded .form-line-error {
     font-weight: bold;
     color: #333;
 }
+.viaje-novios {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%; /* Ocupa el ancho completo del carrusel */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid #6b705c;
+}
+
+.carousel-item p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.cta {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+}
