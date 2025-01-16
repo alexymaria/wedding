@@ -160,7 +160,7 @@ nav ul li a:hover {
 
 /* Header */
 .header-container {
-    max-width: 900px;
+    max-width: 100%;
     max-height: auto; /* Ajusta el alto al tamaño de la ventana */
     overflow: hidden; /* Evita que haya scroll innecesario */
     position: relative;
@@ -394,7 +394,9 @@ nav ul li a:hover {
     position: relative;
     flex-wrap: wrap
 }
-
+.timeline p {
+    font-size: 1.5rem;
+}
 .icon {
     flex: 0 0 50px;
     display: flex;
