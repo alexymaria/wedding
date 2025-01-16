@@ -69,7 +69,7 @@ p, span {
 }
 #nos-casamos{
     font-family: 'pinyon', sans-serif;
-    font-size: 1.0rem;
+    font-size: 1.6rem;
     text-align: center;
     color: #f0f0f0;
 }
@@ -160,16 +160,18 @@ nav ul li a:hover {
 
 /* Header */
 .header-container {
-    max-width: 828px;
-    max-height: 1024px; /* Ajusta el alto al tamaño de la ventana */
+    max-width: 900px;
+    max-height: auto; /* Ajusta el alto al tamaño de la ventana */
     overflow: hidden; /* Evita que haya scroll innecesario */
     position: relative;
+    align-items: center;
 }
 
 .main-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0.9;
 }
 
 
