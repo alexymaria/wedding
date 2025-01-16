@@ -69,7 +69,7 @@ p, span {
 }
 #nos-casamos{
     font-family: 'pinyon', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     text-align: center;
     color: #f0f0f0;
 }
@@ -111,7 +111,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #f0f0f0d5;
+    color: #dddcdc;
 }
 #main-nav {
     height: auto; /* Permite que el contenido determine el alto */
@@ -135,7 +135,7 @@ nav ul li a:hover {
 }
 
 .menu li a:hover {
-    color: #007bff; /* Color en hover */
+    color: #dddcdc; /* Color en hover */
 }
 /* Vista móvil: menú hamburguesa */
 .menu-toggle {
@@ -196,13 +196,16 @@ nav ul li a:hover {
 
 .otroheader-text{
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     padding: 15px 10px;
     border-radius: 10px;
     text-align: center;   
+}
+.otroheader-text{
+    font-size:1.5rem ;
 }
 .header-text h1 {
     font-size: 2rem;
@@ -351,7 +354,7 @@ nav ul li a:hover {
 }
 
 .back-to-top:hover {
-    background-color: #c5c1c1; /* Fondo verde al pasar el ratón */
+    background-color: #dddcdc; /* Fondo verde al pasar el ratón */
     color: black; /* Texto blanco */
     transform: scale(1.1); /* Ligera ampliación al pasar el ratón */
 }
@@ -525,12 +528,12 @@ button {
 }
 
 button:hover {
-    background-color: #f0f0f0d5;;
+    background-color: #dddcdc;
 }
 
 /* Estilo para el botón "Confirma tu asistencia" */
 .go-to-form {
-    font-family: 'lato';
+    font-family: 'champagne';
     position: absolute; /* Posición relativa al contenedor #inicio */
     bottom: 20px; /* Separación desde la parte inferior del contenedor */
     left: 50%; /* Centrado horizontal */
@@ -551,7 +554,7 @@ button:hover {
 
 /* Cambia el color al pasar el mouse */
 .go-to-form:hover {
-    background-color: #b1abab;
+    background-color: #dddcdc;
     transform: translateX(-50%) scale(1.05); /* Pequeño efecto de aumento */
 }
 
@@ -739,10 +742,10 @@ button:hover {
         font-size: 1.0rem;
     }
     .time {
-        font-size: 1.0rem;
+        font-size: 1.1rem;
     }
     .timeline p {
-        font-size: 1.0rem;
+        font-size: 1.1rem;
     }
 }
 @media (max-width: 400px) {
@@ -871,7 +874,7 @@ form {
 }
 
 .contacto-item a:hover {
-    color: #333;
+    color: #dddcdc;
 }
 
 .codigo-vestimenta {
