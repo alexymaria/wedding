@@ -158,7 +158,7 @@ nav ul li a:hover {
     top: 50%; /* Centrado verticalmente */
     transform: translate(-50%, -50%); /* Corrige el desplazamiento */
     max-height: 50px; /* Limita la altura del logo */
-    display: flex;
+    z-index: 10;
     align-items: center;
 }
 
