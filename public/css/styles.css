@@ -170,7 +170,6 @@ nav ul li a:hover {
 
 .main-image {
     width: auto;
-    height: 100vh;
     object-fit: cover;
 }
 
@@ -437,6 +436,7 @@ nav ul li a:hover {
 }
 
 .countdown-timer {
+    padding-top: 20px;
     display: flex;
     justify-content: center;
     gap: 20px;
