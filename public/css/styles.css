@@ -588,6 +588,20 @@ button:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .preloader-logo {
+        width: 80px; /* Tamaño más pequeño para móviles */
+    }
+
+    #preloader h2 {
+        font-size: 1rem; /* Reduce el tamaño del texto en móviles */
+        margin-bottom: 15px;
+    }
+
+    .spinner {
+        width: 30px;
+        height: 30px;
+        border-width: 3px; /* Reduce el grosor del spinner en móviles */
+    }
 
     .venue-container {
         flex-wrap: nowrap;
@@ -1136,7 +1150,6 @@ body.page-loaded .form-line-error {
     color: #333;
 }
 
-/* Preloader Fullscreen */
 /* Preloader base */
 #preloader {
     position: fixed;
@@ -1152,6 +1165,7 @@ body.page-loaded .form-line-error {
     z-index: 9999;
     opacity: 1;
     transition: opacity 0.5s ease; /* Animación de fade-out */
+    text-align: center;
 }
 
 /* Ocultar preloader */
@@ -1160,30 +1174,31 @@ body.page-loaded .form-line-error {
     pointer-events: none;
 }
 
+/* Logo del preloader */
+.preloader-logo {
+    width: 100px; /* Tamaño inicial del logo */
+    height: auto;
+    margin-bottom: 20px; /* Espacio entre el logo y el texto */
+    animation: fadeIn 1.5s ease-in-out infinite alternate; /* Animación suave para el logo */
+}
+
 /* Texto del preloader */
 #preloader h2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: 'Arial', sans-serif;
     color: #6b705c;
-    margin-bottom: 20px;
+    margin: 10px 0 20px; /* Espaciado */
+    line-height: 1.4; /* Mejora la legibilidad */
 }
 
 /* Spinner */
 .spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #ddd;
-    border-top: 5px solid #6b705c;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ddd;
+    border-top: 4px solid #6b705c;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-    margin-bottom: 20px;
-}
-
-/* Logo del preloader */
-.preloader-logo {
-    width: 80px; /* Ajusta el tamaño según necesites */
-    height: auto;
-    animation: fadeIn 1.5s ease-in-out infinite alternate; /* Animación suave para el logo */
 }
 
 /* Animación de rotación del spinner */
