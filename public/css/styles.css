@@ -1137,37 +1137,71 @@ body.page-loaded .form-line-error {
 }
 
 /* Preloader Fullscreen */
+/* Preloader base */
 #preloader {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #f8f9fa; /* Color de fondo del preloader */
-    z-index: 9999; /* Asegúrate de que esté por encima de todo */
+    width: 100%;
+    height: 100%;
+    background: #f8f9fa;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     z-index: 9999;
     opacity: 1;
-    transition: opacity 0.5s ease; /* Transición suave */
-}
-#preloader.hidden {
-    opacity: 0; /* Desvanecer */
-    pointer-events: none; /* Elimina la interacción cuando desaparece */
-}
-.preloader-logo {
-    width: 500px;
-    height: auto;
-    animation: fadeIn 1.5s ease-in-out infinite alternate;
+    transition: opacity 0.5s ease; /* Animación de fade-out */
 }
 
-/* Animación de opacidad */
-@keyframes fadeIn {
-    0% {
-        opacity: 0.5;
+/* Ocultar preloader */
+#preloader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Texto del preloader */
+#preloader h2 {
+    font-size: 1.5rem;
+    font-family: 'Arial', sans-serif;
+    color: #6b705c;
+    margin-bottom: 20px;
+}
+
+/* Spinner */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ddd;
+    border-top: 5px solid #6b705c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+/* Logo del preloader */
+.preloader-logo {
+    width: 80px; /* Ajusta el tamaño según necesites */
+    height: auto;
+    animation: fadeIn 1.5s ease-in-out infinite alternate; /* Animación suave para el logo */
+}
+
+/* Animación de rotación del spinner */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
     }
-    100% {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animación de opacidad para el logo */
+@keyframes fadeIn {
+    from {
+        opacity: 0.6;
+    }
+    to {
         opacity: 1;
     }
 }
