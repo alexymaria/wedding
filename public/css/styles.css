@@ -160,7 +160,7 @@ nav ul li a:hover {
 
 /* Header */
 .header-container {
-    max-width: 900px;
+    max-width: auto;
     max-height: auto; /* Ajusta el alto al tamaño de la ventana */
     overflow: hidden; /* Evita que haya scroll innecesario */
     position: relative;
@@ -521,6 +521,7 @@ button:hover {
 
 /* Estilo para el botón "Confirma tu asistencia" */
 .go-to-form {
+    font-family: 'lato';
     position: absolute; /* Posición relativa al contenedor #inicio */
     bottom: 20px; /* Separación desde la parte inferior del contenedor */
     left: 50%; /* Centrado horizontal */
@@ -534,7 +535,8 @@ button:hover {
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
     z-index: 1000; /* Asegura que esté encima de otros elementos */
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-bottom: 1px solid #ddd; /* Línea sutil debajo */
+    transition: transform 0.3s ease, top 0.3s ease;
 }
 
 /* Cambia el color al pasar el mouse */
