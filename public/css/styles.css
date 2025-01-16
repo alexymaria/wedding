@@ -541,6 +541,7 @@ button:hover {
     border-radius: 30px; /* Borde redondeado */
     padding: 10px 20px; /* Espaciado interno */
     font-size: 1rem; /* Tamaño de fuente */
+    font-weight: bold;
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
     z-index: 1000; /* Asegura que esté encima de otros elementos */
