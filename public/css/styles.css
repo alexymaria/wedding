@@ -113,7 +113,10 @@ nav ul li a {
 nav ul li a:hover {
     color: #f0f0f0d5;
 }
-
+#main-nav {
+    height: auto; /* Permite que el contenido determine el alto */
+    padding: 0; /* Elimina cualquier padding extra */
+}
 /* Estilo para el menú */
 .menu {
     display: flex;
@@ -150,12 +153,17 @@ nav ul li a:hover {
 
 /* Contenedor del logo */
 .logo-container {
-    flex: 1; /* Esto centra el logo */
-    text-align: center;
+    position: absolute; /* Lo posicionamos absolutamente dentro de #main-nav */
+    left: 50%; /* Centrado horizontalmente */
+    top: 50%; /* Centrado verticalmente */
+    transform: translate(-50%, -50%); /* Corrige el desplazamiento */
+    max-height: 50px; /* Limita la altura del logo */
+    display: flex;
+    align-items: center;
 }
 
 .logo {
-    max-height: 80px; /* Tamaño del logo */
+    max-height: 100%; /* Tamaño del logo */
 }
 
 /* Header */
