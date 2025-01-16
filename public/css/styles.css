@@ -163,7 +163,7 @@ nav ul li a:hover {
 }
 
 .logo {
-    max-height: 100%; /* Tamaño del logo */
+    max-height: 25px; /* Tamaño del logo */
 }
 
 /* Header */
@@ -607,6 +607,8 @@ button:hover {
     .nav-container {
         flex-direction: column; /* Columnar en móvil */
         align-items: stretch;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     /* Mostrar menú cuando tenga la clase "show" */
