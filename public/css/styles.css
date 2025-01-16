@@ -877,6 +877,7 @@ form {
 .contacto-item p {
     font-size: 1.1rem;
     margin: 0;
+    width: 90%;
 }
 
 .contacto-item a {
