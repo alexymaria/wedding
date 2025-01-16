@@ -751,6 +751,13 @@ button:hover {
     .codigo-vestimenta-card p{
         font-size: 1.1rem;
     }
+    .carousel-item {
+        height: auto;          /* Deja que las tarjetas crezcan en altura */
+    }
+
+    .carousel-item img {
+        height: 200px;         /* Reduce la altura de las imágenes en móviles */
+    }
 }
 
 
@@ -1102,20 +1109,16 @@ body.page-loaded .form-line-error {
     gap: 20px;
     transition: transform 0.5s ease-in-out;
 }
-
 .carousel-item {
-    min-width: 100%; /* Ocupa el ancho completo del carrusel */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: white;
-    text-align: center;
+    height: 400px;             /* Establece una altura fija */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .carousel-item img {
-    width: 100%;
-    height: auto;
-    border-bottom: 3px solid #6b705c;
+    flex-grow: 1;              /* Permite que la imagen crezca proporcionalmente */
+    object-fit: cover;         /* Recorta los bordes para ajustarse */
 }
 
 .carousel-item p {
