@@ -160,8 +160,8 @@ nav ul li a:hover {
 
 /* Header */
 .header-container {
-    width: 100%;
-    height: 100vh; /* Ajusta el alto al tamaño de la ventana */
+    max-width: 828px;
+    max-height: 1024px; /* Ajusta el alto al tamaño de la ventana */
     overflow: hidden; /* Evita que haya scroll innecesario */
     position: relative;
 }
