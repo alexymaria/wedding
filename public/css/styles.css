@@ -155,17 +155,15 @@ nav ul li a:hover {
 }
 
 .logo {
-    max-height: 60px; /* Tamaño del logo */
+    max-height: 80px; /* Tamaño del logo */
 }
 
 /* Header */
 .header-container {
-    position: relative;
     width: 100%;
-    height: auto;
-    text-align: center;
-    overflow: hidden;
-    padding: 0px;
+    height: 100vh; /* Ajusta el alto al tamaño de la ventana */
+    overflow: hidden; /* Evita que haya scroll innecesario */
+    position: relative;
 }
 
 .main-image {
