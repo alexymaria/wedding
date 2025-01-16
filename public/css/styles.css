@@ -202,7 +202,8 @@ nav ul li a:hover {
     color: white;
     padding: 15px 10px;
     border-radius: 10px;
-    text-align: center;   
+    text-align: center; 
+    width: 90%;  
 }
 .otroheader-text{
     font-size:1.5rem ;
@@ -543,7 +544,7 @@ button:hover {
     border: none; /* Sin borde */
     border-radius: 30px; /* Borde redondeado */
     padding: 10px 20px; /* Espaciado interno */
-    font-size: 1rem; /* Tamaño de fuente */
+    font-size: 1.4rem; /* Tamaño de fuente */
     font-weight: bold;
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
