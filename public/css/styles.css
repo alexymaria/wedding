@@ -305,7 +305,7 @@ nav ul li a:hover {
     min-height: 500px; /* Altura mínima uniforme para todos los elementos */
     display: flex;
     flex-direction: column;
-    /*justify-content: space-between;*/
+    justify-content: space-between;
     font-size: 1.2rem;
     max-width: 600px;
 }
@@ -584,7 +584,7 @@ button:hover {
     }
     .map-container {
         flex-direction: column; /* Cambia a diseño en columna */
-        gap: 15px; /* Ajusta el espacio entre elementos */
+        gap: 10px; /* Ajusta el espacio entre elementos */
     }
 
     .map-column {
@@ -592,7 +592,10 @@ button:hover {
         max-width: 45%;
     }
     .map-item {
-        flex: 1 1 100%; /* Ocupa todo el ancho del contenedor */
+        flex: 1 1 100%; /* Ocupa el 100% del ancho */
+        justify-content: flex-start; /* Alinea los elementos al inicio, elimina espacio entre ellos */
+        min-height: auto; /* Elimina la altura mínima fija para adaptarse mejor al contenido */
+        margin-bottom: 20px; /* Añade un margen inferior entre los elementos */
     }
 
     .map-responsive iframe {
@@ -725,9 +728,7 @@ button:hover {
         font-size: 1.0rem;
     }
     
-.map-item {
-    justify-content: space-between;
-}
+
 }
 
 
