@@ -1132,3 +1132,33 @@ body.page-loaded .form-line-error {
     font-size: 1.2rem;
     color: #333;
 }
+
+/* Preloader Fullscreen */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f8f9fa; /* Color de fondo del preloader */
+    z-index: 9999; /* Asegúrate de que esté por encima de todo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preloader-logo {
+    width: 100px;
+    height: auto;
+    animation: fadeIn 1.5s ease-in-out infinite alternate;
+}
+
+/* Animación de opacidad */
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
