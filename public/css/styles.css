@@ -86,6 +86,7 @@ nav.hidden {
 }
 
 .nav-container {
+    position: relative; /* Para que el logo-container se posicione correctamente */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -165,6 +166,7 @@ nav ul li a:hover {
 
 .logo {
     max-height: 100px; /* Tamaño del logo */
+    height: auto;
 }
 
 /* Header */
