@@ -197,9 +197,13 @@ nav ul li a:hover {
     color: #dddcdc;
 }
 #main-nav {
-    position: relative; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en filas nuevas */
+    padding: 10px 20px;
+    position: relative;
     height: auto; /* Permite que el contenido determine el alto */
-    padding: 20px; /* Elimina cualquier padding extra */
 }
 /* Estilo para el menú */
 .menu {
@@ -208,6 +212,9 @@ nav ul li a:hover {
     padding: 0;
     margin: 0;
     gap: 20px; /* Espaciado entre los enlaces */
+    flex-wrap: wrap; /* Los enlaces se ajustarán si no caben */
+    justify-content: center;
+    flex: 2; /* Ocupa más espacio que el logo */
 }
 
 .menu li a {
@@ -237,20 +244,16 @@ nav ul li a:hover {
 
 /* Contenedor del logo */
 .logo-container {
-    position: absolute; /* Lo posicionamos absolutamente dentro de #main-nav */
-    left: 50%; /* Centrado horizontalmente */
-    top: 50%; /* Centrado verticalmente */
-    transform: translate(-50%, -50%); /* Corrige el desplazamiento */
-    max-height: 100%; /* Limita la altura del logo */
-    z-index: 10;
-    align-items: center;
+    position: relative; /* Cambiar a relativo para mantener el flujo del diseño */
     display: flex;
-    pointer-events: none;
     justify-content: center;
+    align-items: center;
+    max-height: 50px; /* Limita la altura del logo */
+    flex: 1; /* Ocupa un espacio flexible */
 }
 
 .logo {
-    max-height: 50px; /* Tamaño del logo */
+    max-height: 100px; /* Tamaño del logo */
     height: auto;
     width: auto;
 }
