@@ -548,15 +548,6 @@ nav ul li a:hover {
     transform: rotate(360deg);
 }
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px); /* Rebote hacia arriba */
-    }
-}
-
 .event {
     flex: 1;
     text-align: left;
