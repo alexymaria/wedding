@@ -844,7 +844,9 @@ nav ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-
+    .nolinesmovil{
+        padding: 0px;
+    }
     h2 {
         padding: 0 20px; /* Reduce el espacio lateral en pantallas más pequeñas */
     }
@@ -1082,6 +1084,9 @@ nav ul li a:hover {
 
 /* Mobile adjustments */
 @media (max-width: 480px) {
+    .nolinesmovil{
+        padding: 0px;
+    }
     h2::before, h2::after {
         width: 18%; /* Líneas aún más cortas en pantallas móviles */
     }
