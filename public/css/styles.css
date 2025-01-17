@@ -1306,13 +1306,13 @@ iframe .formFooter-wrapper{
 
 
 .cta {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    display: inline-block;
     max-width: 600px;
     margin: 0 auto;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #6b705c;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cta p {
