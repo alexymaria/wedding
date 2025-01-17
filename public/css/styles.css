@@ -758,15 +758,23 @@ nav ul li a:hover {
     transition: transform 0.5s ease-in-out;
 }
 .carousel-item {
-    height: 400px;             /* Establece una altura fija */
+    min-width: 100%;           /* Las tarjetas ocupan el 100% del carrusel */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;          /* Las imágenes que sobresalgan serán recortadas */
+    background-color: white;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .carousel-item img {
-    flex-grow: 1;              /* Permite que la imagen crezca proporcionalmente */
-    object-fit: cover;         /* Recorta los bordes para ajustarse */
+    width: 100%;               /* La imagen ocupa todo el ancho de su contenedor */
+    height: auto;              /* Ajusta la altura automáticamente para mantener proporción */
+    object-fit: cover;         /* Recorta los bordes si es necesario para llenar el espacio */
+    border-bottom: 3px solid #6b705c; /* Borde decorativo opcional */
+    display: block;         /* Recorta los bordes para ajustarse */
 }
 
 .carousel-item p {
