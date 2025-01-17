@@ -362,7 +362,7 @@ nav ul li a:hover {
     font-family: 'pinyon', sans-serif;
     font-size: 3rem;
     text-align: center;
-    color: #f0f0f0;
+    color: #000000;
 
 }
 .header-text {
@@ -378,7 +378,7 @@ nav ul li a:hover {
 
 .otroheader-text{
     position: absolute;
-    top: 70%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -388,7 +388,7 @@ nav ul li a:hover {
     width: 90%;  
 }
 .otroheader-text p{
-    font-size:4rem ;
+    font-size: 3rem ;
 }
 .header-text h1 {
     font-size: 3rem;
