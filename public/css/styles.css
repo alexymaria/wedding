@@ -456,8 +456,8 @@ nav ul li a:hover {
     height: 20px; /* Altura del zigzag */
     background: repeating-linear-gradient(
         135deg,
-        #6b705c 0%,
-        #6b705c 10%,
+        #000000 0%,
+        #000000 10%,
         transparent 10%,
         transparent 20%
     );
