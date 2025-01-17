@@ -314,7 +314,7 @@ nav ul li a:hover {
 }
 .header-text {
     position: absolute;
-    top: 15%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -340,6 +340,8 @@ nav ul li a:hover {
 .header-text h1 {
     font-size: 3rem;
     margin: 0;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
 }
 
 .header-text p {
