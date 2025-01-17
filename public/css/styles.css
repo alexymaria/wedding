@@ -71,12 +71,90 @@ p, span {
     font-size: 1.2rem;
     line-height: 1.6;
 }
-#nos-casamos{
-    font-family: 'pinyon', sans-serif;
-    font-size: 1.7rem;
+/* Preloader base */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Animación de fade-out */
     text-align: center;
-    color: #f0f0f0;
 }
+
+/* Ocultar preloader */
+#preloader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+/* Wrapper para el logo y el spinner */
+.spinner-wrapper {
+    position: relative;
+    width: 120px; /* Tamaño total del contenedor */
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Logo del preloader */
+.preloader-logo {
+    width: 80px; /* Tamaño del logo */
+    height: auto;
+    z-index: 2; /* Mantiene el logo encima del spinner */
+}
+
+/* Texto del preloader */
+#preloader h2 {
+    font-size: 1.2rem;
+    font-family: 'champagne', sans-serif;
+    color: #6b705c;
+    margin: 10px 0 20px; /* Espaciado */
+    line-height: 1.4; /* Mejora la legibilidad */
+}
+
+/* Spinner */
+.spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Tamaño del spinner, igual al wrapper */
+    height: 100%;
+    border: 4px solid transparent; /* Base del borde */
+    border-top: 4px solid #6b705c; /* Color visible del spinner */
+    border-radius: 50%; /* Hace que el borde sea un círculo */
+    animation: spin 1s linear infinite; /* Rotación infinita */
+    z-index: 1; /* Debajo del logo */
+}
+
+/* Animación de rotación del spinner */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animación de opacidad para el logo */
+@keyframes fadeIn {
+    from {
+        opacity: 0.6;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 nav {
     background-color: #f0f0f0;; /* Color de fondo del menú */
     border-bottom: 1px solid #ddd; /* Línea sutil debajo */
@@ -171,6 +249,39 @@ nav ul li a:hover {
     max-height: 100px; /* Tamaño del logo */
     height: auto;
 }
+/* Botón de volver arriba */
+.back-to-top {
+    position: fixed;
+    bottom: 20px; /* Ajusta según tu diseño */
+    right: 20px; /* Ajusta según tu diseño */
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0; /* Fondo blanco */
+    color: black; /* Color del texto (verde) */
+    border: none;
+    border-radius: 50%; /* Hace que sea redondo */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para realce */
+    padding: 15px; /* Tamaño del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    z-index: 1000; /* Asegura que el botón esté encima de otros elementos */
+    display: none; /* Oculto inicialmente */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.back-to-top:hover {
+    background-color: #dddcdc; /* Fondo verde al pasar el ratón */
+    color: black; /* Texto blanco */
+    transform: scale(1.1); /* Ligera ampliación al pasar el ratón */
+}
+
+/* Mostrar el botón al hacer scroll */
+.back-to-top.show {
+    display: block; /* Muestra el botón cuando se agrega la clase */
+    opacity: 1; /* Hace visible el botón */
+    transform: translateY(0); /* Asegura que no se desplace */
+}
+
+
 
 /* Header */
 .header-container {
@@ -188,7 +299,12 @@ nav ul li a:hover {
     opacity: 0.9;
 }
 
-
+#nos-casamos{
+    font-family: 'pinyon', sans-serif;
+    font-size: 1.7rem;
+    text-align: center;
+    color: #f0f0f0;
+}
 .header-text {
     position: absolute;
     top: 15%;
@@ -223,9 +339,159 @@ nav ul li a:hover {
     margin: 5px 0;
 }
 
+/* Estilo para el botón "Confirma tu asistencia" */
+.go-to-form {
+    font-family: 'champagne';
+    position: absolute; /* Posición relativa al contenedor #inicio */
+    bottom: 20px; /* Separación desde la parte inferior del contenedor */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Ajuste para centrar completamente */
+    background-color: #f0f0f0; /* Color de fondo */
+    color: black; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 30px; /* Borde redondeado */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 1.4rem; /* Tamaño de fuente */
+    font-weight: bold;
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    border-bottom: 1px solid #ddd; /* Línea sutil debajo */
+    transition: transform 0.3s ease, top 0.3s ease;
+}
+
+/* Cambia el color al pasar el mouse */
+.go-to-form:hover {
+    background-color: #dddcdc;
+    transform: translateX(-50%) scale(1.05); /* Pequeño efecto de aumento */
+}
 /* Main Content */
 .main-content {
     padding: 20px;
+}
+/* Countdown Section */
+.countdown{
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 2%;
+}
+
+
+.countdown-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.countdown-timer {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+.countdown-item {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 70px;
+}
+
+.time-box span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #6b705c;
+}
+
+.time-box p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Timeline Section */
+.timeline-section {
+    text-align: center;
+    padding-top: 0%;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: rgb(204, 204, 204);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1
+}
+
+.timeline li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    position: relative;
+    flex-wrap: wrap
+}
+.timeline p {
+    font-size: 1.5rem;
+}
+.icon {
+    flex: 0 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.event {
+    flex: 1;
+    text-align: left;
+    position: relative;
+    margin-right: 20px;
+}
+
+.time {
+    flex: 0 0 80px;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 /* Venue Section */
@@ -276,6 +542,8 @@ nav ul li a:hover {
     font-size: 1.2rem;
     line-height: 1.9;
 }
+
+/* Como llegar Section */
 #como-llegar {
     width: 80%; /* Define un ancho fijo o relativo */
     margin: 0 auto; /* Centra horizontalmente el contenedor */
@@ -291,7 +559,6 @@ nav ul li a:hover {
 .como-llegar p{
     font-size: 1.2rem;
 }
-
 
 .map-container {
     display: flex;
@@ -361,165 +628,96 @@ nav ul li a:hover {
     line-height: 1.5;
 }
 
-
-/* Botón de volver arriba */
-.back-to-top {
-    position: fixed;
-    bottom: 20px; /* Ajusta según tu diseño */
-    right: 20px; /* Ajusta según tu diseño */
-    width: 50px;
-    height: 50px;
-    background-color: #f0f0f0; /* Fondo blanco */
-    color: black; /* Color del texto (verde) */
-    border: none;
-    border-radius: 50%; /* Hace que sea redondo */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para realce */
-    padding: 15px; /* Tamaño del botón */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    z-index: 1000; /* Asegura que el botón esté encima de otros elementos */
-    display: none; /* Oculto inicialmente */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
-}
-
-.back-to-top:hover {
-    background-color: #dddcdc; /* Fondo verde al pasar el ratón */
-    color: black; /* Texto blanco */
-    transform: scale(1.1); /* Ligera ampliación al pasar el ratón */
-}
-
-/* Mostrar el botón al hacer scroll */
-.back-to-top.show {
-    display: block; /* Muestra el botón cuando se agrega la clase */
-    opacity: 1; /* Hace visible el botón */
-    transform: translateY(0); /* Asegura que no se desplace */
-}
-
-
-
-/* Timeline Section */
-.timeline-section {
+/* Codigo vestimenta Section */
+.codigo-vestimenta {
     text-align: center;
-    padding-top: 0%;
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: white;
-}
-
-.timeline {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: relative;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 1px;
-    height: 100%;
-    background: rgb(204, 204, 204);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1
-}
-
-.timeline li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 30px 0;
-    position: relative;
-    flex-wrap: wrap
-}
-.timeline p {
-    font-size: 1.5rem;
-}
-.icon {
-    flex: 0 0 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.icon img {
-    width: 50px;
-    height: 50px;
-}
-
-.event {
-    flex: 1;
-    text-align: left;
-    position: relative;
-    margin-right: 20px;
-}
-
-.time {
-    flex: 0 0 80px;
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-/* Countdown Section */
-.countdown{
+    padding: 30px 15px;
     background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    box-sizing: border-box;
+    color: black;
     border-radius: 2%;
 }
-
-
-.countdown-title {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+.codigo-vestimenta p{
+    font-size: 1.2rem;
 }
 
-.countdown-timer {
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: nowrap;
+
+.codigo-vestimenta ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+    font-size: 1.2rem;
 }
 
-.countdown-item {
+.codigo-vestimenta ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.codigo-vestimenta {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
     text-align: center;
-    font-size: 1.5rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin: 20px;
 }
 
-.countdown-item span {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
+.codigo-vestimenta h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
     color: #333;
 }
 
-.time-box {
+.codigo-vestimenta-cards {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.codigo-vestimenta-card {
+    background-color: #ffffff;
+    border: 2px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    flex: 1 1 calc(45% - 20px); /* Adapta a dos columnas */
+    max-width: 300px;
+    text-align: left;
 }
 
-.time-box span {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #6b705c;
+.codigo-vestimenta-card h3 {
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-.time-box p {
-    margin: 0;
-    font-size: 0.9rem;
+.codigo-vestimenta-card p {
+    line-height: 1.6;
     color: #666;
+    font-size: 1.2rem;
 }
+
+.codigo-vestimenta-card strong {
+    color: #c00;
+}
+
+.codigo-vestimenta-card em {
+    font-style: italic;
+    color: #444;
+}
+
+.women-card {
+    border-left: 5px solid #ff7f7f;
+}
+
+.men-card {
+    border-left: 5px solid #7faaff;
+}
+
+
 
 /* RSVP Section */
 .rsvp {
@@ -559,32 +757,7 @@ button:hover {
     background-color: #dddcdc;
 }
 
-/* Estilo para el botón "Confirma tu asistencia" */
-.go-to-form {
-    font-family: 'champagne';
-    position: absolute; /* Posición relativa al contenedor #inicio */
-    bottom: 20px; /* Separación desde la parte inferior del contenedor */
-    left: 50%; /* Centrado horizontal */
-    transform: translateX(-50%); /* Ajuste para centrar completamente */
-    background-color: #f0f0f0; /* Color de fondo */
-    color: black; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 30px; /* Borde redondeado */
-    padding: 10px 20px; /* Espaciado interno */
-    font-size: 1.4rem; /* Tamaño de fuente */
-    font-weight: bold;
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
-    z-index: 1000; /* Asegura que esté encima de otros elementos */
-    border-bottom: 1px solid #ddd; /* Línea sutil debajo */
-    transition: transform 0.3s ease, top 0.3s ease;
-}
 
-/* Cambia el color al pasar el mouse */
-.go-to-form:hover {
-    background-color: #dddcdc;
-    transform: translateX(-50%) scale(1.05); /* Pequeño efecto de aumento */
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -827,30 +1000,7 @@ button:hover {
 #mobile-menu{
     display: none;
 }
-.codigo-vestimenta {
-    text-align: center;
-    padding: 30px 15px;
-    background-color: #f0f0f0;
-    color: black;
-    border-radius: 2%;
-}
-.codigo-vestimenta p{
-    font-size: 1.2rem;
-}
 
-
-.codigo-vestimenta ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px auto;
-    max-width: 600px;
-    font-size: 1.2rem;
-}
-
-.codigo-vestimenta ul li {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
 
 iframe {
     width: 100%; /* O ajusta a un valor fijo, como 600px */
@@ -877,6 +1027,9 @@ form {
     margin: 0 auto; /* Centra el formulario */
     padding: 10px; /* Añade espacio interno */
     box-sizing: border-box; /* Incluye el padding en el tamaño */
+}
+.form h2{
+    padding-bottom: 0px;
 }
 .numero-cuenta {
     text-align: center;
@@ -947,69 +1100,6 @@ form {
 
 .contacto-item a:hover {
     color: #dddcdc;
-}
-
-.codigo-vestimenta {
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    margin: 20px;
-}
-
-.codigo-vestimenta h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.codigo-vestimenta-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.codigo-vestimenta-card {
-    background-color: #ffffff;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    flex: 1 1 calc(45% - 20px); /* Adapta a dos columnas */
-    max-width: 300px;
-    text-align: left;
-}
-
-.codigo-vestimenta-card h3 {
-    font-size: 22px;
-    color: #555;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.codigo-vestimenta-card p {
-    line-height: 1.6;
-    color: #666;
-    font-size: 1.2rem;
-}
-
-.codigo-vestimenta-card strong {
-    color: #c00;
-}
-
-.codigo-vestimenta-card em {
-    font-style: italic;
-    color: #444;
-}
-
-.women-card {
-    border-left: 5px solid #ff7f7f;
-}
-
-.men-card {
-    border-left: 5px solid #7faaff;
 }
 
 .form-error-message,
@@ -1151,86 +1241,4 @@ iframe .formFooter-wrapper{
     color: #333;
 }
 
-/* Preloader base */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #f8f9fa;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 0.5s ease; /* Animación de fade-out */
-    text-align: center;
-}
 
-/* Ocultar preloader */
-#preloader.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-/* Wrapper para el logo y el spinner */
-.spinner-wrapper {
-    position: relative;
-    width: 120px; /* Tamaño total del contenedor */
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* Logo del preloader */
-.preloader-logo {
-    width: 80px; /* Tamaño del logo */
-    height: auto;
-    z-index: 2; /* Mantiene el logo encima del spinner */
-}
-
-/* Texto del preloader */
-#preloader h2 {
-    font-size: 1.2rem;
-    font-family: 'champagne', sans-serif;
-    color: #6b705c;
-    margin: 10px 0 20px; /* Espaciado */
-    line-height: 1.4; /* Mejora la legibilidad */
-}
-
-/* Spinner */
-.spinner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Tamaño del spinner, igual al wrapper */
-    height: 100%;
-    border: 4px solid transparent; /* Base del borde */
-    border-top: 4px solid #6b705c; /* Color visible del spinner */
-    border-radius: 50%; /* Hace que el borde sea un círculo */
-    animation: spin 1s linear infinite; /* Rotación infinita */
-    z-index: 1; /* Debajo del logo */
-}
-
-/* Animación de rotación del spinner */
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Animación de opacidad para el logo */
-@keyframes fadeIn {
-    from {
-        opacity: 0.6;
-    }
-    to {
-        opacity: 1;
-    }
-}
