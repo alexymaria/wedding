@@ -197,6 +197,7 @@ nav ul li a:hover {
     color: #dddcdc;
 }
 #main-nav {
+    position: relative; 
     height: auto; /* Permite que el contenido determine el alto */
     padding: 20px; /* Elimina cualquier padding extra */
 }
@@ -240,14 +241,18 @@ nav ul li a:hover {
     left: 50%; /* Centrado horizontalmente */
     top: 50%; /* Centrado verticalmente */
     transform: translate(-50%, -50%); /* Corrige el desplazamiento */
-    max-height: 50px; /* Limita la altura del logo */
+    max-height: 100%; /* Limita la altura del logo */
     z-index: 10;
     align-items: center;
+    display: flex;
+    pointer-events: none;
+    justify-content: center;
 }
 
 .logo {
-    max-height: 100px; /* Tamaño del logo */
+    max-height: 50px; /* Tamaño del logo */
     height: auto;
+    width: auto;
 }
 /* Botón de volver arriba */
 .back-to-top {
