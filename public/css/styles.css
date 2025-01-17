@@ -772,7 +772,7 @@ nav ul li a:hover {
 .carousel-item img {
     width: 100%;               /* La imagen ocupa todo el ancho de su contenedor */
     height: auto;              /* Ajusta la altura automáticamente para mantener proporción */
-    object-fit: cover;         /* Recorta los bordes si es necesario para llenar el espacio */
+    object-fit: contain;         /* Recorta los bordes si es necesario para llenar el espacio */
     border-bottom: 3px solid #6b705c; /* Borde decorativo opcional */
     display: block;         /* Recorta los bordes para ajustarse */
 }
@@ -1124,7 +1124,7 @@ form {
 .contacto-item p {
     font-size: 1.1rem;
     margin: 0;
-    width: 90%;
+    width: auto;
 }
 
 .contacto-item a {
