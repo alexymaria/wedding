@@ -845,7 +845,7 @@ nav ul li a:hover {
     }
 
     h2::before, h2::after {
-        width: calc(20%); /* Reduce el tamaño de las líneas */
+        width: 20%; /* Reduce el tamaño de las líneas */
     }
     /* DESACTIVAR las líneas en los h2 con la clase 'no-lines' */
     h2.nolinesmovil::before,
@@ -1063,7 +1063,7 @@ nav ul li a:hover {
 /* Mobile adjustments */
 @media (max-width: 480px) {
     h2::before, h2::after {
-        width: calc(50% - 20px); /* Líneas aún más cortas en pantallas móviles */
+        width: 20%; /* Líneas aún más cortas en pantallas móviles */
     }
     .time-box {
         width: 50px;
