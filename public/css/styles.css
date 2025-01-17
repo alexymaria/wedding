@@ -197,7 +197,6 @@ nav ul li a:hover {
     color: #dddcdc;
 }
 #main-nav {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap; /* Permite que los elementos se acomoden en filas nuevas */
