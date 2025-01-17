@@ -1,5 +1,4 @@
 
-import { collection, addDoc } from "firebase/firestore"; 
 
 // Función para guardar los datos
 async function save() {
