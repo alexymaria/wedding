@@ -78,7 +78,7 @@ h2::after {
     transform: translateY(-50%);
     width: 30%; /* Ajusta el ancho de las líneas */
     transform: translateY(-50%); /* Centra las líneas verticalmente */
-    animation: moveLines 2.5s infinite ease-in-out; /* Animación */
+    animation: waveLines 2.5s infinite ease-in-out;
 }
 
 /* Línea izquierda (before) */
@@ -97,7 +97,7 @@ h2.no-lines::after {
 }
 
 /* Animación */
-@keyframes moveLines {
+@keyframes waveLines {
     0% {
         transform: translateX(0);
     }
