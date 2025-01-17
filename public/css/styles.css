@@ -759,6 +759,9 @@ button:hover {
     #mobile-menu.show {
         display: block; /* Mostrar cuando se activa */
     }
+    #mobile-menu.hidden{
+        display: none;
+    }
     .time {
         font-size: 1.0rem;
     }
@@ -1027,7 +1030,7 @@ body.page-loaded .form-line-error {
         object-position: center; /* Centra la imagen en su contenedor */
     }
 }
-.formFooter{
+iframe .formFooter-wrapper{
     display: none !important; /* Oculta el elemento completamente */
 }
 
