@@ -975,7 +975,7 @@ nav ul li a:hover {
     #nos-casamos{
         font-size: 1.7rem;
     }
-    .header-text {
+    .header-text h1 {
         font-size: 2rem;      
     }
     .otroheader-text p{
@@ -999,7 +999,7 @@ nav ul li a:hover {
         font-size: 1.3rem;
         margin-bottom: 8px;
     }
-    .header-text {
+    .header-text h1{
         font-size: 2rem;      
     }
     .contacto p {
