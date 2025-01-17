@@ -1,5 +1,5 @@
 
-import { db } from "./firebase.js"; // Importa `db` desde `firebase.js`
+import { db } from "/firebase.js"; // Importa `db` desde `firebase.js`
 // Función para guardar los datos
 async function save() {
     try {
