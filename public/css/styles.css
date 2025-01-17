@@ -440,6 +440,42 @@ nav ul li a:hover {
 }
 
 /* Timeline Section */
+.decorated-header {
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #333;
+}
+
+.decorated-header::before,
+.decorated-header::after {
+    content: "";
+    position: absolute;
+    width: 100px; /* Longitud del zigzag */
+    height: 20px; /* Altura del zigzag */
+    background: repeating-linear-gradient(
+        135deg,
+        #6b705c 0%,
+        #6b705c 10%,
+        transparent 10%,
+        transparent 20%
+    );
+    z-index: -1; /* Mantener detrás del texto */
+}
+
+.decorated-header::before {
+    left: -120px; /* Mueve el zigzag hacia la izquierda */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%);
+}
+
+.decorated-header::after {
+    right: -120px; /* Mueve el zigzag hacia la derecha */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%);
+}
+
 .timeline-section {
     text-align: center;
     padding-top: 0%;
@@ -808,6 +844,13 @@ nav ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .decorated-header::before,
+    .decorated-header::after {
+        width: 60px; /* Reduce el ancho del zigzag */
+        height: 15px; /* Reduce la altura */
+        left: -80px; /* Ajusta la posición izquierda */
+        right: -80px; /* Ajusta la posición derecha */
+    } 
     .spinner-wrapper {
         width: 90px; /* Reducir tamaño total en móvil */
         height: 90px;
