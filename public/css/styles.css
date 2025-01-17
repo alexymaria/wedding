@@ -98,11 +98,14 @@ h2.no-lines::after {
 
 /* Animación */
 @keyframes waveLines {
-    0% { 
-        transform: translate3d(0, 0, 0); 
-    } 
-    100% { 
-        transform: translate3d(-100%, 0, 0); 
+    0% {
+        width: calc(50% - 60px);
+    }
+    50% {
+        width: calc(50% - 30px); /* Línea se agranda */
+    }
+    100% {
+        width: calc(50% - 60px); /* Vuelve a su tamaño original */
     }
 }
 /* Textos descriptivos (p, span, etc.) */
