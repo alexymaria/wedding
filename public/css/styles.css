@@ -76,7 +76,7 @@ h2::after {
     height: 2px;
     background-color: #6b705c; /* Color de la línea */
     transform: translateY(-50%);
-    width: calc(50% - 60px); /* Ajusta el ancho de las líneas */
+    width: 30%; /* Ajusta el ancho de las líneas */
     transform: translateY(-50%); /* Centra las líneas verticalmente */
     animation: moveLines 2s infinite alternate; /* Animación */
 }
