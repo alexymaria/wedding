@@ -489,25 +489,21 @@ nav ul li a:hover {
 .icon img {
     width: 50px;
     height: 50px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 3s ease-in-out;
     width: 50px;
     height: 50px;
+    animation: bounce 9s infinite;
 }
 .icon img:hover {
     transform: rotate(360deg);
 }
-.icon-disco img{
-    width: 50px;
-    height: 50px;
-    animation: spin 8s linear infinite; /* Gira cada 3 segundos */
-}
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
     }
-    to {
-        transform: rotate(360deg);
+    50% {
+        transform: translateY(-10px); /* Rebote hacia arriba */
     }
 }
 
