@@ -717,46 +717,59 @@ nav ul li a:hover {
     border-left: 5px solid #7faaff;
 }
 
-
-
-/* RSVP Section */
-.rsvp {
-    margin: 40px auto;
+/* numero cuenta Section */
+.numero-cuenta {
     text-align: center;
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 0px 15px;
+    background-color: white;
+    color: black;
+}
+
+.cuenta-container {
     max-width: 600px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #6b705c;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
 }
 
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
+.carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+    height: 400px;             /* Establece una altura fija */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.form-group label {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 8px;
+.carousel-item img {
+    flex-grow: 1;              /* Permite que la imagen crezca proporcionalmente */
+    object-fit: cover;         /* Recorta los bordes para ajustarse */
+}
+
+.carousel-item p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.cta {
+    margin-top: 20px;
+    font-size: 1.2rem;
     color: #333;
 }
-
-button {
-    background-color: #f0f0f0;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #dddcdc;
-}
-
 
 
 /* Responsive Design */
@@ -1031,22 +1044,6 @@ form {
 .form h2{
     padding-bottom: 0px;
 }
-.numero-cuenta {
-    text-align: center;
-    padding: 0px 15px;
-    background-color: white;
-    color: black;
-}
-
-.cuenta-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border: 1px solid #6b705c;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 .contacto {
     text-align: center;
@@ -1204,41 +1201,5 @@ iframe .formFooter-wrapper{
     background-color: #f9f9f9;
 }
 
-.carousel-container {
-    overflow: hidden;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.carousel {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.5s ease-in-out;
-}
-.carousel-item {
-    height: 400px;             /* Establece una altura fija */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.carousel-item img {
-    flex-grow: 1;              /* Permite que la imagen crezca proporcionalmente */
-    object-fit: cover;         /* Recorta los bordes para ajustarse */
-}
-
-.carousel-item p {
-    margin: 10px 0;
-    font-size: 1.1rem;
-    color: #555;
-}
-
-.cta {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #333;
-}
 
 
