@@ -1,15 +1,21 @@
 
-function save(){
-    import { collection, addDoc } from "firebase/firestore"; 
+import { collection, addDoc } from "firebase/firestore"; 
 
+// Función para guardar los datos
+async function save() {
     try {
-    const docRef = await addDoc(collection(db, "nombre"), {
+      // Agregar un documento a la colección "nombre"
+      const docRef = await addDoc(collection(db, "nombre"), {
         nombre: document.getElementById("firstName").value,
         apellido: document.getElementById("lastName").value,
-        born: 1815
-    });
-    console.log("Document written with ID: ", docRef.id);
+        born: 1815 // Este es un dato fijo, cámbialo si necesitas algo dinámico
+      });
+  
+      console.log("Document written with ID: ", docRef.id);
+      alert("Datos enviados correctamente");
+      document.getElementById("dataForm").reset(); // Limpia el formulario
     } catch (e) {
-    console.error("Error adding document: ", e);
+      console.error("Error adding document: ", e);
+      alert("Hubo un error al enviar los datos. Inténtalo nuevamente.");
     }
-}
+  }
