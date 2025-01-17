@@ -61,7 +61,7 @@ h2{
     position: relative;
     font-family: 'lato', sans-serif;
     font-weight: normal;
-    margin: 0;
+    margin: 20px 0;
     text-align: center; 
     padding: 10px;
     overflow: hidden;
@@ -75,22 +75,19 @@ h2::after {
     height: 2px;
     background-color: #6b705c; /* Color de la línea */
     transform: translateY(-50%);
+    width: calc(50% - 60px); /* Ajusta el ancho de las líneas */
+    transform: translateY(-50%); /* Centra las líneas verticalmente */
     animation: moveLines 2s infinite alternate; /* Animación */
-    max-width: calc(50% - 10px); /* Evita desbordamiento */
-    width: 100%;
-    box-sizing: border-box;
 }
 
 /* Línea izquierda (before) */
 h2::before {
     left: 0; /* Comienza desde el borde izquierdo */
-    width: 50%; /* Toma la mitad del ancho disponible */
 }
 
 /* Línea derecha (after) */
 h2::after {
     right: 0; /* Comienza desde el borde derecho */
-    width: 50%; /* Toma la mitad del ancho disponible */
 }
 
 /* Textos descriptivos (p, span, etc.) */
@@ -842,18 +839,18 @@ nav ul li a:hover {
     color: #333;
 }
 
-/* Responsive: Ajustar el ancho de las líneas */
-@media (max-width: 1024px) {
-    h2::before, h2::after {
-        width: 40%; /* Aumenta el ancho de las líneas en pantallas más pequeñas */
-    }
-}
+
 /* Responsive Design */
 @media (max-width: 768px) {
 
-    h2::before, h2::after {
-        width: 40%; /* Líneas un poco más cortas */
+    h2 {
+        padding: 0 20px; /* Reduce el espacio lateral en pantallas más pequeñas */
     }
+
+    h2::before, h2::after {
+        width: calc(50% - 30px); /* Reduce el tamaño de las líneas */
+    }
+}
     .spinner-wrapper {
         width: 90px; /* Reducir tamaño total en móvil */
         height: 90px;
@@ -1061,9 +1058,8 @@ nav ul li a:hover {
 /* Mobile adjustments */
 @media (max-width: 480px) {
     h2::before, h2::after {
-        width: 35%; /* Líneas aún más cortas en pantallas móviles */
+        width: calc(50% - 20px); /* Líneas aún más cortas en pantallas móviles */
     }
-
     .time-box {
         width: 50px;
         padding: 5px 8px;
