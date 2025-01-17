@@ -759,9 +759,6 @@ button:hover {
     #mobile-menu.show {
         display: block; /* Mostrar cuando se activa */
     }
-    #mobile-menu.hidden{
-        display: none;
-    }
     .time {
         font-size: 1.0rem;
     }
