@@ -75,6 +75,7 @@ h2::after {
     color: #202020;
     top: 50%;
     height: 2px;
+    background-color: #1d1c1c;
     background: linear-gradient(90deg, #000000 #1d1c1c, #3a35356b, #474242); /* Gradiente de color */
     transform: translateY(-50%);
     width: 30%; /* Ajusta el ancho de las líneas */
