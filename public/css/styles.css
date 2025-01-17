@@ -58,11 +58,39 @@ h3, h4, h5, h6 {
     font-size: 1.17em;
 }
 h2{
+    position: relative;
     font-family: 'lato', sans-serif;
     font-weight: normal;
     margin: 0;
     text-align: center; 
     padding: 10px;
+    overflow: hidden;
+}
+/* Líneas antes y después del h2 */
+h2::before,
+h2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    background-color: #6b705c; /* Color de la línea */
+    transform: translateY(-50%);
+    animation: moveLines 2s infinite alternate; /* Animación */
+    max-width: calc(50% - 10px); /* Evita desbordamiento */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Línea izquierda (before) */
+h2::before {
+    left: 0; /* Comienza desde el borde izquierdo */
+    width: 50%; /* Toma la mitad del ancho disponible */
+}
+
+/* Línea derecha (after) */
+h2::after {
+    right: 0; /* Comienza desde el borde derecho */
+    width: 50%; /* Toma la mitad del ancho disponible */
 }
 
 /* Textos descriptivos (p, span, etc.) */
@@ -440,45 +468,13 @@ nav ul li a:hover {
 }
 
 /* Timeline Section */
-.decorated-header {
-    position: relative;
-    text-align: center;
-    font-size: 2rem;
-    margin: 20px 0;
-    color: #000000;
-}
-
-.decorated-header::before,
-.decorated-header::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    height: 2px;
-    background-color: #000000; /* Color de la línea */
-    transform: translateY(-50%);
-    animation: moveLines 2s infinite alternate; /* Animación */
-}
-
-.decorated-header::before {
-    left: -20%; /* Mueve el zigzag hacia la izquierda */
-    width: 30%;
-    top: 50%; /* Centra verticalmente */
-    transform: translateY(-50%);
-}
-
-.decorated-header::after {
-    right: -20%; /* Mueve el zigzag hacia la izquierda */
-    width: 30%;
-    top: 50%; /* Centra verticalmente */
-    transform: translateY(-50%);
-}
 /* Animación */
 @keyframes moveLines {
     0% {
         transform: translateY(-50%) translateX(0);
     }
     100% {
-        transform: translateY(-50%) translateX(20px); /* Ajusta el desplazamiento */
+        transform: translateY(-50%) translateX(10px); /* Ajusta el desplazamiento */
     }
 }
 .timeline-section {
@@ -854,10 +850,10 @@ nav ul li a:hover {
 }
 /* Responsive Design */
 @media (max-width: 768px) {
-    .decorated-header::before,
-    .decorated-header::after {
-        width: 40%
-    } 
+
+    h2::before, h2::after {
+        width: 40%; /* Líneas un poco más cortas */
+    }
     .spinner-wrapper {
         width: 90px; /* Reducir tamaño total en móvil */
         height: 90px;
@@ -1064,10 +1060,10 @@ nav ul li a:hover {
 
 /* Mobile adjustments */
 @media (max-width: 480px) {
-    .decorated-header::before,
-    .decorated-header::after {
-        width: 40%
-    } 
+    h2::before, h2::after {
+        width: 35%; /* Líneas aún más cortas en pantallas móviles */
+    }
+
     .time-box {
         width: 50px;
         padding: 5px 8px;
