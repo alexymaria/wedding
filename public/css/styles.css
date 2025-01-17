@@ -210,7 +210,7 @@ nav ul li a:hover {
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 40px; /* Espaciado entre los enlaces */
+    gap: 20px; /* Espaciado entre los enlaces */
     flex-wrap: wrap; /* Los enlaces se ajustarán si no caben */
     justify-content: center;
     flex: 2; /* Ocupa más espacio que el logo */
