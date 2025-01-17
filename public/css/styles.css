@@ -98,20 +98,11 @@ h2.no-lines::after {
 
 /* Animación */
 @keyframes waveLines {
-    0% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(10px);
-    }
-    50% {
-        transform: translateX(-10px);
-    }
-    75% {
-        transform: translateX(5px);
-    }
-    100% {
-        transform: translateX(0);
+    0% { 
+        transform: translate3d(0, 0, 0); 
+    } 
+    100% { 
+        transform: translate3d(-100%, 0, 0); 
     }
 }
 /* Textos descriptivos (p, span, etc.) */
@@ -1065,7 +1056,7 @@ nav ul li a:hover {
 /* Mobile adjustments */
 @media (max-width: 480px) {
     h2::before, h2::after {
-        width: 20%; /* Líneas aún más cortas en pantallas móviles */
+        width: 18%; /* Líneas aún más cortas en pantallas móviles */
     }
     .time-box {
         width: 50px;
