@@ -445,23 +445,19 @@ nav ul li a:hover {
     text-align: center;
     font-size: 2rem;
     margin: 20px 0;
-    color: #333;
+    color: #000000;
 }
 
 .decorated-header::before,
 .decorated-header::after {
-    content: "";
+    content: '';
     position: absolute;
-    width: 100px; /* Longitud del zigzag */
-    height: 20px; /* Altura del zigzag */
-    background: repeating-linear-gradient(
-        135deg,
-        #000000 0%,
-        #000000 10%,
-        transparent 10%,
-        transparent 20%
-    );
-    z-index: -1; /* Mantener detrás del texto */
+    top: 50%;
+    width: 40px;
+    height: 2px;
+    background-color: #000000; /* Color de la línea */
+    transform: translateY(-50%);
+    animation: moveLines 2s infinite alternate; /* Animación */
 }
 
 .decorated-header::before {
@@ -475,7 +471,15 @@ nav ul li a:hover {
     top: 50%; /* Centra verticalmente */
     transform: translateY(-50%);
 }
-
+/* Animación */
+@keyframes moveLines {
+    0% {
+        transform: translateY(-50%) translateX(0);
+    }
+    100% {
+        transform: translateY(-50%) translateX(20px); /* Ajusta el desplazamiento */
+    }
+}
 .timeline-section {
     text-align: center;
     padding-top: 0%;
