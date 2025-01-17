@@ -335,8 +335,8 @@ nav ul li a:hover {
     text-align: center; 
     width: 90%;  
 }
-.otroheader-text{
-    font-size:1.5rem ;
+.otroheader-text p{
+    font-size:4rem ;
 }
 .header-text h1 {
     font-size: 3rem;
