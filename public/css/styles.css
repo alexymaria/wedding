@@ -311,6 +311,8 @@ nav ul li a:hover {
     font-size: 3rem;
     text-align: center;
     color: #f0f0f0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
 }
 .header-text {
     position: absolute;
@@ -340,8 +342,8 @@ nav ul li a:hover {
 .header-text h1 {
     font-size: 3rem;
     margin: 0;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
 }
 
 .header-text p {
