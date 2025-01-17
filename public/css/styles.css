@@ -293,7 +293,7 @@ nav ul li a:hover {
 /* Header */
 .header-container {
     max-width: auto;
-    max-height: auto; /* Ajusta el alto al tamaño de la ventana */
+    max-height: 70%; /* Ajusta el alto al tamaño de la ventana */
     overflow: hidden; /* Evita que haya scroll innecesario */
     position: relative;
     align-items: center;
