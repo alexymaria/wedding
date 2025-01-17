@@ -467,7 +467,7 @@ nav ul li a:hover {
 }
 
 .decorated-header::after {
-    left: -20%; /* Mueve el zigzag hacia la izquierda */
+    right: -20%; /* Mueve el zigzag hacia la izquierda */
     width: 30%;
     top: 50%; /* Centra verticalmente */
     transform: translateY(-50%);
@@ -856,7 +856,7 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     .decorated-header::before,
     .decorated-header::after {
-        width: 50%
+        width: 40%
     } 
     .spinner-wrapper {
         width: 90px; /* Reducir tamaño total en móvil */
@@ -1066,7 +1066,7 @@ nav ul li a:hover {
 @media (max-width: 480px) {
     .decorated-header::before,
     .decorated-header::after {
-        width: 60%
+        width: 40%
     } 
     .time-box {
         width: 50px;
