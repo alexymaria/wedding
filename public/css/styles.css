@@ -90,7 +90,11 @@ h2::before {
 h2::after {
     right: 0; /* Comienza desde el borde derecho */
 }
-
+/* DESACTIVAR las líneas en los h2 con la clase 'no-lines' */
+h2.no-lines::before,
+h2.no-lines::after {
+    content: none; /* Elimina las líneas */
+}
 /* Textos descriptivos (p, span, etc.) */
 p, span {
     font-family: 'champagne', serif;
