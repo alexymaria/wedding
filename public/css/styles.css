@@ -845,9 +845,13 @@ nav ul li a:hover {
     }
 
     h2::before, h2::after {
-        width: calc(50% - 30px); /* Reduce el tamaño de las líneas */
+        width: calc(20%); /* Reduce el tamaño de las líneas */
     }
-
+    /* DESACTIVAR las líneas en los h2 con la clase 'no-lines' */
+    h2.nolinesmovil::before,
+    h2.nolinesmovil::after {
+        content: none; /* Elimina las líneas */
+    }
     .spinner-wrapper {
         width: 90px; /* Reducir tamaño total en móvil */
         height: 90px;
