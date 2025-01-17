@@ -72,6 +72,7 @@ h2::before,
 h2::after {
     content: '';
     position: absolute;
+    color: #202020;
     top: 50%;
     height: 2px;
     background: linear-gradient(90deg, #000000 #1d1c1c, #3a35356b, #474242); /* Gradiente de color */
