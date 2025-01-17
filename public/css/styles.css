@@ -74,7 +74,7 @@ h2::after {
     position: absolute;
     top: 50%;
     height: 2px;
-    background: linear-gradient(90deg, #f0f0f0 #bebcbc, #868484, #a39e9e); /* Gradiente de color */
+    background: linear-gradient(90deg, #000000 #1d1c1c, #3a35356b, #474242); /* Gradiente de color */
     transform: translateY(-50%);
     width: 30%; /* Ajusta el ancho de las líneas */
     border-radius: 8px; /* Hace los bordes de la línea redondeados */
@@ -818,7 +818,7 @@ nav ul li a:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     color: white;
     border: none;
     border-radius: 50%;
