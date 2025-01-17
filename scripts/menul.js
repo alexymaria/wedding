@@ -17,7 +17,17 @@ window.addEventListener('scroll', () => {
 // Mostrar/ocultar menú en móvil
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('#mobile-menu');
+const menuLinks = mobileMenu.querySelectorAll('a'); 
 
 menuToggle.addEventListener('click', () => {
+    console.log("Toggle button clicked"); // Verificar el clic
     mobileMenu.classList.toggle('show');
+});
+
+// Cerrar el menú móvil al hacer clic en un enlace
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        console.log("Menu link clicked"); // Verificar el clic
+        mobileMenu.classList.remove('show'); // Quitar la clase "show"
+    });
 });
