@@ -598,13 +598,13 @@ nav ul li a:hover {
     font-size: 1.2rem;
     margin: 0 0 10px;
 }
-.map-item li a{
+.map-item p a{
     color: #536774; /* Cambia el color del texto */
     text-decoration: none; /* Quita el subrayado */
     font-weight: bold; /* Cambia el grosor del texto */
 }
     
-.map-item li a:hover {
+.map-item p a:hover {
     color: #f0f0f0; /* Cambia el color al pasar el ratón */
     text-decoration: underline; /* Añade subrayado al pasar el ratón */
 }
