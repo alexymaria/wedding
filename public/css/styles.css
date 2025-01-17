@@ -970,6 +970,9 @@ nav ul li a:hover {
     .carousel-item img {
         height: 200px;         /* Reduce la altura de las imágenes en móviles */
     }
+    .menu{
+        display: none;
+    }
 }
 
 
