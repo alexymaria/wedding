@@ -492,17 +492,23 @@ nav ul li a:hover {
     transition: transform 0.3s ease-in-out;
     width: 50px;
     height: 50px;
-    animation: bounce 2s infinite;
+    animation: shake 1.5s infinite;
 }
 .icon img:hover {
     transform: rotate(360deg);
 }
-@keyframes bounce {
+@keyframes shake {
     0%, 100% {
-        transform: translateY(0);
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
     }
     50% {
-        transform: translateY(-10px); /* Rebote hacia arriba */
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
     }
 }
 .event {
