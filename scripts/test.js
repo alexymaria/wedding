@@ -1,3 +1,6 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
 // Configuración de Firebase
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 console.log('El script de JavaScript se está ejecutando.');
@@ -58,17 +61,17 @@ console.log({
 });
   try {
     // Guardar datos en Firestore
-    await db.collection('formResponses').add({
-      attendance,
-      firstName,
-      lastName,
-      email,
-      numGuests,
-      guestNames,
-      dietaryRestrictions,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    await addDoc(collection(db, 'formResponses'), {
+        attendance,
+        firstName,
+        lastName,
+        email,
+        numGuests,
+        guestNames,
+        dietaryRestrictions,
+        timestamp: serverTimestamp()
     });
-
+    console.log('Datos enviados a Firestore correctamente.');
     alert('¡Formulario enviado exitosamente!');
     form.reset();
   } catch (error) {
