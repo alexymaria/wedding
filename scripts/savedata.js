@@ -3,7 +3,7 @@ import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.2.0/fi
 import { db } from "./firebase.js";
 
 // Función para guardar los datos (definida fuera de cualquier evento)
-function save() {
+async function save() {
     const firstName = document.getElementById("firstName").value;
     const lastName = document.getElementById("lastName").value;
     const born = document.getElementById("born").value; // Asume que tienes un input con id "born"
