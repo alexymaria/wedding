@@ -1334,12 +1334,6 @@ body.page-loaded .form-line-error {
     width: 100%;
   }
   
-  p {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
   .form-group {
     margin-bottom: 15px;
   }
