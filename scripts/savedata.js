@@ -1,6 +1,6 @@
 // savedata.js
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
-import { db } from "./firebase.js";
+import { db } from "firebase.js";
 
 // Función para guardar los datos (definida fuera de cualquier evento)
 async function save() {
