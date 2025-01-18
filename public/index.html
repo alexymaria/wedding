@@ -364,7 +364,12 @@
               <button type="button" class="btn">Enviar</button>
     </main>
     <script type="module" src="../scripts/firebase.js" ></script>
-<script type="module" src="../scripts/savedata.js" ></script>
+    <script type="module">
+        import { save } from "../scripts/savedata.js";
+        
+        // Asigna la función `save` al botón
+        document.querySelector(".btn").addEventListener("click", save);
+      </script>
 </body>
 
 
