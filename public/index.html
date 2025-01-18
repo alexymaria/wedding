@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="icons/logo negro.png">
 <!--<script src="../scripts/rsvp.js"></script>-->
-    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js" defer></script>
-    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js" defer></script>
+
     <script src="../scripts/countdown.js" defer></script>
     <script src="js/script.js" defer></script> </script>
 
@@ -358,19 +357,16 @@
             
                   
                 </form>
-                
+                <button type="button" class="btn" onclick="save()">Enviar</button>
               </div>
-              <button type="button" class="btn">Enviar</button>
+              
     </main>
-    <script type="module" src="../scripts/firebase.js" ></script>
-    <script type="module">
-        import { save } from "../scripts/savedata.js";
-        
-        // Asigna la función `save` al botón
-        document.querySelector(".btn").addEventListener("click", save);
-      </script>
-</body>
 
+</body>
+<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+<script type="text/javascript" src="../scripts/firebase.js" ></script>
+<script type="text/javascript" src="../scripts/savedata.js"></script>
 
   
 </html>
