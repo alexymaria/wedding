@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
+
 // Configuración de Firebase
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 console.log('El script de JavaScript se está ejecutando.');
@@ -32,8 +33,9 @@ measurementId: "G-C2CFYLZ973"
 };
 
 // Inicializar Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore(app);
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 
 // Manejar el envío del formulario
 document.getElementById('submitBtn').addEventListener('click', async () => {
