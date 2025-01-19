@@ -1,84 +1,97 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
-
-// Configuración de Firebase
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-console.log('El script de JavaScript se está ejecutando.');
-window.addEventListener('DOMContentLoaded', () => {
-    console.log('La página ha cargado completamente.');
-  
-    const submitBtn = document.getElementById('submitBtn');
-    if (submitBtn) {
-      console.log('Botón encontrado:', submitBtn);
-  
-      submitBtn.addEventListener('click', () => {
-        console.log('El botón Enviar ha sido clickeado.');
-      });
-    } else {
-      console.error('No se encontró el botón con el ID "submitBtn".');
-    }
-  });
-  
-
 const firebaseConfig = {
-apiKey: "AIzaSyACJzTzUT9fZdvoyGNFZkauJvIfJebSOik",
-authDomain: "wedd-88c89.firebaseapp.com",
-databaseURL: "https://wedd-88c89-default-rtdb.europe-west1.firebasedatabase.app",
-projectId: "wedd-88c89",
-storageBucket: "wedd-88c89.firebasestorage.app",
-messagingSenderId: "387760003871",
-appId: "1:387760003871:web:07155124a2a69c5a7f6e2a",
-measurementId: "G-C2CFYLZ973"
+  apiKey: "AIzaSyACJzTzUT9fZdvoyGNFZkauJvIfJebSOik",
+  authDomain: "wedd-88c89.firebaseapp.com",
+  databaseURL: "https://wedd-88c89-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "wedd-88c89",
+  storageBucket: "wedd-88c89.firebasestorage.app",
+  messagingSenderId: "387760003871",
+  appId: "1:387760003871:web:07155124a2a69c5a7f6e2a",
+  measurementId: "G-C2CFYLZ973"
 };
 
-// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+const attendanceRadios = document.getElementsByName('attendance');
+const numGuestsInput = document.getElementById('numGuests');
+const guestNamesInput = document.getElementById('guestNames');
+const emailInput = document.getElementById('email');
+const dietaryRestrictionsInput = document.getElementById('dietaryRestrictions');
 
-// Manejar el envío del formulario
-document.getElementById('submitBtn').addEventListener('click', async () => {
-  console.log('El botón Enviar ha sido clickeado.');
+const updateFormState = () => {
+  const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
+
+  if (attendance === 'No') {
+    emailInput.disabled = true;
+    emailInput.value = '';
+    numGuestsInput.disabled = true;
+    numGuestsInput.value = '';
+    guestNamesInput.disabled = true;
+    guestNamesInput.value = '';
+    dietaryRestrictionsInput.disabled = true;
+    dietaryRestrictionsInput.value = '';
+  } else if (attendance === 'Sí') {
+    emailInput.disabled = false;
+    numGuestsInput.disabled = false;
+    dietaryRestrictionsInput.disabled = false;
+
+    if (parseInt(numGuestsInput.value) > 0) {
+      guestNamesInput.disabled = false;
+    } else {
+      guestNamesInput.disabled = true;
+      guestNamesInput.value = '';
+    }
+  }
+};
+
+attendanceRadios.forEach(radio => {
+  radio.addEventListener('change', updateFormState);
+});
+
+numGuestsInput.addEventListener('input', () => {
+  if (parseInt(numGuestsInput.value) > 0) {
+    guestNamesInput.disabled = false;
+  } else {
+    guestNamesInput.disabled = true;
+    guestNamesInput.value = '';
+  }
+});
+
+document.getElementById('submitBtn').addEventListener('click', async (event) => {
+  event.preventDefault();
+
+  const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
+  if (!attendance) {
+    alert('Por favor selecciona una opción en "¿Contamos contigo?".');
+    return;
+  }
+
   const form = document.getElementById('dataForm');
   const formData = new FormData(form);
 
-  // Extraer valores del formulario
-  const attendance = formData.get('attendance');
-  const firstName = formData.get('firstName');
-  const lastName = formData.get('lastName');
-  const email = formData.get('email');
-  const numGuests = parseInt(formData.get('numGuests'));
-  const guestNames = formData.get('guestNames');
-  const dietaryRestrictions = formData.get('dietaryRestrictions');
-// Mostrar los valores en consola
-console.log({
+  const data = {
     attendance,
-    firstName,
-    lastName,
-    email,
-    numGuests,
-    guestNames,
-    dietaryRestrictions
-});
+    firstName: formData.get('firstName'),
+    lastName: formData.get('lastName'),
+    email: formData.get('email') || '',
+    numGuests: parseInt(formData.get('numGuests')) || 0,
+    guestNames: formData.get('guestNames') || '',
+    dietaryRestrictions: formData.get('dietaryRestrictions') || '',
+    timestamp: serverTimestamp(),
+  };
+
+  console.log('Datos a enviar:', data);
+
   try {
-    // Guardar datos en Firestore
-    await addDoc(collection(db, 'formResponses'), {
-        attendance,
-        firstName,
-        lastName,
-        email,
-        numGuests,
-        guestNames,
-        dietaryRestrictions,
-        timestamp: serverTimestamp()
-    });
-    console.log('Datos enviados a Firestore correctamente.');
+    await addDoc(collection(db, 'formResponses'), data);
     alert('¡Formulario enviado exitosamente!');
     form.reset();
+    updateFormState();
   } catch (error) {
     console.error('Error al enviar el formulario:', error);
     alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
   }
 });
-
