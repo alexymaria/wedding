@@ -1388,3 +1388,8 @@ body.page-loaded .form-line-error {
   .btn:hover {
     background-color: #555;
   }
+  .required {
+    color: red;
+    margin-left: 5px;
+  }
+  

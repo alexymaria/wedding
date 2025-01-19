@@ -321,48 +321,48 @@
                   <p>¿Contamos contigo?</p>
                   <div class="form-group">
                     <label>
-                      <input type="radio" name="attendance" value="Sí" id="attendanceYes" required> Sí
+                      <input type="radio" name="attendance" value="Sí" id="attendanceYes" required> Sí <span class="required">*</span>
                     </label>
                     <label>
-                      <input type="radio" name="attendance" value="No" id="attendanceNo" required> No
+                      <input type="radio" name="attendance" value="No" id="attendanceNo" required> No <span class="required">*</span>
                     </label>
                   </div>
               
                   <div class="form-row">
                     <div class="form-group">
-                      <label for="firstName">Nombre</label>
+                      <label for="firstName">Nombre <span class="required">*</span></label>
                       <input type="text" id="firstName" name="firstName" placeholder="Nombre" required>
                     </div>
                     <div class="form-group">
-                      <label for="lastName">Apellido</label>
+                      <label for="lastName">Apellido <span class="required">*</span></label>
                       <input type="text" id="lastName" name="lastName" placeholder="Apellido" required>
                     </div>
                   </div>
               
                   <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email <span class="required">*</span></label>
                     <input type="email" id="email" name="email" placeholder="example@example.com">
                   </div>
               
                   <div class="form-group">
-                    <label for="numGuests">Número de acompañantes</label>
+                    <label for="numGuests">Número de acompañantes <span class="required">*</span></label>
                     <input type="number" id="numGuests" name="numGuests" placeholder="Poner un 0 en caso de no llevar acompañante." min="0">
                   </div>
               
                   <div class="form-group">
-                    <label for="guestNames">Nombre y apellidos de cada acompañante</label>
+                    <label for="guestNames">Nombre y apellidos de cada acompañante <span class="required">*</span></label>
                     <input type="text" id="guestNames" name="guestNames" placeholder="Nombres de acompañantes">
                   </div>
               
                   <div class="form-group">
-                    <label for="dietaryRestrictions">Restricciones o alergias alimentarias</label>
+                    <label for="dietaryRestrictions">Restricciones o alergias alimentarias <span class="required">*</span></label>
                     <input type="text" id="dietaryRestrictions" name="dietaryRestrictions" placeholder="Cuentanos si tienes alguna restricción alimentaria.">
                   </div>
               
-                  <button type="submit" id="submitBtn" class="btn">Enviar</button>
+                  <button type="submit" id="submitBtn" class="btn" disabled>Enviar</button>
                 </form>
               </div>
-
+              
     </main>
 
 </body>

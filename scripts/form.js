@@ -8,18 +8,44 @@ document.addEventListener("DOMContentLoaded", () => {
     const firstName = document.getElementById("firstName");
     const lastName = document.getElementById("lastName");
     const form = document.getElementById("dataForm");
+    const submitBtn = document.getElementById("submitBtn");
   
-    // Función para deshabilitar o habilitar campos
+    // Función para deshabilitar/habilitar campos
     const toggleField = (field, required, disable) => {
       field.required = required;
       field.disabled = disable;
       if (disable) field.value = ""; // Limpiar el campo si se deshabilita
     };
   
-    // Evento cuando cambia la asistencia
-    form.addEventListener("change", (event) => {
+    // Validar si el formulario está listo para enviar
+    const validateForm = () => {
+      let isValid = true;
+  
+      // Validación básica: ¿Contamos contigo?
+      if (!attendanceYes.checked && !attendanceNo.checked) isValid = false;
+  
+      // Si asistencia es "Sí"
+      if (attendanceYes.checked) {
+        if (!firstName.value || !lastName.value || !email.value || numGuests.value === "") isValid = false;
+  
+        // Si hay acompañantes, nombres de acompañantes debe ser obligatorio
+        const guests = parseInt(numGuests.value, 10) || 0;
+        if (guests > 0 && !guestNames.value) isValid = false;
+        if (!dietaryRestrictions.value) isValid = false;
+      }
+  
+      // Si asistencia es "No"
       if (attendanceNo.checked) {
-        // Si el usuario pone "No"
+        if (!firstName.value || !lastName.value) isValid = false;
+      }
+  
+      // Habilitar o deshabilitar el botón según el estado
+      submitBtn.disabled = !isValid;
+    };
+  
+    // Evento cuando cambia la asistencia
+    form.addEventListener("change", () => {
+      if (attendanceNo.checked) {
         toggleField(email, false, true);
         toggleField(numGuests, false, true);
         toggleField(guestNames, false, true);
@@ -28,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleField(firstName, true, false);
         toggleField(lastName, true, false);
       } else if (attendanceYes.checked) {
-        // Si el usuario pone "Sí"
         toggleField(email, true, false);
         toggleField(numGuests, true, false);
         toggleField(dietaryRestrictions, true, false);
@@ -47,13 +72,21 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       }
+  
+      // Validar el formulario en cada cambio
+      validateForm();
     });
   
-    // Validación adicional al enviar el formulario
+    // Validar al escribir en cualquier campo
+    form.addEventListener("input", validateForm);
+  
+    // Validación final al intentar enviar el formulario
     form.addEventListener("submit", (event) => {
-      if (!attendanceYes.checked && !attendanceNo.checked) {
+      validateForm();
+  
+      if (submitBtn.disabled) {
         event.preventDefault();
-        alert("Por favor, selecciona si contamos contigo o no.");
+        alert("Por favor, completa todos los campos obligatorios antes de enviar.");
       }
     });
   });
