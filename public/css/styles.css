@@ -75,8 +75,7 @@ h2::after {
     color: #202020;
     top: 50%;
     height: 2px;
-    background-color: #1d1c1c;
-    background: linear-gradient(90deg, #000000 #1d1c1c, #3a35356b, #474242); /* Gradiente de color */
+    background: rgb(204, 204, 204);
     transform: translateY(-50%);
     width: 30%; /* Ajusta el ancho de las líneas */
     border-radius: 8px; /* Hace los bordes de la línea redondeados */
@@ -853,7 +852,7 @@ nav ul li a:hover {
     }
 
     h2::before, h2::after {
-        width: 20%; /* Reduce el tamaño de las líneas */
+        width: 18%; /* Reduce el tamaño de las líneas */
     }
     /* DESACTIVAR las líneas en los h2 con la clase 'no-lines' */
     h2.nolinesmovil::before,
