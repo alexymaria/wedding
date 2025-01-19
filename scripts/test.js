@@ -1,83 +1,127 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
-
-
-// Configuración de Firebase
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-console.log('El script de JavaScript se está ejecutando.');
-window.addEventListener('DOMContentLoaded', () => {
-    console.log('La página ha cargado completamente.');
+document.addEventListener("DOMContentLoaded", () => {
+    const attendanceYes = document.getElementById("attendanceYes");
+    const attendanceNo = document.getElementById("attendanceNo");
+    const numGuests = document.getElementById("numGuests");
+    const guestNames = document.getElementById("guestNames");
+    const dietaryRestrictions = document.getElementById("dietaryRestrictions");
+    const email = document.getElementById("email");
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const form = document.getElementById("dataForm");
+    const submitBtn = document.getElementById("submitBtn");
   
-    const submitBtn = document.getElementById('submitBtn');
-    if (submitBtn) {
-      console.log('Botón encontrado:', submitBtn);
+    const thankYouMessage = document.createElement("div");
+    thankYouMessage.id = "thankYouMessage";
+    thankYouMessage.style.display = "none";
+    thankYouMessage.style.textAlign = "center";
+    thankYouMessage.innerHTML = `
+      <h2>¡Gracias por responder!</h2>
+      <p>Tu respuesta ha sido registrada exitosamente.</p>
+      <img src="/public/images/thsanks.jpeg" alt="Gracias" style="margin-top: 20px;">
+    `;
+    document.body.appendChild(thankYouMessage);
   
-      submitBtn.addEventListener('click', () => {
-        console.log('El botón Enviar ha sido clickeado.');
-      });
-    } else {
-      console.error('No se encontró el botón con el ID "submitBtn".');
-    }
+    // Función para deshabilitar/habilitar campos
+    const toggleField = (field, required, disable) => {
+      field.required = required;
+      field.disabled = disable;
+      if (disable) field.value = ""; // Limpiar el campo si se deshabilita
+    };
+  
+    // Validar si el formulario está listo para enviar
+    const validateForm = () => {
+      let isValid = true;
+  
+      // Validación básica: ¿Contamos contigo?
+      if (!attendanceYes.checked && !attendanceNo.checked) isValid = false;
+  
+      // Si asistencia es "Sí"
+      if (attendanceYes.checked) {
+        if (!firstName.value || !lastName.value || !email.value || numGuests.value === "") isValid = false;
+  
+        // Si hay acompañantes, nombres de acompañantes debe ser obligatorio
+        const guests = parseInt(numGuests.value, 10) || 0;
+        if (guests > 0 && !guestNames.value) isValid = false;
+        if (!dietaryRestrictions.value) isValid = false;
+      }
+  
+      // Si asistencia es "No"
+      if (attendanceNo.checked) {
+        if (!firstName.value || !lastName.value) isValid = false;
+      }
+  
+      // Habilitar o deshabilitar el botón según el estado
+      submitBtn.disabled = !isValid;
+    };
+  
+    // Evento cuando cambia la asistencia
+    form.addEventListener("change", () => {
+      if (attendanceNo.checked) {
+        toggleField(email, false, true);
+        toggleField(numGuests, false, true);
+        toggleField(guestNames, false, true);
+        toggleField(dietaryRestrictions, false, true);
+  
+        toggleField(firstName, true, false);
+        toggleField(lastName, true, false);
+      } else if (attendanceYes.checked) {
+        toggleField(email, true, false);
+        toggleField(numGuests, true, false);
+        toggleField(dietaryRestrictions, true, false);
+  
+        toggleField(firstName, true, false);
+        toggleField(lastName, true, false);
+  
+        // Dependiendo del número de acompañantes
+        numGuests.addEventListener("input", () => {
+          const guests = parseInt(numGuests.value, 10) || 0;
+  
+          if (guests === 0) {
+            toggleField(guestNames, false, true); // No obligatorio si 0 acompañantes
+          } else if (guests > 0) {
+            toggleField(guestNames, true, false); // Obligatorio si hay acompañantes
+          }
+        });
+      }
+  
+      // Validar el formulario en cada cambio
+      validateForm();
+    });
+  
+    // Validar al escribir en cualquier campo
+    form.addEventListener("input", validateForm);
+  
+    // Validación final y envío del formulario
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault(); // Evitar que recargue la página
+  
+      if (submitBtn.disabled) {
+        alert("Por favor, completa todos los campos obligatorios antes de enviar.");
+        return;
+      }
+  
+      // Enviar datos a Firebase
+      const formData = {
+        attendance: attendanceYes.checked ? "Sí" : "No",
+        firstName: firstName.value,
+        lastName: lastName.value,
+        email: email.value || null,
+        numGuests: numGuests.value || null,
+        guestNames: guestNames.value || null,
+        dietaryRestrictions: dietaryRestrictions.value || null,
+      };
+  
+      try {
+        const db = firebase.firestore();
+        await db.collection("responses").add(formData);
+  
+        // Ocultar el formulario y mostrar el mensaje de agradecimiento
+        form.style.display = "none";
+        thankYouMessage.style.display = "block";
+      } catch (error) {
+        console.error("Error al enviar los datos a Firebase:", error);
+        alert("Hubo un error al enviar los datos. Por favor, inténtalo nuevamente.");
+      }
+    });
   });
   
-
-const firebaseConfig = {
-apiKey: "AIzaSyACJzTzUT9fZdvoyGNFZkauJvIfJebSOik",
-authDomain: "wedd-88c89.firebaseapp.com",
-databaseURL: "https://wedd-88c89-default-rtdb.europe-west1.firebasedatabase.app",
-projectId: "wedd-88c89",
-storageBucket: "wedd-88c89.firebasestorage.app",
-messagingSenderId: "387760003871",
-appId: "1:387760003871:web:07155124a2a69c5a7f6e2a",
-measurementId: "G-C2CFYLZ973"
-};
-
-// Inicializar Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-
-// Manejar el envío del formulario
-document.getElementById('submitBtn').addEventListener('click', async () => {
-  console.log('El botón Enviar ha sido clickeado.');
-  const form = document.getElementById('dataForm');
-  const formData = new FormData(form);
-
-  // Extraer valores del formulario
-  const attendance = formData.get('attendance');
-  const firstName = formData.get('firstName');
-  const lastName = formData.get('lastName');
-  const email = formData.get('email');
-  const numGuests = parseInt(formData.get('numGuests'));
-  const guestNames = formData.get('guestNames');
-  const dietaryRestrictions = formData.get('dietaryRestrictions');
-// Mostrar los valores en consola
-console.log({
-    attendance,
-    firstName,
-    lastName,
-    email,
-    numGuests,
-    guestNames,
-    dietaryRestrictions
-});
-  try {
-    // Guardar datos en Firestore
-    await addDoc(collection(db, 'formResponses'), {
-        attendance,
-        firstName,
-        lastName,
-        email,
-        numGuests,
-        guestNames,
-        dietaryRestrictions,
-        timestamp: serverTimestamp()
-    });
-    console.log('Datos enviados a Firestore correctamente.');
-    alert('¡Formulario enviado exitosamente!');
-    form.reset();
-  } catch (error) {
-    console.error('Error al enviar el formulario:', error);
-    alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
-  }
-});
