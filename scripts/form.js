@@ -71,6 +71,42 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.disabled = !isValid;
     };
   
+    // Mostrar alertas para campos faltantes
+    const alertMissingFields = () => {
+      if (!attendanceYes.checked && !attendanceNo.checked) {
+        alert("Por favor, selecciona si contamos contigo.");
+        return;
+      }
+  
+      if (!firstName.value || !lastName.value) {
+        alert("Por favor, completa los campos de Nombre y Apellido.");
+        return;
+      }
+  
+      if (attendanceYes.checked) {
+        if (!email.value) {
+          alert("Por favor, completa el campo de Email.");
+          return;
+        }
+  
+        const guests = parseInt(numGuests.value, 10) || 0;
+        if (numGuests.value === "") {
+          alert("Por favor, indica el número de acompañantes.");
+          return;
+        }
+  
+        if (guests > 0 && !guestNames.value) {
+          alert("Por favor, completa el campo de Nombre y apellidos de los acompañantes.");
+          return;
+        }
+  
+        if (!dietaryRestrictions.value) {
+          alert("Por favor, completa el campo de Restricciones alimentarias.");
+          return;
+        }
+      }
+    };
+  
     // Evento cuando cambia la asistencia
     form.addEventListener("change", () => {
       if (attendanceNo.checked) {
@@ -128,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault(); // Evitar que recargue la página
   
       if (submitBtn.disabled) {
-        alert("Por favor, completa todos los campos obligatorios antes de enviar.");
+        alertMissingFields();
         return;
       }
   
