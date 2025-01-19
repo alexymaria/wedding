@@ -19,6 +19,7 @@
     <script src="../scripts/menul.js" defer></script>
     <script src="../scripts/carrusel.js" defer></script>
     <script src="../scripts/preloadaer.js" defer></script>
+    <script src="../scripts/form.js" defer></script>
 
 
 </head>
@@ -320,13 +321,13 @@
                   <p>¿Contamos contigo?</p>
                   <div class="form-group">
                     <label>
-                      <input type="radio" name="attendance" value="Sí" required> Sí
+                      <input type="radio" name="attendance" value="Sí" id="attendanceYes" required> Sí
                     </label>
                     <label>
-                      <input type="radio" name="attendance" value="No" required> No
+                      <input type="radio" name="attendance" value="No" id="attendanceNo" required> No
                     </label>
                   </div>
-            
+              
                   <div class="form-row">
                     <div class="form-group">
                       <label for="firstName">Nombre</label>
@@ -337,32 +338,31 @@
                       <input type="text" id="lastName" name="lastName" placeholder="Apellido" required>
                     </div>
                   </div>
-            
+              
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="example@example.com" required>
+                    <input type="email" id="email" name="email" placeholder="example@example.com">
                   </div>
-            
+              
                   <div class="form-group">
                     <label for="numGuests">Número de acompañantes</label>
-                    <input type="number" id="numGuests" name="numGuests" placeholder="Poner un 0 en caso de no llevar acompañante." min="0" required>
+                    <input type="number" id="numGuests" name="numGuests" placeholder="Poner un 0 en caso de no llevar acompañante." min="0">
                   </div>
-            
+              
                   <div class="form-group">
                     <label for="guestNames">Nombre y apellidos de cada acompañante</label>
                     <input type="text" id="guestNames" name="guestNames" placeholder="Nombres de acompañantes">
                   </div>
-            
+              
                   <div class="form-group">
                     <label for="dietaryRestrictions">Restricciones o alergias alimentarias</label>
                     <input type="text" id="dietaryRestrictions" name="dietaryRestrictions" placeholder="Cuentanos si tienes alguna restricción alimentaria.">
                   </div>
-            
-                  
+              
+                  <button type="submit" id="submitBtn" class="btn">Enviar</button>
                 </form>
-                <button type="button" id="submitBtn" class="btn">Enviar</button>
-
               </div>
+
     </main>
 
 </body>
