@@ -1399,7 +1399,7 @@ body.page-loaded .form-line-error {
   }
   .form-group.inline-radio {
     display: flex;
-    flex-direction: column; /* Cambia a columna */
+    flex-direction:row; /* Cambia a columna */
     align-items: flex-start; /* Alinea el contenido al inicio (izquierda) */
   }
   
