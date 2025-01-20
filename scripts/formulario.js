@@ -99,21 +99,18 @@ const thankYouNo = document.getElementById('thankYouNo');
 
 
 const showThankYouMessage = (attendance) => {
-  if (formContainer) {
-    let message = '';
-    let imageUrl = '';
+  // Ocultar el formulario
+  const formContainer = document.querySelector('.form-container form');
+  if (formContainer) formContainer.style.display = 'none';
 
-    // Determinar mensaje e imagen según la asistencia
-    if (attendance === 'Sí' && thankYouYes) {
-      thankYouYes.style.display = 'block';
-    } else if (attendance === 'No' && thankYouNo) {
-      thankYouNo.style.display = 'block';
-    }
+  // Mostrar el mensaje adecuado
+  const thankYouYes = document.getElementById('thankYouYes');
+  const thankYouNo = document.getElementById('thankYouNo');
 
-    // Reemplazar el contenido del formulario por el mensaje
-    formContainer.innerHTML = `<div class="thank-you">${message}</div>`;
-  } else {
-    console.error('formContainer no está definido. Asegúrate de que la clase exista en el HTML.');
+  if (attendance === 'Sí' && thankYouYes) {
+    thankYouYes.style.display = 'block';
+  } else if (attendance === 'No' && thankYouNo) {
+    thankYouNo.style.display = 'block';
   }
 };
 
