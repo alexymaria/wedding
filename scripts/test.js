@@ -35,9 +35,22 @@ const requiredLabels = {
 const updateFormState = () => {
   const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
   let isValid = true; // Asegúrate de declarar e inicializar isValid aquí.
+  const missingFields = []; // Almacenar campos faltantes para mostrar un mensaje al usuario.
+
+  // Ocultar mensaje de error inicialmente
+  const errorMessage = document.getElementById('errorMessage');
+  if (errorMessage) errorMessage.textContent = '';
+
+  // Restablecer estilos de borde de los campos
+  const resetFieldStyles = () => {
+    [firstNameInput, lastNameInput, emailInput, numGuestsInput, guestNamesInput].forEach(field => {
+      field.style.border = ''; // Restablece el estilo del borde
+    });
+  };
+  resetFieldStyles();
 
   if (attendance === 'No') {
-    // Only firstName and lastName are required
+    // Solo nombre y apellido son requeridos
     emailInput.disabled = true;
     emailInput.value = '';
     numGuestsInput.disabled = true;
@@ -53,9 +66,18 @@ const updateFormState = () => {
     requiredLabels.numGuests.textContent = '';
     requiredLabels.guestNames.textContent = '';
 
-    isValid = firstNameInput.value.trim() && lastNameInput.value.trim();
+    if (!firstNameInput.value.trim()) {
+      missingFields.push('Nombre');
+      firstNameInput.style.border = '2px solid red';
+      isValid = false;
+    }
+    if (!lastNameInput.value.trim()) {
+      missingFields.push('Apellido');
+      lastNameInput.style.border = '2px solid red';
+      isValid = false;
+    }
   } else if (attendance === 'Sí') {
-    // All fields are required
+    // Todos los campos son requeridos
     emailInput.disabled = false;
     numGuestsInput.disabled = false;
     dietaryRestrictionsInput.disabled = false;
@@ -65,25 +87,58 @@ const updateFormState = () => {
     requiredLabels.email.textContent = '*';
     requiredLabels.numGuests.textContent = '*';
 
+    if (!firstNameInput.value.trim()) {
+      missingFields.push('Nombre');
+      firstNameInput.style.border = '2px solid red';
+      isValid = false;
+    }
+    if (!lastNameInput.value.trim()) {
+      missingFields.push('Apellido');
+      lastNameInput.style.border = '2px solid red';
+      isValid = false;
+    }
+    if (!emailInput.value.trim()) {
+      missingFields.push('Email');
+      emailInput.style.border = '2px solid red';
+      isValid = false;
+    }
+    if (!numGuestsInput.value.trim()) {
+      missingFields.push('Número de Acompañantes');
+      numGuestsInput.style.border = '2px solid red';
+      isValid = false;
+    }
     if (parseInt(numGuestsInput.value) > 0) {
       guestNamesInput.disabled = false;
       requiredLabels.guestNames.textContent = '*';
-      isValid = firstNameInput.value.trim() && lastNameInput.value.trim() && emailInput.value.trim() && numGuestsInput.value && guestNamesInput.value.trim();
+      if (!guestNamesInput.value.trim()) {
+        missingFields.push('Nombres de los Acompañantes');
+        guestNamesInput.style.border = '2px solid red';
+        isValid = false;
+      }
     } else {
       guestNamesInput.disabled = true;
       guestNamesInput.value = '';
       requiredLabels.guestNames.textContent = '';
-      isValid = firstNameInput.value.trim() && lastNameInput.value.trim() && emailInput.value.trim() && numGuestsInput.value;
     }
   } else {
     isValid = false; // Si no se selecciona "Sí" o "No".
+    missingFields.push('¿Contamos contigo?');
   }
 
+  // Mostrar mensaje de error si faltan campos obligatorios
+  if (!isValid && errorMessage) {
+    errorMessage.textContent = `Faltan los siguientes campos obligatorios: ${missingFields.join(', ')}`;
+    errorMessage.style.color = 'red';
+  }
+
+  // Actualizar el estado del botón "Enviar"
   submitBtn.disabled = !isValid;
 };
 
-attendanceRadios.forEach(radio => {
-  radio.addEventListener('change', updateFormState);
+// Escuchar los eventos de cambio en el formulario
+attendanceRadios.forEach(radio => radio.addEventListener('change', updateFormState));
+[firstNameInput, lastNameInput, emailInput, numGuestsInput, guestNamesInput].forEach(field => {
+  field.addEventListener('input', updateFormState);
 });
 
 form.addEventListener('input', updateFormState);

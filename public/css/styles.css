@@ -1389,7 +1389,7 @@ body.page-loaded .form-line-error {
     background-color: #555;
   }
   .required {
-    color: rgb(100, 9, 9);
+    color: red;
     margin-left: 5px;
   }
   
