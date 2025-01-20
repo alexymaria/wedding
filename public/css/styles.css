@@ -1398,14 +1398,17 @@ body.page-loaded .form-line-error {
   }
   .form-group.inline-radio {
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Cambia a columna */
+    align-items: flex-start; /* Alinea el contenido al inicio (izquierda) */
   }
   
   .form-group.inline-radio label {
-    margin-right: 10px; /* Adjust margin as needed */
+    margin-bottom: 10px; /* Espacio entre el label y los radios */
   }
-
   
+  .form-group.inline-radio input {
+    margin-left: 10px; /* Indenta los radios */
+  }
   .btn {
     background-color: #333;
     color: #fff;
