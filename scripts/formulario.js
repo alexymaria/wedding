@@ -94,6 +94,10 @@ const resetValidation = () => {
 };
 const formContainer = document.querySelector('.form-container'); // Contenedor del formulario
 
+const imageYesPath = '../images/thanks.jpeg';
+const imageNoPath = '../images/triste.gif';
+
+
 const showThankYouMessage = (attendance) => {
   if (formContainer) {
     let message = '';
@@ -104,13 +108,13 @@ const showThankYouMessage = (attendance) => {
       message = `
         <h2>¡Gracias por tu respuesta!</h2>
         <p>Estamos encantados de contar contigo.</p>
-        <img src="https://raw.githubusercontent.com/alexymaria/wedding/main/public/images/thanks.jpeg" alt="Estamos encantados">
+        <img src="${imageYesPath}" alt="Estamos encantados">
       `;
     } else if (attendance === 'No') {
       message = `
         <h2>¡Gracias por responder!</h2>
         <p>Te echaremos de menos :(</p>
-        <img src="https://raw.githubusercontent.com/alexymaria/wedding/main/public/images/triste.gif" alt="Te echaremos de menos">
+        <img src="${imageNoPath}" alt="Te echaremos de menos">
       `;
     }
 
