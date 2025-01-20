@@ -1402,4 +1402,13 @@ body.page-loaded .form-line-error {
     font-size: 0.9em;
     margin-top: 0.2em;
   }
+  .thank-you {
+    text-align: center;
+    margin-top: 20px;
+  }
   
+  .thank-you img {
+    margin-top: 10px;
+    width: 300px;
+    height: 200px;
+  }

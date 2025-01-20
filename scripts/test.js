@@ -92,9 +92,11 @@ const resetValidation = () => {
   requiredLabels.numGuests.textContent = attendance === 'Sí' ? '*' : '';
   requiredLabels.guestNames.textContent = attendance === 'Sí' && parseInt(numGuestsInput.value) > 0 ? '*' : '';
 };
+const formContainer = document.querySelector('.form-container'); // Contenedor del formulario
 
 // Mostrar mensaje de agradecimiento
 const showThankYouMessage = () => {
+  if (formContainer) {
   formContainer.innerHTML = `
     <div class="thank-you">
       <h2>¡Gracias por tu respuesta!</h2>
@@ -102,6 +104,9 @@ const showThankYouMessage = () => {
       <img src="public/images/thanks.jpeg" alt="Imagen de agradecimiento">
     </div>
   `;
+} else {
+  console.error('formContainer no está definido. Asegúrate de que la clase exista en el HTML.');
+}
 };
 
 // Manejar el envío del formulario
