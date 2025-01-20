@@ -1347,9 +1347,7 @@ body.page-loaded .form-line-error {
 .form-group {
   display: flex; /* Alinea el label y el input en línea */
   align-items: center; /* Centra verticalmente los elementos */
-  justify-content: space-between; /* Espacia los elementos */
-  gap: 10px; /* Espaciado entre el label y el input */
-  margin-bottom: 15px;
+ 
 }
 .form-contaniner{
     display: flex;
