@@ -25,7 +25,13 @@ const numGuestsInput = document.getElementById('numGuests');
 const guestNamesInput = document.getElementById('guestNames');
 const dietaryRestrictionsInput = document.getElementById('dietaryRestrictions');
 
-
+const requiredLabels = {
+  firstName: document.getElementById('firstNameReq'),
+  lastName: document.getElementById('lastNameReq'),
+  email: document.getElementById('emailReq'),
+  numGuests: document.getElementById('numGuestsReq'),
+  guestNames: document.getElementById('guestNamesReq'),
+};
 const updateFormState = () => {
   const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
 
