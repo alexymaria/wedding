@@ -1104,11 +1104,6 @@ nav ul li a:hover {
         font-size: 1rem;
     }
 
-    .footer-social a img {
-        width: 25px;
-        height: 25px;
-    }
-
     .footer-copyright {
         font-size: 0.8rem;
     }
@@ -1501,7 +1496,7 @@ body.page-loaded .form-line-error {
   /* Footer Styling */
 #main-footer {
     background-color: #f0f0f0;
-    padding: 20px 10px;
+    padding: 10px 0;
     text-align: center;
     border-top: 1px solid #ddd;
     opacity: 0;
