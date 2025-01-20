@@ -101,7 +101,7 @@ const showThankYouMessage = () => {
     <div class="thank-you">
       <h2>¡Gracias por tu respuesta!</h2>
       <p>Estamos emocionados de contar contigo.</p>
-      <img src="images/thanks.jpeg" alt="Imagen de agradecimiento">
+      <img src="https://raw.githubusercontent.com/alexymaria/wedding/main/public/images/thanks.jpeg" alt="Imagen de agradecimiento">
     </div>
   `;
 } else {
