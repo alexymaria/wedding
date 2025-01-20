@@ -853,6 +853,16 @@ nav ul li a:hover {
       textarea {
         max-width: 100%; /* Ancho completo en pantallas pequeñas */
       }
+      .form-group {
+        flex-direction: column; /* Cambia a diseño vertical */
+        align-items: stretch; /* Alinea al ancho del contenedor */
+      }
+    
+      label {
+        flex: unset; /* Permite que el label se adapte */
+        text-align: left; /* Sigue alineado a la izquierda */
+        margin-bottom: 5px; /* Espacio entre el label y el input */
+      }
     .nolinesmovil{
         padding: 0px;
     }
@@ -1338,13 +1348,19 @@ body.page-loaded .form-line-error {
     padding: 20px;
     text-align: center;
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     box-sizing: border-box;
     border-radius: 2%;
     max-width: 800px; /* Limita el ancho máximo para centrado */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añade un poco de profundidad */
 }
-
+.form-group {
+    display: flex; /* Alinea el label y el input en línea */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between; /* Espacia los elementos */
+    gap: 10px; /* Espaciado entre el label y el input */
+    margin-bottom: 15px;
+  }
 .form-contaniner{
     display: flex;
     justify-content: center;
@@ -1358,10 +1374,10 @@ body.page-loaded .form-line-error {
   }
   
   label {
-    display: block;
     font-weight: bold;
-    margin-bottom: 5px;
     color: #555;
+    flex: 0 0 150px; /* Fija el ancho del label */
+    text-align: left; /* Alinea el texto del label a la izquierda */
   }
   
   input[type="text"],
