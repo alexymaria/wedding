@@ -1399,17 +1399,26 @@ body.page-loaded .form-line-error {
   }
   .form-group.inline-radio {
     display: flex;
-    flex-direction:row; /* Cambia a columna */
-    align-items: flex-start; /* Alinea el contenido al inicio (izquierda) */
+    flex-direction:column; /* Cambia a columna */
+    /*align-items: flex-start;  Alinea el contenido al inicio (izquierda) */
   }
+  .inline-radio-options {
+    display: flex;
+    flex-direction: column; /* Coloca Sí y No en columnas */
+    gap: 5px; /* Espaciado entre Sí y No */
+}
   
-  .form-group.inline-radio label {
-    margin-bottom: 10px; /* Espacio entre el label y los radios */
-  }
-  
-  .form-group.inline-radio input {
-    margin-left: 10px; /* Indenta los radios */
-  }
+
+.inline-radio-options label {
+    display: flex;
+    align-items: center; /* Alinea el círculo y el texto verticalmente */
+    gap: 5px; /* Espaciado entre el círculo y el texto */
+    font-weight: normal;
+}
+
+.inline-radio-options input[type="radio"] {
+    margin: 0; /* Elimina márgenes adicionales */
+}
   .btn {
     background-color: #333;
     color: #fff;
