@@ -326,42 +326,37 @@
                   </div>
                   <div class="form-row">
                     <div class="form-group">
-                      <label for="firstName">Nombre <span class="required">*</span></label>
-                      <input type="text" id="firstName" name="firstName" placeholder="Nombre" required>
+                      <label for="firstName">Nombre <span id="firstNameReq" class="required"></span></label>
+                      <input type="text" id="firstName" name="firstName" placeholder="Nombre">
                     </div>
                     <div class="form-group">
-                      <label for="lastName">Apellido <span class="required">*</span></label>
-                      <input type="text" id="lastName" name="lastName" placeholder="Apellido" required>
+                      <label for="lastName">Apellido <span id="lastNameReq" class="required"></span></label>
+                      <input type="text" id="lastName" name="lastName" placeholder="Apellido">
                     </div>
                   </div>
               
                   <div class="form-group">
-                    <label for="email">Email <span class="required">*</span></label>
+                    <label for="email">Email <span id="emailReq" class="required"></span></label>
                     <input type="email" id="email" name="email" placeholder="example@example.com">
                   </div>
               
                   <div class="form-group">
-                    <label for="numGuests">Número de acompañantes <span class="required">*</span></label>
+                    <label for="numGuests">Número de acompañantes <span id="numGuestsReq" class="required"></span></label>
                     <input type="number" id="numGuests" name="numGuests" placeholder="Poner un 0 en caso de no llevar acompañante." min="0">
                   </div>
               
                   <div class="form-group">
-                    <label for="guestNames">Nombre y apellidos de cada acompañante <span class="required">*</span></label>
+                    <label for="guestNames">Nombre y apellidos de cada acompañante <span id="guestNamesReq" class="required"></span></label>
                     <input type="text" id="guestNames" name="guestNames" placeholder="Nombres de acompañantes">
                   </div>
               
                   <div class="form-group">
-                    <label for="dietaryRestrictions">Restricciones o alergias alimentarias <span class="required"></span></label>
+                    <label for="dietaryRestrictions">Restricciones o alergias alimentarias</label>
                     <input type="text" id="dietaryRestrictions" name="dietaryRestrictions" placeholder="Cuentanos si tienes alguna restricción alimentaria.">
                   </div>
                 </form>
-                <button type="submit" id="submitBtn" class="btn">Enviar</button>
+                <button type="submit" id="submitBtn" class="btn" disabled>Enviar</button>
               </div>
-              <div id="thankYouMessage" style="display: none; text-align: center;">
-                <h2>¡Gracias por responder!</h2>
-                <img src="images/thanks.jpeg" alt="Gracias" style="max-width: 300px; margin-top: 20px;">
-              </div>
-              
               
     </main>
 

@@ -15,16 +15,22 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+const form = document.getElementById('dataForm');
+const submitBtn = document.getElementById('submitBtn');
 const attendanceRadios = document.getElementsByName('attendance');
+const firstNameInput = document.getElementById('firstName');
+const lastNameInput = document.getElementById('lastName');
+const emailInput = document.getElementById('email');
 const numGuestsInput = document.getElementById('numGuests');
 const guestNamesInput = document.getElementById('guestNames');
-const emailInput = document.getElementById('email');
 const dietaryRestrictionsInput = document.getElementById('dietaryRestrictions');
+
 
 const updateFormState = () => {
   const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
 
   if (attendance === 'No') {
+    // Only firstName and lastName are required
     emailInput.disabled = true;
     emailInput.value = '';
     numGuestsInput.disabled = true;
@@ -33,47 +39,52 @@ const updateFormState = () => {
     guestNamesInput.value = '';
     dietaryRestrictionsInput.disabled = true;
     dietaryRestrictionsInput.value = '';
+
+    requiredLabels.firstName.textContent = '*';
+    requiredLabels.lastName.textContent = '*';
+    requiredLabels.email.textContent = '';
+    requiredLabels.numGuests.textContent = '';
+    requiredLabels.guestNames.textContent = '';
+
+    isValid = firstNameInput.value.trim() && lastNameInput.value.trim();
   } else if (attendance === 'Sí') {
+    // All fields are required
     emailInput.disabled = false;
     numGuestsInput.disabled = false;
     dietaryRestrictionsInput.disabled = false;
 
+    requiredLabels.firstName.textContent = '*';
+    requiredLabels.lastName.textContent = '*';
+    requiredLabels.email.textContent = '*';
+    requiredLabels.numGuests.textContent = '*';
+
     if (parseInt(numGuestsInput.value) > 0) {
       guestNamesInput.disabled = false;
+      requiredLabels.guestNames.textContent = '*';
+      isValid = firstNameInput.value.trim() && lastNameInput.value.trim() && emailInput.value.trim() && numGuestsInput.value && guestNamesInput.value.trim();
     } else {
       guestNamesInput.disabled = true;
       guestNamesInput.value = '';
+      requiredLabels.guestNames.textContent = '';
+      isValid = firstNameInput.value.trim() && lastNameInput.value.trim() && emailInput.value.trim() && numGuestsInput.value;
     }
   }
+
+  submitBtn.disabled = !isValid;
 };
 
 attendanceRadios.forEach(radio => {
   radio.addEventListener('change', updateFormState);
 });
 
-numGuestsInput.addEventListener('input', () => {
-  if (parseInt(numGuestsInput.value) > 0) {
-    guestNamesInput.disabled = false;
-  } else {
-    guestNamesInput.disabled = true;
-    guestNamesInput.value = '';
-  }
-});
+form.addEventListener('input', updateFormState);
 
-document.getElementById('submitBtn').addEventListener('click', async (event) => {
+submitBtn.addEventListener('click', async (event) => {
   event.preventDefault();
 
-  const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
-  if (!attendance) {
-    alert('Por favor selecciona una opción en "¿Contamos contigo?".');
-    return;
-  }
-
-  const form = document.getElementById('dataForm');
   const formData = new FormData(form);
-
   const data = {
-    attendance,
+    attendance: [...attendanceRadios].find(radio => radio.checked)?.value,
     firstName: formData.get('firstName'),
     lastName: formData.get('lastName'),
     email: formData.get('email') || '',
