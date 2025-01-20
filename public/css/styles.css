@@ -1473,6 +1473,21 @@ body.page-loaded .form-line-error {
     width: 300px;
     height: 200px;
   }
+  .inline-radio {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+    gap: 15px; /* Espacio entre los botones de radio */
+  }
+  
+  .inline-radio label {
+    margin-right: 10px; /* Espacio entre el label y los botones */
+  }
+  
+  .inline-radio input[type="radio"] {
+    margin: 0; /* Elimina cualquier margen que desplace los botones */
+    vertical-align: middle; /* Asegura que se alineen con el texto */
+  }
+  
 
   /* Footer Styling */
 #main-footer {
