@@ -32,24 +32,25 @@ const requiredLabels = {
   numGuests: document.getElementById('numGuestsReq'),
   guestNames: document.getElementById('guestNamesReq'),
 };
-
 const updateFormState = () => {
   const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
+  let isValid = true; // Asegúrate de declarar e inicializar isValid aquí.
+  const missingFields = []; // Almacenar campos faltantes para mostrar un mensaje al usuario.
 
-  // Restablecer estilos de los campos y mensajes
+  // Ocultar mensaje de error inicialmente
+  const errorMessage = document.getElementById('errorMessage');
+  if (errorMessage) errorMessage.textContent = '';
+
+  // Restablecer estilos de borde de los campos
   const resetFieldStyles = () => {
     [firstNameInput, lastNameInput, emailInput, numGuestsInput, guestNamesInput].forEach(field => {
-      field.style.border = ''; // Restablece el borde
-      const errorSpan = field.nextElementSibling;
-      if (errorSpan && errorSpan.classList.contains('error-message')) {
-        errorSpan.textContent = ''; // Limpia el mensaje de error
-      }
+      field.style.border = ''; // Restablece el estilo del borde
     });
   };
   resetFieldStyles();
 
-  // Actualizar etiquetas dinámicas
   if (attendance === 'No') {
+    // Solo nombre y apellido son requeridos
     emailInput.disabled = true;
     emailInput.value = '';
     numGuestsInput.disabled = true;
@@ -64,7 +65,19 @@ const updateFormState = () => {
     requiredLabels.email.textContent = '';
     requiredLabels.numGuests.textContent = '';
     requiredLabels.guestNames.textContent = '';
+
+    if (!firstNameInput.value.trim()) {
+      missingFields.push('Nombre');
+      firstNameInput.style.border = '2px solid red';
+      isValid = false;
+    }
+    if (!lastNameInput.value.trim()) {
+      missingFields.push('Apellido');
+      lastNameInput.style.border = '2px solid red';
+      isValid = false;
+    }
   } else if (attendance === 'Sí') {
+    // Todos los campos son requeridos
     emailInput.disabled = false;
     numGuestsInput.disabled = false;
     dietaryRestrictionsInput.disabled = false;
@@ -74,66 +87,86 @@ const updateFormState = () => {
     requiredLabels.email.textContent = '*';
     requiredLabels.numGuests.textContent = '*';
 
+    if (!firstNameInput.value.trim()) {
+      missingFields.push('Nombre');
+      firstNameInput.style.border = '2px solid red';
+      isValid = false;
+    }
+    if (!lastNameInput.value.trim()) {
+      missingFields.push('Apellido');
+      lastNameInput.style.border = '2px solid red';
+      isValid = false;
+    }
+    if (!emailInput.value.trim()) {
+      missingFields.push('Email');
+      emailInput.style.border = '2px solid red';
+      isValid = false;
+    }
+    if (!numGuestsInput.value.trim()) {
+      missingFields.push('Número de Acompañantes');
+      numGuestsInput.style.border = '2px solid red';
+      isValid = false;
+    }
     if (parseInt(numGuestsInput.value) > 0) {
       guestNamesInput.disabled = false;
       requiredLabels.guestNames.textContent = '*';
+      if (!guestNamesInput.value.trim()) {
+        missingFields.push('Nombres de los Acompañantes');
+        guestNamesInput.style.border = '2px solid red';
+        isValid = false;
+      }
     } else {
       guestNamesInput.disabled = true;
       guestNamesInput.value = '';
       requiredLabels.guestNames.textContent = '';
     }
-  }
-};
-
-const validateForm = () => {
-  const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
-  let isValid = true;
-
-  // Validar campos obligatorios y mostrar mensajes de error
-  const validateField = (field, condition, errorMessage) => {
-    const errorSpan = field.nextElementSibling || document.createElement('span');
-    if (!errorSpan.classList.contains('error-message')) {
-      errorSpan.classList.add('error-message');
-      field.parentNode.appendChild(errorSpan);
-    }
-    if (!condition) {
-      field.style.border = '2px solid red';
-      errorSpan.textContent = errorMessage;
-      isValid = false;
-    } else {
-      field.style.border = '';
-      errorSpan.textContent = '';
-    }
-  };
-
-  if (attendance === 'No') {
-    validateField(firstNameInput, firstNameInput.value.trim() !== '', 'Campo obligatorio');
-    validateField(lastNameInput, lastNameInput.value.trim() !== '', 'Campo obligatorio');
-  } else if (attendance === 'Sí') {
-    validateField(firstNameInput, firstNameInput.value.trim() !== '', 'Campo obligatorio');
-    validateField(lastNameInput, lastNameInput.value.trim() !== '', 'Campo obligatorio');
-    validateField(emailInput, emailInput.value.trim() !== '', 'Campo obligatorio');
-    validateField(numGuestsInput, numGuestsInput.value.trim() !== '', 'Campo obligatorio');
-
-    if (parseInt(numGuestsInput.value) > 0) {
-      validateField(guestNamesInput, guestNamesInput.value.trim() !== '', 'Campo obligatorio');
-    }
   } else {
     isValid = false; // Si no se selecciona "Sí" o "No".
-    alert('Por favor, selecciona si contamos contigo.');
+    missingFields.push('¿Contamos contigo?');
   }
 
-  return isValid;
+  // Mostrar mensaje de error si faltan campos obligatorios
+  if (!isValid && errorMessage) {
+    errorMessage.textContent = `Faltan los siguientes campos obligatorios: ${missingFields.join(', ')}`;
+    errorMessage.style.color = 'red';
+  }
+
+  // Actualizar el estado del botón "Enviar"
+  submitBtn.disabled = !isValid;
 };
 
-// Manejar el envío del formulario
-submitBtn.addEventListener('click', (e) => {
-  e.preventDefault(); // Evitar el envío por defecto del formulario
+// Escuchar los eventos de cambio en el formulario
+attendanceRadios.forEach(radio => radio.addEventListener('change', updateFormState));
+[firstNameInput, lastNameInput, emailInput, numGuestsInput, guestNamesInput].forEach(field => {
+  field.addEventListener('input', updateFormState);
+});
 
-  if (validateForm()) {
-    alert('Formulario enviado correctamente.');
-    // Aquí iría el código para enviar los datos al servidor
-  } else {
-    alert('Por favor, completa todos los campos obligatorios.');
+form.addEventListener('input', updateFormState);
+
+submitBtn.addEventListener('click', async (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+  const data = {
+    attendance: [...attendanceRadios].find(radio => radio.checked)?.value,
+    firstName: formData.get('firstName'),
+    lastName: formData.get('lastName'),
+    email: formData.get('email') || '',
+    numGuests: parseInt(formData.get('numGuests')) || 0,
+    guestNames: formData.get('guestNames') || '',
+    dietaryRestrictions: formData.get('dietaryRestrictions') || '',
+    timestamp: serverTimestamp(),
+  };
+
+  console.log('Datos a enviar:', data);
+
+  try {
+    await addDoc(collection(db, 'formResponses'), data);
+    alert('¡Formulario enviado exitosamente!');
+    form.reset();
+    updateFormState();
+  } catch (error) {
+    console.error('Error al enviar el formulario:', error);
+    alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
   }
 });
