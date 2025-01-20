@@ -1475,17 +1475,26 @@ body.page-loaded .form-line-error {
   }
   .inline-radio {
     display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre el label y las opciones */
+  }
+  
+  .radio-options {
+    display: flex;
     align-items: center; /* Alinea verticalmente los elementos */
-    gap: 15px; /* Espacio entre los botones de radio */
+    gap: 15px; /* Espacio entre cada botón y su texto */
   }
   
-  .inline-radio label {
-    margin-right: 10px; /* Espacio entre el label y los botones */
+  .radio-options input[type="radio"] {
+    margin: 0; /* Elimina márgenes innecesarios */
+    accent-color: #333; /* Cambia el color del botón de radio */
   }
   
-  .inline-radio input[type="radio"] {
-    margin: 0; /* Elimina cualquier margen que desplace los botones */
-    vertical-align: middle; /* Asegura que se alineen con el texto */
+  .radio-options .radio-text {
+    font-family: "lator"; /* Aplica la fuente deseada */
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    color: #555; /* Color del texto */
+    cursor: pointer; /* Hace clickeable el texto */
   }
   
 
