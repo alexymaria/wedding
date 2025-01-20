@@ -94,8 +94,8 @@ const resetValidation = () => {
 };
 const formContainer = document.querySelector('.form-container'); // Contenedor del formulario
 
-const imageYesPath = '../images/thanks.jpeg';
-const imageNoPath = '../images/triste.gif';
+const imageYesPath = '../public/images/thanks.jpeg';
+const imageNoPath = 'public/images/triste.gif';
 
 
 const showThankYouMessage = (attendance) => {
