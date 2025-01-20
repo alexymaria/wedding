@@ -119,14 +119,17 @@ const showThankYouMessage = (attendance) => {
 
 
 // Manejar el envío del formulario
-form.addEventListener('submit', (e) => {
-  e.preventDefault(); // Evitar envío por defecto
-  const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
+document.getElementById('dataForm').addEventListener('submit', (e) => {
+  e.preventDefault();
 
-  if (validateForm()) {
-    showThankYouMessage(attendance); // Pasar asistencia como argumento
+  // Validar el formulario (lógica de validación no mostrada aquí)
+  const attendance = document.querySelector('input[name="attendance"]:checked')?.value;
+
+  if (attendance) {
+    // Si la validación es correcta, muestra el mensaje
+    showThankYouMessage(attendance);
   } else {
-    alert('Por favor, completa todos los campos obligatorios.');
+    alert('Por favor, selecciona si asistirás o no.');
   }
 });
 
