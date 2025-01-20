@@ -1399,7 +1399,8 @@ body.page-loaded .form-line-error {
   }
   .form-group.inline-radio {
     display: flex;
-    flex-direction:column; /* Cambia a columna */
+    flex-direction:column;
+    gap: 10px; /* Cambia a columna */
     /*align-items: flex-start;  Alinea el contenido al inicio (izquierda) */
   }
   .inline-radio-options {
@@ -1410,7 +1411,7 @@ body.page-loaded .form-line-error {
   
 
 .inline-radio-options label {
-    display: flex;
+    display: inline-flex;
     align-items: center; /* Alinea el círculo y el texto verticalmente */
     gap: 5px; /* Espaciado entre el círculo y el texto */
     font-weight: normal;
