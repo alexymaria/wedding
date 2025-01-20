@@ -272,7 +272,7 @@ nav ul li a:hover {
     text-decoration: none;
     color: #333;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     transition: color 0.3s ease;
 }
 
@@ -1088,6 +1088,26 @@ nav ul li a:hover {
     .otroheader-text p{
         font-size:1.6rem ;
     }
+    .footer-container {
+        gap: 10px;
+    }
+
+    .footer-logo img {
+        width: 80px; /* Reduce el tamaño del logo en pantallas pequeñas */
+    }
+
+    .footer-message {
+        font-size: 1rem;
+    }
+
+    .footer-social a img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
 
 }
 
@@ -1473,3 +1493,65 @@ body.page-loaded .form-line-error {
     width: 300px;
     height: 200px;
   }
+
+  /* Footer Styling */
+#main-footer {
+    background-color: #f0f0f0;
+    padding: 20px 10px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo img {
+    width: 100px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+.footer-message {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.footer-social a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.1);
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: #777;
+}
+
