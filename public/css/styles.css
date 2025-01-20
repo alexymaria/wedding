@@ -1415,30 +1415,7 @@ body.page-loaded .form-line-error {
     min-width: 150px; /* Asegura un tamaño mínimo */
     max-width: 400px; /* Fija un tamaño máximo */
   }
-/* Contenedor del grupo de radio */
-.form-group.inline-radio {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Espaciado entre los botones y el texto */
-}
 
-/* Estilo de las etiquetas (Sí, No) */
-.form-group.inline-radio label {
-    font-family: 'Arial', sans-serif; /* Cambia la fuente aquí */
-    font-size: 1rem; /* Ajusta el tamaño de la fuente */
-    color: #333; /* Cambia el color del texto */
-    margin: 0; /* Elimina márgenes adicionales */
-    display: flex;
-    align-items: center; /* Centra verticalmente con los botones */
-    gap: 10px; /* Espacio entre el botón y el texto */
-}
-
-/* Estilo de los inputs (botones blancos) */
-.form-group.inline-radio input[type="radio"] {
-    margin: 0; /* Elimina márgenes predeterminados */
-    accent-color: #6b705c; /* Cambia el color del botón al seleccionarlo */
-    transform: scale(1.2); /* Ajusta el tamaño del botón */
-}
   .btn {
     background-color: #333;
     color: #fff;
