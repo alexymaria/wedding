@@ -1473,11 +1473,6 @@ body.page-loaded .form-line-error {
     width: 300px;
     height: 200px;
   }
-  .inline-radio {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Espacio entre el label y las opciones */
-  }
   
   .radio-options {
     display: flex;
