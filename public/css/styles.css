@@ -1398,17 +1398,20 @@ body.page-loaded .form-line-error {
   }
   .form-group.inline-radio {
     display: flex;
-    align-items: center;
-    gap: 10px; /* Espacio entre los elementos */
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    gap: 5px; /* Espaciado entre las opciones */
 }
 
-.form-group.inline-radio label {
-    margin: 0;
-    font-weight: bold;
+.inline-radio label {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espacio entre el botón de radio y el texto */
+    font-weight: bold; /* Hace que el texto sea más visible */
 }
 
 .inline-radio input[type="radio"] {
-    margin-left: 5px; /* Espacio a la izquierda del botón */
+    margin: 0; /* Elimina márgenes adicionales */
 }
 
   
