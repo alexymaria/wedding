@@ -34,6 +34,7 @@ const requiredLabels = {
 };
 const updateFormState = () => {
   const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
+  let isValid = true; // Asegúrate de declarar e inicializar isValid aquí.
 
   if (attendance === 'No') {
     // Only firstName and lastName are required
@@ -74,6 +75,8 @@ const updateFormState = () => {
       requiredLabels.guestNames.textContent = '';
       isValid = firstNameInput.value.trim() && lastNameInput.value.trim() && emailInput.value.trim() && numGuestsInput.value;
     }
+  } else {
+    isValid = false; // Si no se selecciona "Sí" o "No".
   }
 
   submitBtn.disabled = !isValid;
