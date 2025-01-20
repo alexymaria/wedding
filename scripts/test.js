@@ -15,145 +15,85 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+
 const form = document.getElementById('dataForm');
 const submitBtn = document.getElementById('submitBtn');
-const attendanceRadios = document.getElementsByName('attendance');
+
+// Campos del formulario
+const attendanceRadios = document.querySelectorAll('input[name="attendance"]');
 const firstNameInput = document.getElementById('firstName');
 const lastNameInput = document.getElementById('lastName');
 const emailInput = document.getElementById('email');
 const numGuestsInput = document.getElementById('numGuests');
 const guestNamesInput = document.getElementById('guestNames');
-const dietaryRestrictionsInput = document.getElementById('dietaryRestrictions');
 
+// Etiquetas dinámicas para los asteriscos
 const requiredLabels = {
-  firstName: document.getElementById('firstNameReq'),
-  lastName: document.getElementById('lastNameReq'),
-  email: document.getElementById('emailReq'),
-  numGuests: document.getElementById('numGuestsReq'),
-  guestNames: document.getElementById('guestNamesReq'),
+  firstName: document.getElementById('requiredFirstName'),
+  lastName: document.getElementById('requiredLastName'),
+  email: document.getElementById('requiredEmail'),
+  numGuests: document.getElementById('requiredNumGuests'),
+  guestNames: document.getElementById('requiredGuestNames'),
 };
-const updateFormState = () => {
-  const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
-  let isValid = true; // Asegúrate de declarar e inicializar isValid aquí.
-  const missingFields = []; // Almacenar campos faltantes para mostrar un mensaje al usuario.
-  // Ocultar mensaje de error inicialmente
-  const errorMessage = document.getElementById('errorMessage');
-  if (errorMessage) errorMessage.textContent = '';
 
-  // Restablecer estilos de borde de los campos
-  const resetFieldStyles = () => {
-    [firstNameInput, lastNameInput, emailInput, numGuestsInput, guestNamesInput].forEach(field => {
-      field.style.border = ''; // Restablece el estilo del borde
-    });
+// Validar campos obligatorios al enviar
+const validateForm = () => {
+  const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
+  let isValid = true;
+
+  const validateField = (field, condition, errorMessage) => {
+    const errorSpan = field.nextElementSibling;
+    if (!condition) {
+      field.classList.add('error-border');
+      errorSpan.textContent = errorMessage;
+      isValid = false;
+    } else {
+      field.classList.remove('error-border');
+      errorSpan.textContent = '';
+    }
   };
-  resetFieldStyles();
 
   if (attendance === 'No') {
-    // Only firstName and lastName are required
-    emailInput.disabled = true;
-    emailInput.value = '';
-    numGuestsInput.disabled = true;
-    numGuestsInput.value = '';
-    guestNamesInput.disabled = true;
-    guestNamesInput.value = '';
-    dietaryRestrictionsInput.disabled = true;
-    dietaryRestrictionsInput.value = '';
-
-    requiredLabels.firstName.textContent = '*';
-    requiredLabels.lastName.textContent = '*';
-    requiredLabels.email.textContent = '';
-    requiredLabels.numGuests.textContent = '';
-    requiredLabels.guestNames.textContent = '';
-
-    if (!firstNameInput.value.trim()) {
-      missingFields.push('Nombre');
-      firstNameInput.style.border = '2px solid red';
-      isValid = false;
-    }
-    if (!lastNameInput.value.trim()) {
-      missingFields.push('Apellido');
-      lastNameInput.style.border = '2px solid red';
-      isValid = false;
-    }
-
+    validateField(firstNameInput, firstNameInput.value.trim() !== '', 'Campo obligatorio');
+    validateField(lastNameInput, lastNameInput.value.trim() !== '', 'Campo obligatorio');
   } else if (attendance === 'Sí') {
-    // All fields are required
-    emailInput.disabled = false;
-    numGuestsInput.disabled = false;
-    dietaryRestrictionsInput.disabled = false;
+    validateField(firstNameInput, firstNameInput.value.trim() !== '', 'Campo obligatorio');
+    validateField(lastNameInput, lastNameInput.value.trim() !== '', 'Campo obligatorio');
+    validateField(emailInput, emailInput.value.trim() !== '', 'Campo obligatorio');
+    validateField(numGuestsInput, numGuestsInput.value.trim() !== '', 'Campo obligatorio');
 
-    requiredLabels.firstName.textContent = '*';
-    requiredLabels.lastName.textContent = '*';
-    requiredLabels.email.textContent = '*';
-    requiredLabels.numGuests.textContent = '*';
-
-    if (!firstNameInput.value.trim()) {
-      missingFields.push('Nombre');
-      firstNameInput.style.border = '2px solid red';
-      isValid = false;
-    }
-    if (!lastNameInput.value.trim()) {
-      missingFields.push('Apellido');
-      lastNameInput.style.border = '2px solid red';
-      isValid = false;
-    }
-    if (!emailInput.value.trim()) {
-      missingFields.push('Email');
-      emailInput.style.border = '2px solid red';
-      isValid = false;
-    }
-    if (!numGuestsInput.value.trim()) {
-      missingFields.push('Número de Acompañantes');
-      numGuestsInput.style.border = '2px solid red';
-      isValid = false;
-    }
     if (parseInt(numGuestsInput.value) > 0) {
-      guestNamesInput.disabled = false;
-      requiredLabels.guestNames.textContent = '*';
-      isValid = firstNameInput.value.trim() && lastNameInput.value.trim() && emailInput.value.trim() && numGuestsInput.value && guestNamesInput.value.trim();
-    } else {
-      guestNamesInput.disabled = true;
-      guestNamesInput.value = '';
-      requiredLabels.guestNames.textContent = '';
-      isValid = firstNameInput.value.trim() && lastNameInput.value.trim() && emailInput.value.trim() && numGuestsInput.value;
+      validateField(guestNamesInput, guestNamesInput.value.trim() !== '', 'Campo obligatorio');
     }
   } else {
-    isValid = false; // Si no se selecciona "Sí" o "No".
+    alert('Por favor, selecciona si contamos contigo.');
+    isValid = false;
   }
 
-  submitBtn.disabled = !isValid;
+  return isValid;
 };
 
-attendanceRadios.forEach(radio => {
-  radio.addEventListener('change', updateFormState);
-});
-
-form.addEventListener('input', updateFormState);
-
-submitBtn.addEventListener('click', async (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(form);
-  const data = {
-    attendance: [...attendanceRadios].find(radio => radio.checked)?.value,
-    firstName: formData.get('firstName'),
-    lastName: formData.get('lastName'),
-    email: formData.get('email') || '',
-    numGuests: parseInt(formData.get('numGuests')) || 0,
-    guestNames: formData.get('guestNames') || '',
-    dietaryRestrictions: formData.get('dietaryRestrictions') || '',
-    timestamp: serverTimestamp(),
-  };
-
-  console.log('Datos a enviar:', data);
-
-  try {
-    await addDoc(collection(db, 'formResponses'), data);
-    alert('¡Formulario enviado exitosamente!');
-    form.reset();
-    updateFormState();
-  } catch (error) {
-    console.error('Error al enviar el formulario:', error);
-    alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
+// Manejar el envío del formulario
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); // Evitar el envío por defecto
+  if (validateForm()) {
+    alert('Formulario enviado correctamente.');
+    form.reset(); // Reiniciar formulario tras envío exitoso
+  } else {
+    alert('Por favor, completa todos los campos obligatorios.');
   }
 });
+
+// Actualizar estado de los campos según la selección
+attendanceRadios.forEach(radio => radio.addEventListener('change', () => {
+  const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
+
+  // Resetear campos al cambiar opción
+  emailInput.disabled = attendance === 'No';
+  numGuestsInput.disabled = attendance === 'No';
+  guestNamesInput.disabled = attendance === 'No' || parseInt(numGuestsInput.value) === 0;
+
+  requiredLabels.email.textContent = attendance === 'Sí' ? '*' : '';
+  requiredLabels.numGuests.textContent = attendance === 'Sí' ? '*' : '';
+  requiredLabels.guestNames.textContent = attendance === 'Sí' && parseInt(numGuestsInput.value) > 0 ? '*' : '';
+}));
