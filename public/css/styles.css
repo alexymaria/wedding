@@ -513,15 +513,16 @@ nav ul li a:hover {
     content: '';
     position: absolute;
     color: #202020;
-    top: 50%;
-    height: 2px;
+    top: 0%;
+    height: 100%;
     background: rgb(204, 204, 204);
-    transform: translateY(-50%);
-    width: 30%; /* Ajusta el ancho de las líneas */
+    width: 1px; /* Ajusta el ancho de las líneas */
     border-radius: 8px; /* Hace los bordes de la línea redondeados */
     transform: translateY(-50%); /* Centra las líneas verticalmente */
     animation: waveLines 7.5s infinite ease-in-out;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    z-index: 1;
+    left: 50%;
 }
 
 .timeline li {
