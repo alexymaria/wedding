@@ -92,13 +92,24 @@ const resetValidation = () => {
   requiredLabels.numGuests.textContent = attendance === 'Sí' ? '*' : '';
   requiredLabels.guestNames.textContent = attendance === 'Sí' && parseInt(numGuestsInput.value) > 0 ? '*' : '';
 };
+
+// Mostrar mensaje de agradecimiento
+const showThankYouMessage = () => {
+  formContainer.innerHTML = `
+    <div class="thank-you">
+      <h2>¡Gracias por tu respuesta!</h2>
+      <p>Estamos emocionados de contar contigo.</p>
+      <img src="public/images/thanks.jpeg" alt="Imagen de agradecimiento">
+    </div>
+  `;
+};
+
 // Manejar el envío del formulario
 form.addEventListener('submit', (e) => {
   e.preventDefault(); // Evitar envío por defecto
   if (validateForm()) {
-    alert('Formulario enviado correctamente.');
-    form.reset(); // Reiniciar formulario tras envío exitoso
-    resetValidation(); // Reiniciar estilos y mensajes
+    showThankYouMessage(); // Mostrar mensaje de agradecimiento
+    console.log("Formulario enviado")
   } else {
     alert('Por favor, completa todos los campos obligatorios.');
   }
