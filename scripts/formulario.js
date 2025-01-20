@@ -125,13 +125,15 @@ const showThankYouMessage = (attendance) => {
 // Manejar el envío del formulario
 form.addEventListener('submit', (e) => {
   e.preventDefault(); // Evitar envío por defecto
+  const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
+
   if (validateForm()) {
-    showThankYouMessage(); // Mostrar mensaje de agradecimiento
-    console.log("Formulario enviado")
+    showThankYouMessage(attendance); // Pasar asistencia como argumento
   } else {
     alert('Por favor, completa todos los campos obligatorios.');
   }
 });
+
 
 // Actualizar estado de los campos dinámicamente
 attendanceRadios.forEach(radio => radio.addEventListener('change', resetValidation));
