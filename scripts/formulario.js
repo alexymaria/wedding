@@ -94,20 +94,33 @@ const resetValidation = () => {
 };
 const formContainer = document.querySelector('.form-container'); // Contenedor del formulario
 
-// Mostrar mensaje de agradecimiento
-const showThankYouMessage = () => {
+const showThankYouMessage = (attendance) => {
   if (formContainer) {
-  formContainer.innerHTML = `
-    <div class="thank-you">
-      <h2>¡Gracias por tu respuesta!</h2>
-      <p>Estamos emocionados de contar contigo.</p>
-      <img src="https://raw.githubusercontent.com/alexymaria/wedding/main/public/images/thanks.jpeg" alt="Imagen de agradecimiento">
-    </div>
-  `;
-} else {
-  console.error('formContainer no está definido. Asegúrate de que la clase exista en el HTML.');
-}
+    let message = '';
+    let imageUrl = '';
+
+    // Determinar mensaje e imagen según la asistencia
+    if (attendance === 'Sí') {
+      message = `
+        <h2>¡Gracias por tu respuesta!</h2>
+        <p>Estamos encantados de contar contigo.</p>
+        <img src="https://raw.githubusercontent.com/alexymaria/wedding/main/public/images/thanks.jpeg" alt="Estamos encantados">
+      `;
+    } else if (attendance === 'No') {
+      message = `
+        <h2>¡Gracias por responder!</h2>
+        <p>Te echaremos de menos :(</p>
+        <img src="https://raw.githubusercontent.com/alexymaria/wedding/main/public/images/triste.gif" alt="Te echaremos de menos">
+      `;
+    }
+
+    // Reemplazar el contenido del formulario por el mensaje
+    formContainer.innerHTML = `<div class="thank-you">${message}</div>`;
+  } else {
+    console.error('formContainer no está definido. Asegúrate de que la clase exista en el HTML.');
+  }
 };
+
 
 // Manejar el envío del formulario
 form.addEventListener('submit', (e) => {
