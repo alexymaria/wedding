@@ -94,8 +94,8 @@ const resetValidation = () => {
 };
 const formContainer = document.querySelector('.form-container'); // Contenedor del formulario
 
-const imageYesPath = '../public/images/thanks.jpeg';
-const imageNoPath = 'public/images/triste.gif';
+const thankYouYes = document.getElementById('thankYouYes');
+const thankYouNo = document.getElementById('thankYouNo');
 
 
 const showThankYouMessage = (attendance) => {
@@ -104,18 +104,10 @@ const showThankYouMessage = (attendance) => {
     let imageUrl = '';
 
     // Determinar mensaje e imagen según la asistencia
-    if (attendance === 'Sí') {
-      message = `
-        <h2>¡Gracias por tu respuesta!</h2>
-        <p>Estamos encantados de contar contigo.</p>
-        <img src="${imageYesPath}" alt="Estamos encantados">
-      `;
-    } else if (attendance === 'No') {
-      message = `
-        <h2>¡Gracias por responder!</h2>
-        <p>Te echaremos de menos :(</p>
-        <img src="${imageNoPath}" alt="Te echaremos de menos">
-      `;
+    if (attendance === 'Sí' && thankYouYes) {
+      thankYouYes.style.display = 'block';
+    } else if (attendance === 'No' && thankYouNo) {
+      thankYouNo.style.display = 'block';
     }
 
     // Reemplazar el contenido del formulario por el mensaje
