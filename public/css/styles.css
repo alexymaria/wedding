@@ -1393,13 +1393,13 @@ body.page-loaded .form-line-error {
     margin-left: 5px;
   }
   
-  .error-message {
-    color: red;
-    font-size: 0.9em;
-  }
   .error-border {
     border: 2px solid red;
   }
-  .required {
+  
+  .error-message {
     color: red;
+    font-size: 0.9em;
+    margin-top: 0.2em;
   }
+  

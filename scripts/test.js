@@ -71,28 +71,41 @@ const validateForm = () => {
 
   return isValid;
 };
+// Reiniciar estilos y mensajes dinámicamente
+const resetValidation = () => {
+  const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
 
+  // Habilitar o deshabilitar campos según la selección
+  emailInput.disabled = attendance === 'No';
+  numGuestsInput.disabled = attendance === 'No';
+  guestNamesInput.disabled = attendance === 'No' || parseInt(numGuestsInput.value) === 0;
+
+  // Reiniciar bordes y mensajes
+  [firstNameInput, lastNameInput, emailInput, numGuestsInput, guestNamesInput].forEach(field => {
+    field.classList.remove('error-border');
+    const errorSpan = field?.nextElementSibling;
+    if (errorSpan) errorSpan.textContent = '';
+  });
+
+  // Actualizar asteriscos dinámicos
+  requiredLabels.email.textContent = attendance === 'Sí' ? '*' : '';
+  requiredLabels.numGuests.textContent = attendance === 'Sí' ? '*' : '';
+  requiredLabels.guestNames.textContent = attendance === 'Sí' && parseInt(numGuestsInput.value) > 0 ? '*' : '';
+};
 // Manejar el envío del formulario
 form.addEventListener('submit', (e) => {
-  e.preventDefault(); // Evitar el envío por defecto
+  e.preventDefault(); // Evitar envío por defecto
   if (validateForm()) {
     alert('Formulario enviado correctamente.');
     form.reset(); // Reiniciar formulario tras envío exitoso
+    resetValidation(); // Reiniciar estilos y mensajes
   } else {
     alert('Por favor, completa todos los campos obligatorios.');
   }
 });
 
-// Actualizar estado de los campos según la selección
-attendanceRadios.forEach(radio => radio.addEventListener('change', () => {
-  const attendance = [...attendanceRadios].find(radio => radio.checked)?.value;
-
-  // Resetear campos al cambiar opción
-  emailInput.disabled = attendance === 'No';
-  numGuestsInput.disabled = attendance === 'No';
-  guestNamesInput.disabled = attendance === 'No' || parseInt(numGuestsInput.value) === 0;
-
-  requiredLabels.email.textContent = attendance === 'Sí' ? '*' : '';
-  requiredLabels.numGuests.textContent = attendance === 'Sí' ? '*' : '';
-  requiredLabels.guestNames.textContent = attendance === 'Sí' && parseInt(numGuestsInput.value) > 0 ? '*' : '';
-}));
+// Actualizar estado de los campos dinámicamente
+attendanceRadios.forEach(radio => radio.addEventListener('change', resetValidation));
+[numGuestsInput].forEach(field =>
+  field.addEventListener('input', resetValidation)
+);
