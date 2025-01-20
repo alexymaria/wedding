@@ -512,13 +512,16 @@ nav ul li a:hover {
 .timeline::before {
     content: '';
     position: absolute;
-    top: 0;
-    width: 1px;
-    height: 100%;
+    color: #202020;
+    top: 50%;
+    height: 2px;
     background: rgb(204, 204, 204);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1
+    transform: translateY(-50%);
+    width: 30%; /* Ajusta el ancho de las líneas */
+    border-radius: 8px; /* Hace los bordes de la línea redondeados */
+    transform: translateY(-50%); /* Centra las líneas verticalmente */
+    animation: waveLines 7.5s infinite ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
 }
 
 .timeline li {
