@@ -1346,7 +1346,9 @@ body.page-loaded .form-line-error {
 }
 .form-group {
   display: flex; /* Alinea el label y el input en línea */
-  align-items: center; /* Centra verticalmente los elementos */
+  flex-direction: column; /* Apila los elementos en columna */
+  gap: 5px; /* Espacio entre el label y la caja */
+  margin-bottom: 15px;
  
 }
 .form-contaniner{
@@ -1362,10 +1364,9 @@ body.page-loaded .form-line-error {
   }
   
   label {
-    display: block;
     font-weight: bold;
-    margin-bottom: 5px;
     color: #555;
+    text-align: left; /* Alinea el texto del label a la izquierda */
   }
   
   input[type="text"],
