@@ -843,6 +843,16 @@ nav ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .form {
+        padding: 15px;
+      }
+    
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      textarea {
+        max-width: 100%; /* Ancho completo en pantallas pequeñas */
+      }
     .nolinesmovil{
         padding: 0px;
     }
@@ -1323,6 +1333,7 @@ body.page-loaded .form-line-error {
 
 
 .form{
+    font-family: 'champagne', sans-serif;
     background-color: #f0f0f0;
     padding: 20px;
     text-align: center;
@@ -1330,6 +1341,8 @@ body.page-loaded .form-line-error {
     margin: 0;
     box-sizing: border-box;
     border-radius: 2%;
+    max-width: 800px; /* Limita el ancho máximo para centrado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añade un poco de profundidad */
 }
 
 .form-contaniner{
@@ -1337,9 +1350,11 @@ body.page-loaded .form-line-error {
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap; /* Para que se adapte bien en móviles */
+    width: 100%;
 }
   .form-group {
     margin-bottom: 15px;
+    width: 100%; 
   }
   
   label {
@@ -1354,10 +1369,12 @@ body.page-loaded .form-line-error {
   input[type="number"],
   textarea {
     width: 100%;
+    max-width: 400px; /* Fija un ancho máximo */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    font-size: 14px;
   }
   
   input[type="radio"] {
@@ -1372,10 +1389,13 @@ body.page-loaded .form-line-error {
   .form-row {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap; 
   }
   
   .form-row .form-group {
     flex: 1;
+    min-width: 150px; /* Asegura un tamaño mínimo */
+    max-width: 400px; /* Fija un tamaño máximo */
   }
   
   .btn {
@@ -1387,12 +1407,26 @@ body.page-loaded .form-line-error {
     cursor: pointer;
     text-align: center;
     display: block;
-    margin: 0 auto;
+    margin: 20px auto 0; /* Centra el botón */
+    transition: background-color 0.3s;
   }
   
   .btn:hover {
     background-color: #555;
   }
+  /* Mensajes de agradecimiento */
+.thank-you-message {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .thank-you-message img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
   .required {
     color: red;
     margin-left: 5px;
