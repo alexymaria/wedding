@@ -1332,18 +1332,16 @@ body.page-loaded .form-line-error {
 }
 
 
-.form{
-    font-family: 'champagne', sans-serif;
+.form {
     background-color: #f0f0f0;
     padding: 20px;
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    width: 90%; /* Ancho del formulario relativo al ancho de la pantalla */
+    max-width: 600px; /* Limita el ancho máximo del formulario */
+    box-sizing: border-box; /* Incluye padding y border dentro del width */
     border-radius: 2%;
-    max-width: 800px; /* Limita el ancho máximo para centrado */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añade un poco de profundidad */
-}
+  }
+  
 .form-group {
   display: flex; /* Alinea el label y el input en línea */
   flex-direction: column; /* Apila los elementos en columna */
