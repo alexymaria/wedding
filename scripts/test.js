@@ -15,7 +15,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-
 const form = document.getElementById('dataForm');
 const submitBtn = document.getElementById('submitBtn');
 
@@ -42,28 +41,28 @@ const validateForm = () => {
   let isValid = true;
 
   const validateField = (field, condition, errorMessage) => {
-    const errorSpan = field.nextElementSibling;
+    const errorSpan = field?.nextElementSibling; // Asegúrate de que field existe
     if (!condition) {
-      field.classList.add('error-border');
-      errorSpan.textContent = errorMessage;
+      field?.classList.add('error-border'); // Solo modifica si field existe
+      if (errorSpan) errorSpan.textContent = errorMessage; // Evita errores si errorSpan no existe
       isValid = false;
     } else {
-      field.classList.remove('error-border');
-      errorSpan.textContent = '';
+      field?.classList.remove('error-border');
+      if (errorSpan) errorSpan.textContent = '';
     }
   };
 
   if (attendance === 'No') {
-    validateField(firstNameInput, firstNameInput.value.trim() !== '', 'Campo obligatorio');
-    validateField(lastNameInput, lastNameInput.value.trim() !== '', 'Campo obligatorio');
+    validateField(firstNameInput, firstNameInput?.value.trim() !== '', 'Campo obligatorio');
+    validateField(lastNameInput, lastNameInput?.value.trim() !== '', 'Campo obligatorio');
   } else if (attendance === 'Sí') {
-    validateField(firstNameInput, firstNameInput.value.trim() !== '', 'Campo obligatorio');
-    validateField(lastNameInput, lastNameInput.value.trim() !== '', 'Campo obligatorio');
-    validateField(emailInput, emailInput.value.trim() !== '', 'Campo obligatorio');
-    validateField(numGuestsInput, numGuestsInput.value.trim() !== '', 'Campo obligatorio');
+    validateField(firstNameInput, firstNameInput?.value.trim() !== '', 'Campo obligatorio');
+    validateField(lastNameInput, lastNameInput?.value.trim() !== '', 'Campo obligatorio');
+    validateField(emailInput, emailInput?.value.trim() !== '', 'Campo obligatorio');
+    validateField(numGuestsInput, numGuestsInput?.value.trim() !== '', 'Campo obligatorio');
 
     if (parseInt(numGuestsInput.value) > 0) {
-      validateField(guestNamesInput, guestNamesInput.value.trim() !== '', 'Campo obligatorio');
+      validateField(guestNamesInput, guestNamesInput?.value.trim() !== '', 'Campo obligatorio');
     }
   } else {
     alert('Por favor, selecciona si contamos contigo.');
