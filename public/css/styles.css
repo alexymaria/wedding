@@ -1358,6 +1358,7 @@ body.page-loaded .form-line-error {
 }
 
   label {
+    font-family: "lator";
     font-weight: bold;
     color: #555;
     text-align: left; /* Alinea el texto del label a la izquierda */
