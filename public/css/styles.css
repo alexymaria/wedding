@@ -1419,28 +1419,29 @@ body.page-loaded .form-line-error {
     min-width: 150px; /* Asegura un tamaño mínimo */
     max-width: 400px; /* Fija un tamaño máximo */
   }
-  .form-group.inline-radio {
+/* Contenedor del grupo de radio */
+.form-group.inline-radio {
     display: flex;
-    flex-direction:column;
-    gap: 10px; /* Cambia a columna */
-    /*align-items: flex-start;  Alinea el contenido al inicio (izquierda) */
-  }
-  .inline-radio-options {
-    display: flex;
-    flex-direction: column; /* Coloca Sí y No en columnas */
-    gap: 5px; /* Espaciado entre Sí y No */
-}
-  
-
-.inline-radio-options label {
-    display: inline-flex;
-    align-items: center; /* Alinea el círculo y el texto verticalmente */
-    gap: 5px; /* Espaciado entre el círculo y el texto */
-    font-weight: normal;
+    align-items: center;
+    gap: 20px; /* Espaciado entre los botones y el texto */
 }
 
-.inline-radio-options input[type="radio"] {
+/* Estilo de las etiquetas (Sí, No) */
+.form-group.inline-radio label {
+    font-family: 'Arial', sans-serif; /* Cambia la fuente aquí */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+    color: #333; /* Cambia el color del texto */
     margin: 0; /* Elimina márgenes adicionales */
+    display: flex;
+    align-items: center; /* Centra verticalmente con los botones */
+    gap: 10px; /* Espacio entre el botón y el texto */
+}
+
+/* Estilo de los inputs (botones blancos) */
+.form-group.inline-radio input[type="radio"] {
+    margin: 0; /* Elimina márgenes predeterminados */
+    accent-color: #6b705c; /* Cambia el color del botón al seleccionarlo */
+    transform: scale(1.2); /* Ajusta el tamaño del botón */
 }
   .btn {
     background-color: #333;
