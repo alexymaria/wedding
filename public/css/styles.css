@@ -390,6 +390,7 @@ nav ul li a:hover {
 .otroheader-text p{
     margin: 10px 0;
     font-size: 3rem ;
+    white-space: nowrap;
 }
 .header-text h1 {
     font-size: 3rem;
@@ -1067,7 +1068,7 @@ nav ul li a:hover {
     #close-menu {
         position: absolute;
         top: 15px;
-        left: 15px;
+        right: 25px;
         font-size: 1.5rem;
         background: none;
         border: none;
@@ -1164,8 +1165,9 @@ nav ul li a:hover {
         padding: 0px;
     }
     h2::before, h2::after {
-        width: 18%; /* Líneas aún más cortas en pantallas móviles */
+        width: 16%; /* Líneas aún más cortas en pantallas móviles */
     }
+
     .time-box {
         width: 50px;
         padding: 5px 8px;
