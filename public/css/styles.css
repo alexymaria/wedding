@@ -1028,8 +1028,6 @@ nav ul li a:hover {
         background:rgba(255, 255, 255, 0.9);;
         border-left: 1px solid #ddd;
         border-radius: 0 0 0 10px;
-        transition: right 0.3s ease; /* Animación suave */
-        text-align: right;
     }
 
     #mobile-menu ul {
@@ -1067,7 +1065,7 @@ nav ul li a:hover {
     #close-menu {
         position: absolute;
         top: 15px;
-        right: 15px;
+        left: 15px;
         font-size: 1.5rem;
         background: none;
         border: none;
