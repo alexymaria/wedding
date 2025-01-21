@@ -1056,6 +1056,7 @@ nav ul li a:hover {
         display: none; /* Sigue oculto hasta que se active */
     }
     #mobile-menu.show {
+        display: block;
         right: 0;; /* Mostrar cuando se activa */
     }
     #close-menu {
