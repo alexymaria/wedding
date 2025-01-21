@@ -350,11 +350,11 @@ nav ul li a:hover {
 }
 
 .mobile-only {
-    display: none; /* Solo para móviles */
+    display: block; /* Solo para móviles */
 }
 
 .desktop-only {
-    display: block; /* Oculta en móviles */
+    display: none; /* Oculta en móviles */
 }
 
 #nos-casamos{
@@ -853,6 +853,7 @@ nav ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
     .desktop-only {
         display: none; /* Oculta la imagen de escritorio */
         height: 90vh;
@@ -1321,6 +1322,13 @@ body.page-loaded .form-line-error {
 @media (min-width: 768px) {
     .main-image {
         object-position: center; /* Centra la imagen en su contenedor */
+    }
+    .mobile-only {
+        display: none; /* Solo para móviles */
+    }
+    
+    .desktop-only {
+        display: block; /* Oculta en móviles */
     }
 }
 
