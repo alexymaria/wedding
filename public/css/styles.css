@@ -383,9 +383,10 @@ nav ul li a:hover {
     padding: 15px 10px;
     border-radius: 10px;
     text-align: center; 
-    width: 90%;  
+    width: auto;  
 }
 .otroheader-text p{
+    margin: 10px 0;
     font-size: 3rem ;
 }
 .header-text h1 {
