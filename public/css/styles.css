@@ -1019,7 +1019,6 @@ nav ul li a:hover {
         position: fixed;
         right: 0px;
         width: 50%;
-        height: 100%;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         z-index: 1000;
         padding: 20px;
@@ -1030,6 +1029,7 @@ nav ul li a:hover {
         border-left: 1px solid #ddd;
         border-radius: 0 0 0 10px;
         transition: right 0.3s ease; /* Animación suave */
+        text-align: right;
     }
 
     #mobile-menu ul {
