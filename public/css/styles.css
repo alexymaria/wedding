@@ -378,7 +378,7 @@ nav ul li a:hover {
 
 .otroheader-text{
     position: absolute;
-    top: 85%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
