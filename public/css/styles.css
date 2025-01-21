@@ -350,11 +350,11 @@ nav ul li a:hover {
 }
 
 .mobile-only {
-    display: block; /* Solo para móviles */
+    display: none; /* Solo para móviles */
 }
 
 .desktop-only {
-    display: none; /* Oculta en móviles */
+    display: block; /* Oculta en móviles */
 }
 
 #nos-casamos{
