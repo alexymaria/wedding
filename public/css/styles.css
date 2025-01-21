@@ -362,6 +362,7 @@ nav ul li a:hover {
     font-family: 'pinyon', sans-serif;
     font-size: 2.5rem;
     text-align: center;
+    margin: 0 auto;
 }
 .header-text {
     position: absolute;
