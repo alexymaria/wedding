@@ -138,11 +138,24 @@ document.getElementById('dataForm').addEventListener('submit', (e) => {
     alert('Por favor, completa todos los campos obligatorios.');
     return; // Terminar ejecución aquí
   }
-
-  // Si todo es válido, mostrar mensaje de agradecimiento
-  showThankYouMessage(attendance);
-});
-
+    // Si todo es válido, guardar los datos en Firebase
+    try {
+      await addDoc(collection(db, 'formResponses'), {
+        attendance,
+        firstName: firstNameInput.value.trim(),
+        lastName: lastNameInput.value.trim(),
+        email: emailInput.value.trim(),
+        numGuests: parseInt(numGuestsInput.value) || 0,
+        guestNames: guestNamesInput.value.trim(),
+        timestamp: serverTimestamp(),
+      });
+      console.log('Datos enviados correctamente a Firestore.');
+      showThankYouMessage(attendance); // Mostrar mensaje de agradecimiento
+    } catch (error) {
+      console.error('Error al enviar datos a Firestore:', error);
+      alert('Hubo un error al enviar los datos. Inténtalo de nuevo.');
+    }
+  });
 
 // Actualizar estado de los campos dinámicamente
 attendanceRadios.forEach(radio => radio.addEventListener('change', resetValidation));
