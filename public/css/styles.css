@@ -1039,7 +1039,9 @@ nav ul li a:hover {
     }
 
     #mobile-menu ul li {
-        margin-bottom: 15px;
+        margin-bottom: 10px; /* Espaciado entre las opciones */
+        border-bottom: 1px solid #ddd; /* Línea separadora */
+        padding-bottom: 10px; /* Espaciado entre el texto y la línea */
     }
 
     #mobile-menu ul li a {
@@ -1051,7 +1053,8 @@ nav ul li a:hover {
         transition: color 0.3s ease; /* Transición de color */
     }
     #mobile-menu ul li:last-child {
-        margin-bottom: 0; /* Elimina el margen del último elemento */
+        border-bottom: none; /* Elimina la línea del último elemento */
+        margin-bottom: 0; /* Ajusta el espaciado *//* Elimina el margen del último elemento */
     }
     #mobile-menu {
         display: none; /* Sigue oculto hasta que se active */
