@@ -363,6 +363,7 @@ nav ul li a:hover {
     font-size: 2.5rem;
     text-align: center;
     margin: 0 auto;
+    white-space: nowrap;
 }
 .header-text {
     position: absolute;
