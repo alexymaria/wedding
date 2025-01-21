@@ -4,16 +4,6 @@
     font-family: 'champagne';
     src: url('../fonts/champagne.ttf') format('truetype');
 }
-
-@font-face {
-    font-family: 'libre';
-    src: url('../fonts/JosefinSans-VariableFont_wght') format('truetype');
-}
-
-@font-face {
-    font-family: 'tenor';
-    src: url('../fonts/TenorSans-Regular.ttf') format('truetype');
-}
 @font-face {
     font-family: 'promenade';
     src: url('../fonts/BLUDHAVEN.ttf') format('truetype');
