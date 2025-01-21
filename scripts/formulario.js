@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyACJzTzUT9fZdvoyGNFZkauJvIfJebSOik",
   authDomain: "wedd-88c89.firebaseapp.com",
@@ -11,7 +12,6 @@ const firebaseConfig = {
   appId: "1:387760003871:web:07155124a2a69c5a7f6e2a",
   measurementId: "G-C2CFYLZ973"
 };
-
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
