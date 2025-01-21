@@ -367,7 +367,7 @@ nav ul li a:hover {
 }
 .header-text {
     position: absolute;
-    top: 20%;
+    top: 18%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
