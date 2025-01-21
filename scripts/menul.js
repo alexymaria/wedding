@@ -18,7 +18,7 @@ window.addEventListener('scroll', () => {
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('#mobile-menu');
 const menuLinks = mobileMenu.querySelectorAll('a'); 
-
+const closeBtn = document.getElementById('close-menu');
 menuToggle.addEventListener('click', () => {
     console.log("Toggle button clicked"); // Verificar el clic
     mobileMenu.classList.toggle('show');
@@ -30,4 +30,9 @@ menuLinks.forEach(link => {
         console.log("Menu link clicked"); // Verificar el clic
         mobileMenu.classList.remove('show'); // Quitar la clase "show"
     });
+});
+
+closeBtn.addEventListener('click', () => {
+    menu.classList.remove('show');
+    overlay.classList.remove('show');
 });
