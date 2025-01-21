@@ -362,8 +362,7 @@ nav ul li a:hover {
     font-family: 'pinyon', sans-serif;
     font-size: 2.5rem;
     text-align: center;
-    color: #ffffff;
-
+    position: absolute;
 }
 .header-text {
     position: absolute;
@@ -1032,7 +1031,7 @@ nav ul li a:hover {
 
     #mobile-menu ul {
         list-style: none;
-        padding: 0;
+        padding-left: 15px;
         margin: 0;
     }
 
