@@ -1039,9 +1039,11 @@ nav ul li a:hover {
     }
 
     #mobile-menu ul li {
-        margin-bottom: 10px; /* Espaciado entre las opciones */
-        border-bottom: 1px solid #ddd; /* Línea separadora */
-        padding-bottom: 10px; /* Espaciado entre el texto y la línea */
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        padding-left: 10px; /* Ajusta si quieres un margen interno */
+        padding-right: 10px;
     }
 
     #mobile-menu ul li a {
