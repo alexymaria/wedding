@@ -44,10 +44,12 @@ const validateForm = () => {
     const errorSpan = field?.nextElementSibling; // Asegúrate de que field existe
     if (!condition) {
       field?.classList.add('error-border'); // Solo modifica si field existe
+      errorSpan.textContent = errorMessage;
       if (errorSpan) errorSpan.textContent = errorMessage; // Evita errores si errorSpan no existe
       isValid = false;
     } else {
       field?.classList.remove('error-border');
+      errorSpan.textContent = '';
       if (errorSpan) errorSpan.textContent = '';
     }
   };
@@ -119,15 +121,24 @@ const showThankYouMessage = (attendance) => {
 document.getElementById('dataForm').addEventListener('submit', (e) => {
   e.preventDefault();
 
-  // Validar el formulario (lógica de validación no mostrada aquí)
+  // Obtener el valor seleccionado de attendance
   const attendance = document.querySelector('input[name="attendance"]:checked')?.value;
 
-  if (attendance) {
-    // Si la validación es correcta, muestra el mensaje
-    showThankYouMessage(attendance);
-  } else {
+  if (!attendance) {
+    // Mostrar alerta si no se seleccionó Sí o No
     alert('Por favor, selecciona si asistirás o no.');
+    return; // Terminar ejecución aquí
   }
+
+  // Validar el formulario según la opción seleccionada
+  if (!validateForm()) {
+    // Mostrar alerta si hay errores en la validación
+    alert('Por favor, completa todos los campos obligatorios.');
+    return; // Terminar ejecución aquí
+  }
+
+  // Si todo es válido, mostrar mensaje de agradecimiento
+  showThankYouMessage(attendance);
 });
 
 
