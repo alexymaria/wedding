@@ -1476,24 +1476,29 @@ body.page-loaded .form-line-error {
   .inline-radio {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espacio entre el label y las opciones */
+    gap: 10px; /* Espacio entre la pregunta y las opciones */
   }
   
   .radio-options {
     display: flex;
-    align-items: center; /* Alinea verticalmente los elementos */
-    gap: 15px; /* Espacio entre cada botón y su texto */
+    gap: 20px; /* Espacio entre las opciones (Sí y No) */
   }
   
-  .radio-options input[type="radio"] {
-    margin: 0; /* Elimina márgenes innecesarios */
+  .radio-option {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el botón de radio con el texto */
+    gap: 8px; /* Espacio entre el botón de radio y su texto */
+  }
+  
+  .radio-option input[type="radio"] {
+    margin: 0; /* Elimina cualquier margen predefinido */
     accent-color: #333; /* Cambia el color del botón de radio */
   }
   
-  .radio-options .radio-text {
-    font-family: "lator"; /* Aplica la fuente deseada */
-    font-size: 16px; /* Ajusta el tamaño de la fuente */
-    color: #555; /* Color del texto */
+  .radio-label {
+    font-family: "lator";
+    font-size: 16px; /* Ajusta el tamaño del texto */
+    color: #555;
     cursor: pointer; /* Hace clickeable el texto */
   }
   
