@@ -119,6 +119,8 @@ const showThankYouMessage = (attendance) => {
 
 // Manejar el envío del formulario
 document.getElementById('dataForm').addEventListener('submit', (e) => {
+  console.log('El botón Enviar ha sido clickeado.');
+
   e.preventDefault();
 
   // Obtener el valor seleccionado de attendance
