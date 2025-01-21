@@ -356,6 +356,15 @@ nav ul li a:hover {
     height: 100%;
     object-fit: cover;
     opacity: 0.9;
+    display: none;
+}
+
+.mobile-only {
+    display: block; /* Solo para móviles */
+}
+
+.desktop-only {
+    display: none; /* Oculta en móviles */
 }
 
 #nos-casamos{
@@ -854,6 +863,15 @@ nav ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .desktop-only {
+        display: none; /* Oculta la imagen de escritorio */
+        height: 90vh;
+        flex: 1;
+        width: 100%; /* La imagen central ocupa todo el ancho */
+    }
+    .mobile-only {
+        display: block; /* Muestra la imagen para móvil */
+    }
     .form {
         padding: 15px;
       }
