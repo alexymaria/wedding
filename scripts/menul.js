@@ -19,6 +19,7 @@ const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('#mobile-menu');
 const menuLinks = mobileMenu.querySelectorAll('a'); 
 const closeBtn = document.getElementById('close-menu');
+const overlay = document.getElementById('menu-overlay');
 menuToggle.addEventListener('click', () => {
     console.log("Toggle button clicked"); // Verificar el clic
     mobileMenu.classList.toggle('show');
@@ -33,6 +34,6 @@ menuLinks.forEach(link => {
 });
 
 closeBtn.addEventListener('click', () => {
-    menu.classList.remove('show');
+    mobileMenu.classList.remove('show');
     overlay.classList.remove('show');
 });
