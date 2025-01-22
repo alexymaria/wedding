@@ -1177,6 +1177,10 @@ nav ul li a:hover {
     .footer-copyright {
         font-size: 0.8rem;
     }
+    .form-contaniner{
+
+        width: 70%;
+    }
 
 }
 
