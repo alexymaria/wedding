@@ -1448,7 +1448,7 @@ body.page-loaded .form-line-error {
     background-color: #f0f0f0;
     padding: 20px;
     margin: 0 auto; /* Centra el contenedor horizontalmente */
-    width: 90%; /* Ancho del formulario relativo al ancho de la pantalla */
+    width: 120%; /* Ancho del formulario relativo al ancho de la pantalla */
     max-width: 600px; /* Limita el ancho máximo del formulario */
     box-sizing: border-box; /* Incluye padding y border dentro del width */
     border-radius: 2%;
@@ -1467,6 +1467,7 @@ body.page-loaded .form-line-error {
     gap: 40px;
     flex-wrap: wrap; /* Para que se adapte bien en móviles */
     width: 100%;
+    margin-left: 70px;
 }
 
   label {
