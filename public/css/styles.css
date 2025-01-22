@@ -89,6 +89,7 @@ h2.no-lines::after {
     content: none; /* Elimina las líneas */
 }
 
+
 /* Animación */
 @keyframes waveLines {
     0% {
