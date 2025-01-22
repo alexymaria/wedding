@@ -854,6 +854,13 @@ nav ul li a:hover {
   .carousel-button:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
+  .carousel-caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+  }
   
 
 /* Responsive Design */
