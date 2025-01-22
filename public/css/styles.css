@@ -820,7 +820,7 @@ nav ul li a:hover {
 
 .carousel-item img {
     width: 100%;
-    height: auto;
+    height: 90vh;
     object-fit: cover;
 }
 
@@ -831,7 +831,7 @@ nav ul li a:hover {
     border: none;
     border-radius: 50%;
     width: 40px;
-    height: auto;
+    height: 40px;
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 10;
