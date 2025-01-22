@@ -1178,7 +1178,6 @@ nav ul li a:hover {
         font-size: 0.8rem;
     }
     .form-contaniner{
-
         width: 70%;
     }
 
@@ -1472,6 +1471,9 @@ body.page-loaded .form-line-error {
     flex-wrap: wrap; /* Para que se adapte bien en móviles */
     width: 100%;
     margin-left: 70px;
+}
+.dataForm{
+    margin-left: 70px
 }
 
   label {
