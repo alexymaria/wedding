@@ -1332,8 +1332,8 @@ body.page-loaded .form-line-error {
     }
 
     .main-image.desktop-only {
-        max-width: 674px;
-        height: 70vh; /* Ajusta el alto de la imagen */
+        max-width: 900px;
+        height: auto; /* Ajusta el alto de la imagen */
         object-fit: cover; /* Mantén la imagen escalada correctamente */
     }
 
