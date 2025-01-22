@@ -1332,8 +1332,7 @@ body.page-loaded .form-line-error {
     }
 
     .main-image.desktop-only {
-        display: block; /* Asegúrate de que la imagen de escritorio se muestre */
-        width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+        display: block; /* Asegúrate de que la imagen de escritorio se muestre */ /* Ocupa el 100% del ancho de la ventana */
         height: 100vh; /* Ocupa el 100% de la altura de la ventana */
         object-fit: cover; /* Escala la imagen para cubrir toda la pantalla */
         margin: 0; /* Asegúrate de que no haya márgenes */
