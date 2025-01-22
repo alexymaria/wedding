@@ -1340,9 +1340,11 @@ body.page-loaded .form-line-error {
     }
 
     .header-container {
-        max-width: 1200px; /* Ancho máximo del contenido */
-        margin: 0 auto; /* Centrado horizontal */
+        max-width: 100vw; /* Asegúrate de que el contenedor llene el ancho de la pantalla */
+        margin: 0;
+        padding: 0;
     }
+
 }
 
 
