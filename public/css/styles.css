@@ -1330,6 +1330,16 @@ body.page-loaded .form-line-error {
     .desktop-only {
         display: block; /* Oculta en móviles */
     }
+
+    .main-image.desktop-only {
+        height: 70vh; /* Ajusta el alto de la imagen */
+        object-fit: cover; /* Mantén la imagen escalada correctamente */
+    }
+
+    .header-container {
+        max-width: 1200px; /* Ancho máximo del contenido */
+        margin: 0 auto; /* Centrado horizontal */
+    }
 }
 
 
