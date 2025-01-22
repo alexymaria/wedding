@@ -1340,7 +1340,7 @@ body.page-loaded .form-line-error {
     }
 
     .header-container {
-        max-width: 100px; /* Asegúrate de que el contenedor llene el ancho de la pantalla */
+       /* Asegúrate de que el contenedor llene el ancho de la pantalla */
         margin: 0;
         padding: 0;
     }
