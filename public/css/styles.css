@@ -910,12 +910,23 @@ nav ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    #como-empezo-todo .container {
+    #como-empezo-todo {
+        padding: 30px 10px; /* Reduce el padding general */
+      }
+  
+      #como-empezo-todo .container {
         flex-direction: column;
+        gap: 10px; /* Menos espacio entre elementos */
       }
   
       #como-empezo-todo .content {
         text-align: center;
+        margin-bottom: 10px; /* Reduce espacio antes del texto */
+      }
+  
+      #como-empezo-todo .image img {
+        margin: 0 auto;
+        max-width: 90%; /* Evita espacios excesivos en los bordes */
       }
     .desktop-only {
         display: none; /* Oculta la imagen de escritorio */
