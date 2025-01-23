@@ -1711,3 +1711,21 @@ body.page-loaded .form-line-error {
       margin-left: 50px; /* Añade margen izquierdo en escritorio */
     }
   }
+  .button-container {
+    text-align: center; /* Centra el botón */
+    margin-top: 20px; /* Añade espacio superior al botón */
+  }
+  .button-container .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .button-container .btn:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+  }
