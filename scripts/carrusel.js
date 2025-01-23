@@ -17,40 +17,61 @@ carousel.insertBefore(lastClone, items[0]);
 carousel.style.transform = `translateX(-100%)`;
 let allowShift = true;
 
-// Actualizar la posición del carrusel
 function updateCarousel() {
-  if (!allowShift) return;
-  allowShift = false;
-
-  carousel.style.transition = 'transform 0.5s ease-in-out';
-  carousel.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
-
-  setTimeout(() => {
-    if (currentIndex === totalItems) {
-      currentIndex = 0;
-      carousel.style.transition = 'none';
-      carousel.style.transform = `translateX(-100%)`;
-    } else if (currentIndex === -1) {
-      currentIndex = totalItems - 1;
-      carousel.style.transition = 'none';
-      carousel.style.transform = `translateX(-${totalItems * 100}%)`;
+    if (!allowShift) return; // Evita cambios mientras está en transición
+    allowShift = false; // Bloquea nuevos cambios
+  
+    carousel.style.transition = 'transform 0.5s ease-in-out';
+    carousel.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
+  
+    carousel.addEventListener(
+      'transitionend',
+      () => {
+        if (currentIndex === totalItems) {
+          currentIndex = 0;
+          carousel.style.transition = 'none';
+          carousel.style.transform = `translateX(-100%)`;
+        } else if (currentIndex === -1) {
+          currentIndex = totalItems - 1;
+          carousel.style.transition = 'none';
+          carousel.style.transform = `translateX(-${totalItems * 100}%)`;
+        }
+        allowShift = true; // Permite cambios después de la transición
+      },
+      { once: true } // Asegura que el evento se elimine después de ejecutarse una vez
+    );
+  }
+  
+  function nextSlide() {
+    if (allowShift) {
+      currentIndex++;
+      if (currentIndex > totalItems) currentIndex = totalItems; // Previene desbordes
+      updateCarousel();
     }
-    allowShift = true;
-  }, 500);
-}
-
-// Ir al siguiente slide
-function nextSlide() {
-  currentIndex++;
-  updateCarousel();
-}
-
-// Ir al slide anterior
-function prevSlide() {
-  currentIndex--;
-  updateCarousel();
-}
-
+  }
+  
+  function prevSlide() {
+    if (allowShift) {
+      currentIndex--;
+      if (currentIndex < -1) currentIndex = -1; // Previene desbordes
+      updateCarousel();
+    }
+  }
+  function restartAutoSlide() {
+    clearInterval(autoSlide);
+    autoSlide = setInterval(nextSlide, 4000);
+  }
+  
+  nextButton.addEventListener('click', () => {
+    nextSlide();
+    restartAutoSlide(); // Reinicia el auto-slide
+  });
+  
+  prevButton.addEventListener('click', () => {
+    prevSlide();
+    restartAutoSlide(); // Reinicia el auto-slide
+  });
+  
 // Event listeners
 nextButton.addEventListener('click', nextSlide);
 prevButton.addEventListener('click', prevSlide);
