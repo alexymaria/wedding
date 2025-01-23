@@ -911,7 +911,7 @@ nav ul li a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     #como-empezo-todo {
-        padding: 30px 10px; /* Reduce el padding general */
+        padding: 0px 10px; /* Reduce el padding general */
       }
   
       #como-empezo-todo .container {
