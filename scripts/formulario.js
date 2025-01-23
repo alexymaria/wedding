@@ -13,6 +13,7 @@ const firebaseConfig = {
   measurementId: "G-C2CFYLZ973"
 };
 const app = initializeApp(firebaseConfig);
+const analytics = firebase.analytics();
 const db = getFirestore(app);
 
 const form = document.getElementById('dataForm');
