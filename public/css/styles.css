@@ -862,10 +862,60 @@ nav ul li a:hover {
     font-weight: bold;
   }
   
+    /* General Styling */
+    #como-empezo-todo {
+        padding: 50px 20px;
+        background-color: #f9f9f9;
+        text-align: center;
+      }
+    
+      #como-empezo-todo .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+    
+      #como-empezo-todo .content {
+        flex: 1 1 400px;
+        text-align: left;
+      }
+    
+      #como-empezo-todo .content h2 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+    
+      #como-empezo-todo .content p {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.6;
+      }
+    
+      #como-empezo-todo .image {
+        flex: 1 1 400px;
+        text-align: center;
+      }
+    
+      #como-empezo-todo .image img {
+        max-width: 60%;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
-
+    #como-empezo-todo .container {
+        flex-direction: column;
+      }
+  
+      #como-empezo-todo .content {
+        text-align: center;
     .desktop-only {
         display: none; /* Oculta la imagen de escritorio */
         height: 90vh;
