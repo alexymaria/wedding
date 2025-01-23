@@ -1705,3 +1705,9 @@ body.page-loaded .form-line-error {
     color: #777;
 }
 
+  /* Estilos exclusivos para escritorio */
+  @media (min-width: 1024px) {
+    #dataForm {
+      margin-left: 50px; /* Añade margen izquierdo en escritorio */
+    }
+  }
