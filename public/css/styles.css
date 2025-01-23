@@ -1708,7 +1708,7 @@ body.page-loaded .form-line-error {
   /* Estilos exclusivos para escritorio */
   @media (min-width: 1024px) {
     #dataForm {
-      margin-left: 50px; /* Añade margen izquierdo en escritorio */
+      margin-left: 70px; /* Añade margen izquierdo en escritorio */
     }
   }
   .button-container {
@@ -1726,5 +1726,5 @@ body.page-loaded .form-line-error {
   }
 
   .button-container .btn:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Color al pasar el mouse */
+    background-color: rgba(0, 0, 0, 0.5); /* Color al pasar el mouse */
   }
