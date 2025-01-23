@@ -906,7 +906,7 @@ nav ul li a:hover {
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
-
+    
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -916,6 +916,7 @@ nav ul li a:hover {
   
       #como-empezo-todo .content {
         text-align: center;
+      }
     .desktop-only {
         display: none; /* Oculta la imagen de escritorio */
         height: 90vh;
