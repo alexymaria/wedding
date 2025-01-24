@@ -806,7 +806,7 @@ nav ul li a:hover {
 .men-card {
     border-left: 5px solid #7faaff;
 }
-
+/*++++++++++++++++++++++++++++++ SECCION VIAJE NOVIOS ++++++++++++++++++++++++++++++++++*/
 .carousel-container {
     overflow: hidden;
     width: 100%;
@@ -871,11 +871,280 @@ nav ul li a:hover {
     color: #333;
     font-weight: bold;
   }
+  .cta {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #6b705c;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+.cta p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.viaje-novios {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+
+/*++++++++++++++++++++++++++++++ SECCION CONTACTO ++++++++++++++++++++++++++++++++++*/
+.contacto {
+    text-align: center;
+    padding: 30px 15px;
+    background-color:#f0f0f0; /* Fondo rosa claro */
+    color: #6b705c;
+    border-radius: 2%;
+}
+
+.contacto p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.contacto-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Para que se adapte bien en móviles */
+}
+
+.contacto-item {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #6b705c;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    flex: 1;
+}
+
+.contacto-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contacto-item p {
+    font-size: 1.1rem;
+    margin: 0;
+    width: auto;
+}
+
+.contacto-item a {
+    text-decoration: none;
+    color: #6b705c;
+    white-space: nowrap;
+}
+
+.contacto-item a:hover {
+    color: #dddcdc;
+}
+
+/*++++++++++++++++++++++++++++++ SECCION FORMULARIO ++++++++++++++++++++++++++++++++++*/
+.form {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    width: 90%; /* Ancho del formulario relativo al ancho de la pantalla */
+    max-width: 600px; /* Limita el ancho máximo del formulario */
+    box-sizing: border-box; /* Incluye padding y border dentro del width */
+    border-radius: 2%;
+  }
   
-    /* General Styling */
+.form-group {
+  display: flex; /* Alinea el label y el input en línea */
+  flex-direction: column; /* Apila los elementos en columna */
+  gap: 5px; /* Espacio entre el label y la caja */
+  margin-bottom: 15px;
+ 
+}
+.form-contaniner{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Para que se adapte bien en móviles */
+    width: 100%;
+    margin-left: 50px;
+}
 
+  label {
+    font-family: "lator";
+    color: #555;
+    text-align: left; /* Alinea el texto del label a la izquierda */
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+    max-width: 400px; /* Fija un ancho máximo */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; 
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+    min-width: 150px; /* Asegura un tamaño mínimo */
+    max-width: 400px; /* Fija un tamaño máximo */
+  }
 
-/* Responsive Design */
+  .btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin: 20px auto 0; /* Centra el botón */
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #555;
+  }
+  /* Mensajes de agradecimiento */
+.thank-you-message {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .thank-you-message img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .required {
+    color: red;
+    margin-left: 5px;
+  }
+  
+  .error-border {
+    border: 2px solid red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 0.2em;
+  }
+  .thank-you {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .thank-you img {
+    margin-top: 10px;
+    width: 300px;
+    height: 200px;
+  }
+  .inline-radio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre la pregunta y las opciones */
+  }
+  
+  .radio-options {
+    display: flex;
+    gap: 20px; /* Espacio entre las opciones (Sí y No) */
+  }
+  
+  .radio-option {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el botón de radio con el texto */
+    gap: 8px; /* Espacio entre el botón de radio y su texto */
+  }
+  
+  .radio-option input[type="radio"] {
+    margin: 0; /* Elimina cualquier margen predefinido */
+    accent-color: #333; /* Cambia el color del botón de radio */
+  }
+  
+  .radio-label {
+    font-family: "lator";
+    font-size: 16px; /* Ajusta el tamaño del texto */
+    color: #555;
+    cursor: pointer; /* Hace clickeable el texto */
+  }
+
+/*++++++++++++++++++++++++++++++ FIN SECCION MAIN ++++++++++++++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++++++++++ SECCION FOOTER ++++++++++++++++++++++++++++++++++*/  
+#main-footer {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 100px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+.footer-message {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 0 auto;
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* ------------------------------- Responsive Design --------------------------------*/
 @media (max-width: 768px) {
     #como-empezo-todo {
         padding: 0px 10px; /* Reduce el padding general */
@@ -1304,59 +1573,6 @@ iframe {
     margin-bottom: 0px;
 }
 
-.contacto {
-    text-align: center;
-    padding: 30px 15px;
-    background-color:#f0f0f0; /* Fondo rosa claro */
-    color: #6b705c;
-    border-radius: 2%;
-}
-
-
-.contacto p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.contacto-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap; /* Para que se adapte bien en móviles */
-}
-
-.contacto-item {
-    text-align: center;
-    padding: 10px 20px;
-    background-color: white;
-    border: 1px solid #6b705c;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 250px;
-    flex: 1;
-}
-
-.contacto-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.contacto-item p {
-    font-size: 1.1rem;
-    margin: 0;
-    width: auto;
-}
-
-.contacto-item a {
-    text-decoration: none;
-    color: #6b705c;
-    white-space: nowrap;
-}
-
-.contacto-item a:hover {
-    color: #dddcdc;
-}
 
 
 
@@ -1394,282 +1610,9 @@ body.page-loaded .form-line-error {
 
 
 
-.travel-journey {
-    text-align: center;
-    padding: 40px 20px;
-    background: #f9f9f9; /* Fondo suave */
-    color: #333; /* Texto en color oscuro */
-    font-family: 'Arial', sans-serif;
-}
-
-.travel-journey h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.travel-journey .intro-text {
-    font-size: 18px;
-    margin-bottom: 40px;
-    color: #555;
-}
-
-.travel-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Espacio entre las imágenes */
-    flex-wrap: wrap; /* Permite que las imágenes bajen de línea si no caben */
-}
-
-.travel-item {
-    position: relative;
-    text-align: center;
-    font-size: 16px;
-    width: 200px; /* Tamaño fijo para cada contenedor */
-    flex-shrink: 0; /* Evita que se encojan */
-}
-
-.travel-item img {
-    width: 100%; /* La imagen ocupa el 100% del contenedor */
-    height: auto; /* Mantiene la proporción original */
-    object-fit: cover; /* Asegura que la imagen siempre se vea bien dentro del contenedor */
-    border-radius: 10px; /* Bordes redondeados */
-    transition: transform 0.3s ease; /* Animación suave */
-}
-
-.travel-item img:hover {
-    transform: scale(1.05); /* Efecto zoom al pasar el ratón */
-}
-
-.travel-item p {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #333;
-}
 
 
-.cta {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border: 1px solid #6b705c;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 15px;
-}
 
-.cta p {
-    font-size: 16px;
-    color: #555;
-    margin: 10px 0;
-}
-
-.bank-account {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-}
-.viaje-novios {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-
-.form {
-    background-color: #f0f0f0;
-    padding: 20px;
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-    width: 90%; /* Ancho del formulario relativo al ancho de la pantalla */
-    max-width: 600px; /* Limita el ancho máximo del formulario */
-    box-sizing: border-box; /* Incluye padding y border dentro del width */
-    border-radius: 2%;
-  }
-  
-.form-group {
-  display: flex; /* Alinea el label y el input en línea */
-  flex-direction: column; /* Apila los elementos en columna */
-  gap: 5px; /* Espacio entre el label y la caja */
-  margin-bottom: 15px;
- 
-}
-.form-contaniner{
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap; /* Para que se adapte bien en móviles */
-    width: 100%;
-    margin-left: 50px;
-}
-
-  label {
-    font-family: "lator";
-    color: #555;
-    text-align: left; /* Alinea el texto del label a la izquierda */
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="number"],
-  textarea {
-    width: 100%;
-    max-width: 400px; /* Fija un ancho máximo */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 14px;
-  }
-  
-  input[type="radio"] {
-    margin-right: 10px;
-  }
-  
-  textarea {
-    resize: none;
-    height: 100px;
-  }
-  
-  .form-row {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap; 
-  }
-  
-  .form-row .form-group {
-    flex: 1;
-    min-width: 150px; /* Asegura un tamaño mínimo */
-    max-width: 400px; /* Fija un tamaño máximo */
-  }
-
-  .btn {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    display: block;
-    margin: 20px auto 0; /* Centra el botón */
-    transition: background-color 0.3s;
-  }
-  
-  .btn:hover {
-    background-color: #555;
-  }
-  /* Mensajes de agradecimiento */
-.thank-you-message {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .thank-you-message img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 10px;
-  }
-  
-  .required {
-    color: red;
-    margin-left: 5px;
-  }
-  
-  .error-border {
-    border: 2px solid red;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 0.9em;
-    margin-top: 0.2em;
-  }
-  .thank-you {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .thank-you img {
-    margin-top: 10px;
-    width: 300px;
-    height: 200px;
-  }
-  .inline-radio {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Espacio entre la pregunta y las opciones */
-  }
-  
-  .radio-options {
-    display: flex;
-    gap: 20px; /* Espacio entre las opciones (Sí y No) */
-  }
-  
-  .radio-option {
-    display: flex;
-    align-items: center; /* Alinea verticalmente el botón de radio con el texto */
-    gap: 8px; /* Espacio entre el botón de radio y su texto */
-  }
-  
-  .radio-option input[type="radio"] {
-    margin: 0; /* Elimina cualquier margen predefinido */
-    accent-color: #333; /* Cambia el color del botón de radio */
-  }
-  
-  .radio-label {
-    font-family: "lator";
-    font-size: 16px; /* Ajusta el tamaño del texto */
-    color: #555;
-    cursor: pointer; /* Hace clickeable el texto */
-  }
-  
-
-  /* Footer Styling */
-#main-footer {
-    background-color: #f0f0f0;
-    padding: 10px 0;
-    text-align: center;
-    border-top: 1px solid #ddd;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s ease-in-out forwards;
-}
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-logo img {
-    width: 100px; /* Ajusta el tamaño del logo */
-    height: auto;
-}
-
-.footer-message {
-    font-size: 1.2rem;
-    color: #555;
-    margin: 0 auto;
-}
-
-.footer-copyright {
-    font-size: 0.9rem;
-    color: #777;
-}
 
   /* Estilos exclusivos para escritorio */
   @media (min-width: 1024px) {

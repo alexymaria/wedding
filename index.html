@@ -6,23 +6,19 @@
     <title>Alejandro & María - Save the Date</title>
     <link rel="stylesheet" href="public/css/styles.css">
     <link rel="icon" href="/public/icons/logo negro.png">
-<!--<script src="../scripts/rsvp.js"></script>-->
-<script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
-<script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js"></script>
-<script type="module" src="scripts/formulario.js" defer></script>
-
+    <!--<script src="../scripts/rsvp.js"></script>-->
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js"></script>
+    <script type="module" src="scripts/formulario.js" defer></script>
     <script src="scripts/countdown.js" defer></script>
     <script src="public/js/script.js" defer></script> </script>
-
     <script src="scripts/botontorsvp.js" defer></script>
     <script src="scripts/scrollbutton.js" defer></script>
     <script src="scripts/menul.js" defer></script>
     <script src="scripts/carrusel.js" defer></script>
     <script src="scripts/preloadaer.js" defer></script>
-
-
-
 </head>
+
 <body>
     <div id="preloader">
         <div class="spinner-wrapper">
@@ -30,13 +26,10 @@
             <div class="spinner"></div>
         </div>
         <h2 class="no-lines">Estamos poniéndonos guapos...</h2>
-    </div>
-    
-    
+    </div> 
     <!-- Menú de navegación -->
     <button class="menu-toggle" aria-label="Abrir menú">☰</button>
     <nav id="main-nav">
-
         <div class="nav-container">
             <ul class="menu">
                 <li><a href="#inicio">INICIO</a></li>
@@ -49,12 +42,10 @@
                 <img src="public/icons/logo negro.png" alt="Logo" class="logo">
             </div>
             <ul class="menu">
-
                 <li><a href="#codigo-vestimenta">¿QUÉ ME PONGO?</a></li>
                 <li><a href="#viaje-novios">VIAJES</a></li>
                 <li><a href="#contacto">CONTACTO</a></li>
                 <li><a href="#dataForm">CONFIRMA TU ASISTENCIA</a></li>
-                
             </ul>
         </div>
     </nav>
@@ -72,14 +63,11 @@
             <li><a href="#contacto">Contacto</a></li>
             <li><a href="#dataForm">Confirma tu asistencia</a></li>
         </ul>
-    </div>
-    
-    
+    </div>   
 <!-- Botón para volver arriba -->
 <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
     <img src="public/icons/navegar-flecha-hacia-arriba.png" alt="Flecha hacia arriba" width="18px" height="18px">
 </button>
-
 <div id="inicio">   <!-- Encabezado con imagen principal -->
     <header class="header">
         <div class="header-container">
@@ -90,11 +78,8 @@
                 
                 <!-- Imagen para escritorio -->
                 <img src="public/images/mobil.webp" alt="Imagen para escritorio" class="main-image desktop-only">
-
                 <!-- Imagen para móvil -->
-
-            
-                <!-- Texto sobre la imagen -->
+                      <!-- Texto sobre la imagen -->
                 <div class="header-text">
                     <h1>Alejandro <br>&<br> María</h1>
                     
@@ -103,16 +88,13 @@
                     <p id="nos-casamos">" Nos conocimos cenando"</p>
                     <p>30 de Agosto de 2025</p>
                 </div>
-
             </div>
             <button id="goToFormButton" class="go-to-form" aria-label="Ir al formulario">
                 Confirma tu asistencia
             </button>
         </div>
     </header>
-
 </div> 
-
 
     <!-- Contenido principal -->
     <main class="main-content">
@@ -167,7 +149,6 @@
             </div>
         </section>
         
-    
         <section class="timeline-section" id="timeline-section">
             <h2>Timing</h2>   
             <ul class="timeline">
@@ -349,8 +330,6 @@
                 <p><strong>ES16 2100 2507 1113 0016 6966</strong></p>
             </div>
         </section>
-        
-
         <section id="contacto" class="contacto">
             <h2>Contacto</h2>
             <p>Si tienes cualquier duda o necesitas más información, no dudes en ponerte en contacto con nosotros:</p>
@@ -365,9 +344,7 @@
                 </div>
             </div>
         </section>
-        
-            <h2>Confirma tu asistencia</h2>
-
+        <h2>Confirma tu asistencia</h2>
         <section class="form">
             <div class="form-container">
                 <div id="thankYouYes" class="thank-you-message" style="display: none;">
@@ -375,7 +352,6 @@
                 <p>Estamos encantados de contar contigo. 😎</p>
                 <img src="public/images/thanks.webp" loading="lazy" alt="Gracias">
               </div>
-              
               <div id="thankYouNo" class="thank-you-message" style="display: none;">
                 <h2 class="no-lines">¡Gracias por responder!</h2>
                 <p>Te echaremos de menos 😢</p>
@@ -394,8 +370,7 @@
                             <label for="attendanceNo" class="radio-label">No</label>
                           </div>
                         </div>
-                      </div>
-                      
+                      </div>                     
                       <div class="form-group">
                         <label for="firstName">Nombre <span id="requiredFirstName" class="required">*</span></label>
                         <input type="text" id="firstName" name="firstName" placeholder="Nombre">
@@ -443,10 +418,5 @@
             <p class="footer-copyright">© 2025 Alejandro & María</p>
         </div>
     </footer>
-    
-
-</body>
-
-
-  
+</body>  
 </html>
