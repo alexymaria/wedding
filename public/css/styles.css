@@ -35,6 +35,12 @@ body {
     width: 100%;
     overflow-x: hidden; /* Evita el scroll horizontal */
 }
+
+body.page-loaded .form-error-message,
+body.page-loaded .form-line-error {
+    display: block; /* Muestra el mensaje cuando sea necesario */
+}
+
 h1{
     color: #f0f0f0;
     font-family: 'promenade', sans-serif;
@@ -741,6 +747,26 @@ nav ul li a:hover {
     line-height: 1.5;
 }
 
+iframe {
+    width: 100%; /* O ajusta a un valor fijo, como 600px */
+    height: 100vh; /* Altura del viewport, ajusta según el contenido */
+    border: none; /* Quita el borde para una apariencia limpia */
+    display: block; /* Asegura que ocupe todo su contenedor */
+    margin: 0 auto; /* Centra horizontalmente si es necesario */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+.iframe-container {
+    position: relative; /* Por si necesitas overlays o elementos absolutos */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Ajusta automáticamente según el iframe */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    padding: 0;
+    margin: 0 auto;
+}
+iframe {
+    overflow: auto; /* Habilita el scroll interno */
+    -webkit-overflow-scrolling: touch; /* Suaviza el scroll en móviles */
+}
 /*++++++++++++++++++++++++++++++ SECCION CODIGO VESTIMENTA ++++++++++++++++++++++++++++++++++*/
 .codigo-vestimenta {
     text-align: center;
@@ -974,12 +1000,16 @@ nav ul li a:hover {
     width: 100%;
     margin-left: 50px;
 }
+.form h2{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
 
-  label {
+label {
     font-family: "lator";
     color: #555;
     text-align: left; /* Alinea el texto del label a la izquierda */
-  }
+}
   
   input[type="text"],
   input[type="email"],
@@ -1096,6 +1126,24 @@ nav ul li a:hover {
     color: #555;
     cursor: pointer; /* Hace clickeable el texto */
   }
+  .button-container {
+    text-align: center; /* Centra el botón */
+    margin-top: 20px; /* Añade espacio superior al botón */
+  }
+  .button-container .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .button-container .btn:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Color al pasar el mouse */
+  }
+
 
 /*++++++++++++++++++++++++++++++ FIN SECCION MAIN ++++++++++++++++++++++++++++++++++*/
 
@@ -1145,49 +1193,15 @@ nav ul li a:hover {
 }
 
 /* ------------------------------- Responsive Design --------------------------------*/
+  
+/* Estilos exclusivos para escritorio */
+@media (min-width: 1024px) {
+    #dataForm {
+      margin-left: 70px; /* Añade margen izquierdo en escritorio */
+    }
+}
+
 @media (max-width: 768px) {
-    #como-empezo-todo {
-        padding: 0px 10px; /* Reduce el padding general */
-      }
-  
-      #como-empezo-todo .container {
-        flex-direction: column;
-        gap: 10px; /* Menos espacio entre elementos */
-      }
-  
-      #como-empezo-todo .content {
-        text-align: center;
-        margin-bottom: 10px; /* Reduce espacio antes del texto */
-      }
-  
-      #como-empezo-todo .image img {
-        margin: 0 auto;
-        max-width: 90%; /* Evita espacios excesivos en los bordes */
-      }
-      #como-empezo-todo .image {
-        flex: unset;
-        text-align: unset;
-      }
-      
-    .desktop-only {
-        display: none; /* Oculta la imagen de escritorio */
-        height: 90vh;
-        flex: 1;
-        width: 100%; /* La imagen central ocupa todo el ancho */
-    }
-    .mobile-only {
-        display: block; /* Muestra la imagen para móvil */
-    }
-    .form {
-        padding: 15px;
-      }
-    
-      input[type="text"],
-      input[type="email"],
-      input[type="number"],
-      textarea {
-        max-width: 100%; /* Ancho completo en pantallas pequeñas */
-      }
     .nolinesmovil{
         padding: 0px;
     }
@@ -1203,15 +1217,6 @@ nav ul li a:hover {
     h2.nolinesmovil::after {
         content: none; /* Elimina las líneas */
     }
-    .spinner-wrapper {
-        width: 90px; /* Reducir tamaño total en móvil */
-        height: 90px;
-    }
-    .carousel-button {
-        width: 30px;
-        height: 30px;
-        font-size: 1.2rem;
-    }
     .preloader-logo {
         width: 60px; /* Logo más pequeño en móvil */
     }
@@ -1223,40 +1228,9 @@ nav ul li a:hover {
     #preloader h2 {
         font-size: 1rem; /* Texto más pequeño */
     }
-    .venue-container {
-        flex-wrap: nowrap;
-        flex-direction: row;
-        overflow-x: scroll;
-        gap: 10px;
-    }
-
-    .venue-column {
-        flex: 1 1 45%;
-        max-width: 45%;
-    }
-    #como-llegar{
-        width: 100%;
-        margin: 0;
-    }
-    .map-container {
-        flex-direction: column; /* Cambia a diseño en columna */
-        gap: 10px; /* Ajusta el espacio entre elementos */
-    }
-
-    .map-column {
-        flex: 1 1 45%;
-        max-width: 45%;
-    }
-    .map-item {
-        font-size: 1.1rem;
-        flex: 1 1 100%; /* Ocupa el 100% del ancho */
-        justify-content: flex-start; /* Alinea los elementos al inicio, elimina espacio entre ellos */
-        min-height: auto; /* Elimina la altura mínima fija para adaptarse mejor al contenido */
-        margin-bottom: 20px; /* Añade un margen inferior entre los elementos */
-    }
-
-    .map-responsive iframe {
-        height: 250px; /* Aumenta la altura del mapa en móviles */
+    .spinner-wrapper {
+        width: 90px; /* Reducir tamaño total en móvil */
+        height: 90px;
     }
     .logo-container {
         margin: 10px 0;
@@ -1304,42 +1278,8 @@ nav ul li a:hover {
         right: 0px;
         z-index: 1100; /* Debe quedar sobre el menú desplegable */
     }
-    .contacto p {
-        font-size: 1.0rem;
-    }
-    .venue p {
-        font-size: 1.0rem;
-    }
-    
-    .map-item p {
-        font-size: 1.1rem;
-    }
-    .codigo-vestimenta p{
-        font-size: 1.0rem;
-    }
-    .codigo-vestimenta ul li{
-        font-size: 1.2rem;
-    }
-    .viaje-novios{
-        font-size: 1.0rem;
-    }
-    .main-image {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-    }
-    .scroll-to-top {
-        bottom: 15px;
-        right: 15px;
-        padding: 10px;
-    }
-    .go-to-form {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-      /* Menú móvil */
+          /* Menú móvil */
       #mobile-menu {
-
         font-family: 'lato', sans-serif;
         font-size: 1.1rem;
         display: none;
@@ -1356,7 +1296,6 @@ nav ul li a:hover {
         border-left: 1px solid #ddd;
         border-radius: 0 0 0 10px;
     }
-
     #mobile-menu ul {
         list-style: none;
         padding-left: 20px;
@@ -1424,6 +1363,125 @@ nav ul li a:hover {
     .timeline p {
         font-size: 1.0rem;
     }
+    .desktop-only {
+        display: none; /* Oculta la imagen de escritorio */
+        height: 90vh;
+        flex: 1;
+        width: 100%; /* La imagen central ocupa todo el ancho */
+    }
+    .mobile-only {
+        display: block; /* Muestra la imagen para móvil */
+    }
+    #como-empezo-todo {
+        padding: 0px 10px; /* Reduce el padding general */
+      }
+  
+    #como-empezo-todo .container {
+        flex-direction: column;
+        gap: 10px; /* Menos espacio entre elementos */
+    }
+  
+    #como-empezo-todo .content {
+        text-align: center;
+        margin-bottom: 10px; /* Reduce espacio antes del texto */
+    }
+  
+    #como-empezo-todo .image img {
+        margin: 0 auto;
+        max-width: 90%; /* Evita espacios excesivos en los bordes */
+    }
+    #como-empezo-todo .image {
+        flex: unset;
+        text-align: unset;
+    }
+    
+    .form {
+        padding: 15px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+        max-width: 100%; /* Ancho completo en pantallas pequeñas */
+    }
+    
+    .carousel-button {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+    }
+    
+    .venue-container {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        overflow-x: scroll;
+        gap: 10px;
+    }
+
+    .venue-column {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+    #como-llegar{
+        width: 100%;
+        margin: 0;
+    }
+    .map-container {
+        flex-direction: column; /* Cambia a diseño en columna */
+        gap: 10px; /* Ajusta el espacio entre elementos */
+    }
+
+    .map-column {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+    .map-item {
+        font-size: 1.1rem;
+        flex: 1 1 100%; /* Ocupa el 100% del ancho */
+        justify-content: flex-start; /* Alinea los elementos al inicio, elimina espacio entre ellos */
+        min-height: auto; /* Elimina la altura mínima fija para adaptarse mejor al contenido */
+        margin-bottom: 20px; /* Añade un margen inferior entre los elementos */
+    }
+
+    .map-responsive iframe {
+        height: 250px; /* Aumenta la altura del mapa en móviles */
+    }
+   
+    .contacto p {
+        font-size: 1.0rem;
+    }
+    .venue p {
+        font-size: 1.0rem;
+    }
+    
+    .map-item p {
+        font-size: 1.1rem;
+    }
+    .codigo-vestimenta p{
+        font-size: 1.0rem;
+    }
+    .codigo-vestimenta ul li{
+        font-size: 1.2rem;
+    }
+    .viaje-novios{
+        font-size: 1.0rem;
+    }
+    .main-image {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px;
+    }
+    .go-to-form {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
     #mobile-menu ul li a:hover {
         color: #555; /* Cambia el color al pasar el cursor */
     }
@@ -1480,7 +1538,29 @@ nav ul li a:hover {
     .footer-copyright {
         font-size: 0.8rem;
     }
+}
 
+@media (min-width: 768px) {
+    .main-image {
+        object-position: center; /* Centra la imagen en su contenedor */
+    }
+    .mobile-only {
+        display: none; /* Solo para móviles */
+    }
+    .desktop-only {
+        display: block; /* Oculta en móviles */
+    }
+    .main-image.desktop-only {
+        display: block; /* Asegúrate de que la imagen de escritorio se muestre */ /* Ocupa el 100% del ancho de la ventana */
+        height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+        object-fit: cover; /* Escala la imagen para cubrir toda la pantalla */
+        margin: 0; /* Asegúrate de que no haya márgenes */
+    }
+    .header-container {
+       /* Asegúrate de que el contenedor llene el ancho de la pantalla */
+        margin: 0;
+        padding: 0;
+    }
 }
 
 /* Mobile adjustments */
@@ -1491,16 +1571,13 @@ nav ul li a:hover {
     h2::before, h2::after {
         width: 16%; /* Líneas aún más cortas en pantallas móviles */
     }
-
     .time-box {
         width: 50px;
         padding: 5px 8px;
     }
-
     .time-box span {
         font-size: 1.6rem;
     }
-
     .countdown-title {
         font-size: 1.3rem;
         margin-bottom: 8px;
@@ -1533,107 +1610,11 @@ nav ul li a:hover {
     .otroheader-text p{
         font-size:1.6rem ;
     }
-    
 }
+
 @media (max-width: 400px) {
     nav ul {
         width: 100%; /* Ocupa todo el ancho de la pantalla */
         max-width: none; /* Elimina el límite máximo */
     }
 }
-
-#mobile-menu{
-    display: none;
-}
-
-
-iframe {
-    width: 100%; /* O ajusta a un valor fijo, como 600px */
-    height: 100vh; /* Altura del viewport, ajusta según el contenido */
-    border: none; /* Quita el borde para una apariencia limpia */
-    display: block; /* Asegura que ocupe todo su contenedor */
-    margin: 0 auto; /* Centra horizontalmente si es necesario */
-    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
-}
-.iframe-container {
-    position: relative; /* Por si necesitas overlays o elementos absolutos */
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    height: auto; /* Ajusta automáticamente según el iframe */
-    overflow: hidden; /* Oculta cualquier desbordamiento */
-    padding: 0;
-    margin: 0 auto;
-}
-iframe {
-    overflow: auto; /* Habilita el scroll interno */
-    -webkit-overflow-scrolling: touch; /* Suaviza el scroll en móviles */
-}
-
-.form h2{
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-
-
-
-
-body.page-loaded .form-error-message,
-body.page-loaded .form-line-error {
-    display: block; /* Muestra el mensaje cuando sea necesario */
-}
-
-@media (min-width: 768px) {
-    .main-image {
-        object-position: center; /* Centra la imagen en su contenedor */
-    }
-    .mobile-only {
-        display: none; /* Solo para móviles */
-    }
-    
-    .desktop-only {
-        display: block; /* Oculta en móviles */
-    }
-
-    .main-image.desktop-only {
-        display: block; /* Asegúrate de que la imagen de escritorio se muestre */ /* Ocupa el 100% del ancho de la ventana */
-        height: 100vh; /* Ocupa el 100% de la altura de la ventana */
-        object-fit: cover; /* Escala la imagen para cubrir toda la pantalla */
-        margin: 0; /* Asegúrate de que no haya márgenes */
-    }
-
-    .header-container {
-       /* Asegúrate de que el contenedor llene el ancho de la pantalla */
-        margin: 0;
-        padding: 0;
-    }
-
-}
-
-
-
-
-
-
-
-  /* Estilos exclusivos para escritorio */
-  @media (min-width: 1024px) {
-    #dataForm {
-      margin-left: 70px; /* Añade margen izquierdo en escritorio */
-    }
-  }
-  .button-container {
-    text-align: center; /* Centra el botón */
-    margin-top: 20px; /* Añade espacio superior al botón */
-  }
-  .button-container .btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .button-container .btn:hover {
-    background-color: rgba(0, 0, 0, 0.5); /* Color al pasar el mouse */
-  }
