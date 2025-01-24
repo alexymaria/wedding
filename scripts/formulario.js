@@ -28,6 +28,7 @@ const lastNameInput = document.getElementById('lastName');
 const emailInput = document.getElementById('email');
 const numGuestsInput = document.getElementById('numGuests');
 const guestNamesInput = document.getElementById('guestNames');
+const dietaryRestrictionsInput = document.getElementById('dietaryRestrictions');
 
 // Etiquetas dinámicas para los asteriscos
 const requiredLabels = {
@@ -150,6 +151,7 @@ document.getElementById('dataForm').addEventListener('submit', async (e) => {
         email: emailInput.value.trim(),
         numGuests: parseInt(numGuestsInput.value) || 0,
         guestNames: guestNamesInput.value.trim(),
+        dietaryRestrictions: dietaryRestrictionsInput.value.trim(),
         timestamp: serverTimestamp(),
       });
       console.log('Datos enviados correctamente a Firestore.');
