@@ -176,3 +176,57 @@ document.getElementById("goToFormButton").addEventListener("click", () => {
     method: "RSVP",
   });
 });
+const form = document.querySelector("#form");
+const fields = form.querySelectorAll("input, textarea");
+
+fields.forEach((field) => {
+  field.addEventListener("focus", () => {
+    logEvent(analytics, "form_field_focus", {
+      field_name: field.name,
+    });
+  });
+});
+
+form.addEventListener("submit", () => {
+  logEvent(analytics, "form_submission", {
+    status: "submitted",
+  });
+});
+let scrollDepth = 0;
+
+window.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY + window.innerHeight;
+  const pageHeight = document.body.scrollHeight;
+  const currentScroll = Math.round((scrollPosition / pageHeight) * 100);
+
+  if (currentScroll > scrollDepth) {
+    scrollDepth = currentScroll;
+
+    if (scrollDepth % 25 === 0) { // Enviar evento cada 25%
+      logEvent(analytics, "scroll_depth", {
+        depth: `${scrollDepth}%`,
+      });
+    }
+  }
+});
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      logEvent(analytics, "section_view", {
+        section_id: entry.target.id,
+      });
+    }
+  });
+});
+
+sections.forEach((section) => observer.observe(section));
+document.querySelectorAll(".carousel-item img").forEach((image) => {
+  image.addEventListener("click", () => {
+    logEvent(analytics, "image_click", {
+      image_src: image.src,
+      alt_text: image.alt,
+    });
+  });
+});
