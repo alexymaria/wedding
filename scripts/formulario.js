@@ -165,3 +165,14 @@ attendanceRadios.forEach(radio => radio.addEventListener('change', resetValidati
 [numGuestsInput].forEach(field =>
   field.addEventListener('input', resetValidation)
 );
+
+
+import { logEvent } from "firebase/analytics";
+
+
+document.getElementById("goToFormButton").addEventListener("click", () => {
+  logEvent(analytics, "confirm_attendance", {
+    content_type: "button",
+    method: "RSVP",
+  });
+});
