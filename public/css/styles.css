@@ -1618,3 +1618,6 @@ label {
         max-width: none; /* Elimina el límite máximo */
     }
 }
+#mobile-menu {
+    display: none; /* Sigue oculto hasta que se active */
+}
