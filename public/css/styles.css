@@ -114,6 +114,9 @@ p, span {
     font-size: 1.2rem;
     line-height: 1.6;
 }
+
+/*++++++++++++++++++++++++++++++ PRELOADER ++++++++++++++++++++++++++++++++++*/
+
 /* Preloader base */
 #preloader {
     position: fixed;
@@ -197,6 +200,8 @@ p, span {
         opacity: 1;
     }
 }
+
+/*++++++++++++++++++++++++++++++ MENÚ NAVEGACIÓN ++++++++++++++++++++++++++++++++++*/
 
 nav {
     background-color: #f0f0f0;; /* Color de fondo del menú */
@@ -331,7 +336,7 @@ nav ul li a:hover {
     transform: translateY(0); /* Asegura que no se desplace */
 }
 
-
+/*++++++++++++++++++++++++++++++ SECCION ENCABEZADO ++++++++++++++++++++++++++++++++++*/
 
 /* Header */
 .header-container {
@@ -429,11 +434,59 @@ nav ul li a:hover {
     background-color: #dddcdc;
     transform: translateX(-50%) scale(1.05); /* Pequeño efecto de aumento */
 }
+
+/*++++++++++++++++++++++++++++++ SECCION MAIN ++++++++++++++++++++++++++++++++++*/
 /* Main Content */
 .main-content {
     padding: 20px;
 }
-/* Countdown Section */
+
+/*++++++++++++++++++++++++++++++ SECCION COMO EMPEZO TODO ++++++++++++++++++++++++++++++++++*/
+#como-empezo-todo {
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+#como-empezo-todo .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #como-empezo-todo .content {
+    flex: 1 1 400px;
+    text-align: left;
+  }
+
+  #como-empezo-todo .content h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  #como-empezo-todo .content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  #como-empezo-todo .image {
+    flex: 1 1 400px;
+    text-align: center;
+  }
+
+  #como-empezo-todo .image img {
+    max-width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+/*++++++++++++++++++++++++++++++ SECCION CUENTA ATRÁS ++++++++++++++++++++++++++++++++++*/
+
 .countdown{
     background-color: #f0f0f0;
     padding: 20px;
@@ -444,30 +497,12 @@ nav ul li a:hover {
     border-radius: 2%;
 }
 
-
-.countdown-title {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-
 .countdown-timer {
     padding-top: 20px;
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: nowrap;
-}
-
-.countdown-item {
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-.countdown-item span {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
 }
 
 .time-box {
@@ -493,7 +528,7 @@ nav ul li a:hover {
     color: #666;
 }
 
-/* Timeline Section */
+/*++++++++++++++++++++++++++++++ SECCION TIMELINE ++++++++++++++++++++++++++++++++++*/
 
 .timeline-section {
     text-align: center;
@@ -574,7 +609,7 @@ nav ul li a:hover {
     font-size: 1.5rem;
 }
 
-/* Venue Section */
+/*++++++++++++++++++++++++++++++ SECCION UBICACIONES ++++++++++++++++++++++++++++++++++*/
 .venue {
     background-color: #f0f0f0;
     padding: 20px;
@@ -623,7 +658,7 @@ nav ul li a:hover {
     line-height: 1.9;
 }
 
-/* Como llegar Section */
+/*++++++++++++++++++++++++++++++ SECCION COMO LLEGAR ++++++++++++++++++++++++++++++++++*/
 #como-llegar {
     width: 80%; /* Define un ancho fijo o relativo */
     margin: 0 auto; /* Centra horizontalmente el contenedor */
@@ -682,8 +717,6 @@ nav ul li a:hover {
     text-decoration: underline; /* Añade subrayado al pasar el ratón */
 }
     
-
-
 .map-responsive {
     position: relative;
     width: 100%;
@@ -708,7 +741,7 @@ nav ul li a:hover {
     line-height: 1.5;
 }
 
-/* Codigo vestimenta Section */
+/*++++++++++++++++++++++++++++++ SECCION CODIGO VESTIMENTA ++++++++++++++++++++++++++++++++++*/
 .codigo-vestimenta {
     text-align: center;
     padding: 30px 15px;
@@ -718,29 +751,6 @@ nav ul li a:hover {
 }
 .codigo-vestimenta p{
     font-size: 1.2rem;
-}
-
-
-.codigo-vestimenta ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px auto;
-    max-width: 600px;
-    font-size: 1.2rem;
-}
-
-.codigo-vestimenta ul li {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.codigo-vestimenta {
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    margin: 20px;
 }
 
 .codigo-vestimenta h2 {
@@ -863,49 +873,7 @@ nav ul li a:hover {
   }
   
     /* General Styling */
-    #como-empezo-todo {
-        padding: 50px 20px;
-        text-align: center;
-      }
-    
-      #como-empezo-todo .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-    
-      #como-empezo-todo .content {
-        flex: 1 1 400px;
-        text-align: left;
-      }
-    
-      #como-empezo-todo .content h2 {
-        font-size: 2rem;
-        color: #333;
-        margin-bottom: 20px;
-      }
-    
-      #como-empezo-todo .content p {
-        font-size: 1.1rem;
-        color: #555;
-        line-height: 1.6;
-      }
-    
-      #como-empezo-todo .image {
-        flex: 1 1 400px;
-        text-align: center;
-      }
-    
-      #como-empezo-todo .image img {
-        max-width: 60%;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-    
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
