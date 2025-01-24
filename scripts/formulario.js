@@ -176,7 +176,7 @@ document.getElementById("goToFormButton").addEventListener("click", () => {
     method: "RSVP",
   });
 });
-const form = document.querySelector("#form");
+
 const fields = form.querySelectorAll("input, textarea");
 
 fields.forEach((field) => {
